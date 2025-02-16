@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      @vite('resources/css/app.css')
-</head>
-<body>
-   <h1 class="text-slate-  text-2xl bg-slate-500">hello world</h1> 
-</body>
-</html>
+<x-layout>
+    <div class="grid grid-cols-2 mt-12 items-center justify-around">
+        <div class="font-poppins">
+            <h2 class="text-2xl font-bold">Bingung Pilih <span class="text-primary">Program Studi</span> ?</h2>
+            <h1 class="text-4xl font-bold flex items-center gap-4 my-4">
+                <img src="/asset/logo.svg" alt="logo" class="inline-block w-34">
+                Jawaban nya
+            </h1>
+
+            <small class="block font-roboto text-sm my-8 w-[80%]">Discover your path to academic success. We help you plan your future by
+                choosing the right <span class="text-primary">Study Program</span> that matches your interests and potential.</small>
+
+            <x-button class="block bg-secondary text-black">Mulai Pilihan Mu</x-button>
+
+            <small  class="flex items-center gap-2 my-4 ">
+                A Product From <a href="" class="underline">STMIK-TM</a>
+                <img src="/asset/stmik logo.png" alt="logo" class="w-8">
+            </small>
+
+        </div>
+
+        <div>
+            <img src="/asset/welcome-image.svg" alt="welcome image" class="w-[70%]">
+        </div>
+    </div>
+</x-layout>

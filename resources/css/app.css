@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import "tailwindcss";
 @source "../views";
+
+
+@theme {
+
+    /* color */
+
+    --color-primary : #40A578;
+    --color-dark-primary : #006769;
+    --color-secondary : #FCDC2A;
+    --color-divider : #ECECEC;
+    /* font */
+    --font-poppins : sans-serif, Poppins;
+    --font-roboto : sans-serif, Roboto;
+
+}
+
+@layer components {
+    .active-navbar {
+        @apply text-primary line-through;
+    }
+}
