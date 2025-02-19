@@ -3,7 +3,7 @@
     <img src="/asset/logo.svg" alt="logo" class="  md:w-36">
     <x-navbar />
 
-    <x-button class="bg-primary text-white ">Login</x-button>
+    <a href="{{ Route('login') }}"><x-button class="bg-primary text-white ">Login</x-button></a>
 
     {{-- line --}}
     <div class=" absolute left-0 -bottom-1 w-full  h-0.5 bg-divider">

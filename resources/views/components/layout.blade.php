@@ -1,3 +1,7 @@
+@props([
+    'header' => true,
+    'footer' => true
+])
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,24 +20,19 @@
 
 </head>
 
-<body class="flex flex-col min-h-screen" >
-
-    @isset($header)
-        {{ $header }}
-    @else
+<body class="flex flex-col min-h-screen">
+    @if ($header  )
         <x-header />
-    @endisset
+    @endif
 
     <main {{ $attributes->merge(['class' => 'container mx-auto  p-4']) }} />
     {{ $slot }}
     </main>
 
 
-    @isset($footer)
-        {{ $footer }}
-    @else
+    @if($footer)
         <x-footer />
-    @endisset
+    @endif
 
 
 
