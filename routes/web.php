@@ -9,3 +9,5 @@ Route::get('/', function () {
 Route::view('/about','about')->name('about');
 
 Route::view('/login','login')->name('login');
+
+Route::view('/register','singup')->name('register');  

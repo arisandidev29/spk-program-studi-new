@@ -22,7 +22,8 @@
 <?php unset($__componentOriginalb9eddf53444261b5c229e9d8b9f1298e); ?>
 <?php endif; ?>
 
-    <a href="<?php echo e(Route('login')); ?>"><?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+    <div id="right header" class="flex items-center gap-4">
+        <a href="<?php echo e(Route('login')); ?>"><?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white ']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
@@ -41,6 +42,30 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?></a>
+
+        
+        <?php if (isset($component)) { $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $attributes; } ?>
+<?php $component = App\View\Components\UserNavbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('user-navbar'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\UserNavbar::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8)): ?>
+<?php $attributes = $__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8; ?>
+<?php unset($__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8)): ?>
+<?php $component = $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8; ?>
+<?php unset($__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8); ?>
+<?php endif; ?>
+        
+    </div>
 
     
     <div class=" absolute left-0 -bottom-1 w-full  h-0.5 bg-divider">
