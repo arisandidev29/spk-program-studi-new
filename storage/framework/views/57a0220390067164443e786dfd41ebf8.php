@@ -1,7 +1,7 @@
-<div x-cloak x-data="{show : false }" class="flex items-center gap-4">
-    <p>Arisandi</p>
-    <div class="relative">
-        <img @click="show = !show" @mouseover="show = !show" src="/asset/exampe user.png" alt="profile picute" class="w-10 h-10 rounded-full">
+<div x-data="{show : false }"  class="flex items-center gap-4">
+    <p >Arisandi</p>
+    <div  class="relative">
+        <img @click="show = !show" @mouseover="show = !show"  src="/asset/exampe user.png" alt="profile picute" class="w-10 h-10 rounded-full">
         <div
             x-show="show"
             class="absolute right-0 top-14 w-72 bg-white-light p-4 border-2 border-black border-solid rounded-md shadow-md z-10">

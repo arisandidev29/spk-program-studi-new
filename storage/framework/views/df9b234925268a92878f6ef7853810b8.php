@@ -38,7 +38,8 @@ unset($__defined_vars); ?>
 <div x-data="{ value : <?php echo \Illuminate\Support\Js::from($value)->toHtml() ?> }" class="relative" ">
 
         <input id="<?php echo e($placeholder); ?>" x-model="value" type="<?php echo e($type); ?>" value="<?php echo e($value); ?>"
-            <?php echo e($attributes->class(['peer border-1 border-primary px-6 py-2 w-full rounded-md  my-2 focus:border-dark-primary outline-none'])); ?>
+            <?php echo e($attributes->class(['peer border-1 border-primary px-6 py-2 w-full rounded-md  my-2 focus:border-dark-primary outline-none',
+            'border-red-500!' => $errors->has($placeholder)])); ?>
 
             <?php echo e($attributes); ?> ">
         
@@ -48,6 +49,17 @@ unset($__defined_vars); ?>
             <?php echo e($placeholder); ?>
 
         </label>
+
+        <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$placeholder];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+            <p class="text-red-500 text-sm "><?php echo e($message); ?></p>
+        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
             
 
 </div>

@@ -11,11 +11,35 @@ new class extends Component implements Livewire\Volt\Contracts\FunctionalCompone
 
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+    public $Name;
+
+    public $Username;
+
+    public $Email;
+
+    public $Password;
+
+    public $Password_Confirmasi;
+
+    public $Token;
+
     public function mount()
     {
         (new Actions\InitializeState)->execute(static::$__context, $this, get_defined_vars());
 
         (new Actions\CallHook('mount'))->execute(static::$__context, $this, get_defined_vars());
+    }
+
+    public function register()
+    {
+        $arguments = [static::$__context, $this, func_get_args()];
+
+        return (new Actions\CallMethod('register'))->execute(...$arguments);
+    }
+
+    protected function rules()
+    {
+        return (new Actions\ReturnRules)->execute(static::$__context, $this, []);
     }
 
 };
