@@ -171,6 +171,11 @@
             class="underline">Login disini</a></small>
     
 
+    
+
+    <div
+    class=" absolute -bottom-10 -left-14 w-20 h-20 bg-primary rounded-full shadow-primary shadow-[0_0_50px_40px] -z-10  ">
+</div>
 
 
 </form><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/livewire/singupform.blade.php ENDPATH**/ ?>

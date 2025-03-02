@@ -17,7 +17,9 @@ Route::view('/register','singup')->name('register');
 // user
 
 
-
-
 Route::view('/dashboard','user.dashboard')->name('dashboard');
 Route::get('/question',Question::class)->name('question');
+
+// admin
+
+Route::view('/admin/dashboard','admin.dashboard')->name('admin.dashboard');

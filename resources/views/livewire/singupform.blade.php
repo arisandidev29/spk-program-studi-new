@@ -49,6 +49,11 @@ $register = function() {
             class="underline">Login disini</a></small>
     
 
+    {{-- circle --}}
+
+    <div
+    class=" absolute -bottom-10 -left-14 w-20 h-20 bg-primary rounded-full shadow-primary shadow-[0_0_50px_40px] -z-10  ">
+</div>
 
 
 </form>
