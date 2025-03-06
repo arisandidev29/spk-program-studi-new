@@ -2,7 +2,8 @@
 
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
-    'title' => 'dashboard'
+    'title' => 'dashboard',
+    'breadcrumbs' => 'dashboard'
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -19,7 +20,8 @@ unset($__propNames);
 unset($__newAttributes);
 
 foreach (array_filter(([
-    'title' => 'dashboard'
+    'title' => 'dashboard',
+    'breadcrumbs' => 'dashboard'
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -61,17 +63,17 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal2880b66d47486b4bfeaf519598a469d6; ?>
 <?php unset($__componentOriginal2880b66d47486b4bfeaf519598a469d6); ?>
 <?php endif; ?>
-    <div class="p-2">
+    <div class="p-3">
         <?php if (isset($component)) { $__componentOriginal489711a049975b0fbcd3875ea3652a04 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal489711a049975b0fbcd3875ea3652a04 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin-header','data' => ['title' => $title]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin-header','data' => ['title' => $title,'breadcrumbs' => $breadcrumbs]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin-header'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['title' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($title)]); ?>
+<?php $component->withAttributes(['title' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($title),'breadcrumbs' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($breadcrumbs)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal489711a049975b0fbcd3875ea3652a04)): ?>
@@ -83,7 +85,7 @@ unset($__defined_vars); ?>
 <?php unset($__componentOriginal489711a049975b0fbcd3875ea3652a04); ?>
 <?php endif; ?>
 
-        <div class="p-4">
+        <div class="py-4">
             <?php echo e($slot); ?>
 
         </div>

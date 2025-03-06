@@ -3,8 +3,7 @@
     <ul class="flex flex-col gap-2 mt-8 w-[80%] mx-auto">
         @foreach (config('custome.sidebar') as $list)
             <li >
-              <a href="" class="group flex gap-4 items-center duration-300 hover:bg-white p-3 rounded-lg w-full ">
-                    {{-- <img src="{{$list['icon']}}" alt="{{$list['name']}}" class="w-6 h-6 group-hover:hue-rotate-60"> --}}
+              <a href="{{url($list['route'])}}" class="group flex gap-4 items-center duration-300 hover:bg-white p-3 rounded-lg w-full ">
                     {!! $list['icon']!!}
                     <p class="font-poppins text-md text-white font-bold group-hover:text-primary duration-300">{{ $list['name'] }}</p>
                 </a>

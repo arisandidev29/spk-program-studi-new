@@ -10,12 +10,28 @@
     --color-primary : #40A578;
     --color-dark-primary : #006769;
     --color-secondary : #FCDC2A;
+    --color-dark-secondary : #87A922;
     --color-divider : #ECECEC;
     --color-white-light : #FDFDFD;
     /* font */
     --font-poppins : sans-serif, Poppins;
     --font-roboto : sans-serif, Roboto;
 
+}
+
+@layer base {
+    table {
+        @apply w-full border-hidden border-spacing-4 table-auto;
+    }
+
+    table td {
+        @apply border text-center m-2 p-2  border-divider; 
+
+    }
+
+    table th {
+        @apply border border-divider p-2;
+    }
 }
 
 @layer components {

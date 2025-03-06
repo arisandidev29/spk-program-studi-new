@@ -1,6 +1,6 @@
 <?php if (! ($breadcrumbs->isEmpty())): ?>
     <nav class="container mx-auto">
-        <ol class="py-4 rounded flex flex-wrap bg-gray-300 text-sm text-gray-800 font-poppins">
+        <ol class="py-4 rounded flex flex-wrap  text-sm text-gray-800 font-poppins">
             <?php $__currentLoopData = $breadcrumbs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $breadcrumb): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                 <?php if($breadcrumb->url && !$loop->last): ?>

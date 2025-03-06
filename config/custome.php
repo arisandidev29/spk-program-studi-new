@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 return [
     'sidebar' => [
         [
@@ -22,7 +24,7 @@ return [
                 </svg>
             SVG
             ,
-            'route' => '',
+            'route' => 'admin/dashboard',
         ],
         [
             'name' => 'Users',
@@ -35,7 +37,7 @@ return [
                         </svg>
             SVG
             ,
-            'route' => '',
+            'route' => 'admin/users',
         ],
         [
             'name' => 'Kriteria',
