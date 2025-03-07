@@ -24,3 +24,4 @@ Route::get('/question',Question::class)->name('question');
 
 Route::view('/admin/dashboard','admin.dashboard')->name('admin.dashboard');
 Route::view('/admin/users','admin.users')->name('admin.users');
+Route::view('/admin/kriteria','admin.kriteria')->name('admin.kriteria');

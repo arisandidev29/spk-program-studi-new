@@ -10,12 +10,15 @@
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.2.0",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
         "vite": "^6.0.11"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.0.6",
         "animejs": "^3.2.2",
         "chart.js": "^4.4.8",
+        "prettier-plugin-blade": "^2.1.21",
         "tailwindcss": "^4.0.6"
     }
 }

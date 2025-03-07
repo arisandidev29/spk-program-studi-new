@@ -53,7 +53,7 @@ return [
                 </g>
             </svg>
             SVG,
-            'route' => '',
+            'route' => 'admin/kriteria',
         ],
         [
             'name' => 'Bobot',
