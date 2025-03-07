@@ -1,10 +1,14 @@
-@props(['title', 'breadcrumbs' ])
-<header class="flex justify-between bg-white shadow- shadow-xl rounded-2xl px-4 py-4">
+@props([
+    "title",
+    "breadcrumbs",
+])
+<header
+    class="shadow- flex justify-between rounded-2xl bg-white px-4 py-4 shadow-xl"
+>
     <div>
-        <h1 class="text-2xl font-poppins text-primary">{{ $title }}</h1>
+        <h1 class="font-poppins text-primary text-2xl">{{ $title }}</h1>
         {{ Breadcrumbs::render($breadcrumbs) }}
     </div>
 
     <x-user-navbar />
-
 </header>

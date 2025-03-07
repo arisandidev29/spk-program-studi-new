@@ -1,7 +1,10 @@
 <?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
 
 $__newAttributes = [];
-$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames((['title', 'breadcrumbs' ]));
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
+    "title",
+    "breadcrumbs",
+]));
 
 foreach ($attributes->all() as $__key => $__value) {
     if (in_array($__key, $__propNames)) {
@@ -16,7 +19,10 @@ $attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
 unset($__propNames);
 unset($__newAttributes);
 
-foreach (array_filter((['title', 'breadcrumbs' ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+foreach (array_filter(([
+    "title",
+    "breadcrumbs",
+]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
 
@@ -27,9 +33,11 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<header class="flex justify-between bg-white shadow- shadow-xl rounded-2xl px-4 py-4">
+<header
+    class="shadow- flex justify-between rounded-2xl bg-white px-4 py-4 shadow-xl"
+>
     <div>
-        <h1 class="text-2xl font-poppins text-primary"><?php echo e($title); ?></h1>
+        <h1 class="font-poppins text-primary text-2xl"><?php echo e($title); ?></h1>
         <?php echo e(Breadcrumbs::render($breadcrumbs)); ?>
 
     </div>
@@ -54,6 +62,5 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8; ?>
 <?php unset($__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8); ?>
 <?php endif; ?>
-
 </header>
 <?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/admin-header.blade.php ENDPATH**/ ?>

@@ -1,14 +1,12 @@
-
-<div class="max-w-4xl mx-auto my-4">
-
-    <x-question-head  /> 
+<div class="mx-auto my-4 max-w-4xl">
+    <x-question-head />
     <div class="flex flex-col gap-2">
-        <livewire:program-studi-answer programStudi="Sistem informasi"  />
-        <livewire:program-studi-answer programStudi="Komputarisasi Akuntansi"  />
-        <livewire:program-studi-answer programStudi="Manajemen informatika"  />
+        <livewire:program-studi-answer programStudi="Sistem informasi" />
+        <livewire:program-studi-answer programStudi="Komputarisasi Akuntansi" />
+        <livewire:program-studi-answer programStudi="Manajemen informatika" />
     </div>
- 
-    <x-button class="mt-4 bg-secondary text-black " wire:click='submit()'>Submit</x-button>
-    
-    
- </div>
+
+    <x-button class="bg-secondary mt-4 text-black" wire:click="submit()">
+        Submit
+    </x-button>
+</div>

@@ -2,8 +2,8 @@
 
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
-    'header' => true,
-    'footer' => true
+    "header" => true,
+    "footer" => true,
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -20,8 +20,8 @@ unset($__propNames);
 unset($__newAttributes);
 
 foreach (array_filter(([
-    'header' => true,
-    'footer' => true
+    "header" => true,
+    "footer" => true,
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -35,25 +35,24 @@ foreach ($attributes->all() as $__key => $__value) {
 unset($__defined_vars); ?>
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <?php echo app('Illuminate\Foundation\Vite')("resources/css/app.css"); ?>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+        <title><?php echo e($title ?? "SPK Pemilihan Program studi"); ?></title>
+    </head>
 
-    <title><?php echo e($title ?? 'SPK Pemilihan Program studi'); ?></title>
-
-</head>
-
-<body class="flex flex-col min-h-screen">
-    <?php if($header  ): ?>
-        <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
+    <body class="flex min-h-screen flex-col">
+        <?php if($header): ?>
+            <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>
 <?php $component = App\View\Components\Header::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('header'); ?>
@@ -73,16 +72,18 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal2a2e454b2e62574a80c8110e5f128b60; ?>
 <?php unset($__componentOriginal2a2e454b2e62574a80c8110e5f128b60); ?>
 <?php endif; ?>
-    <?php endif; ?>
+        <?php endif; ?>
 
-    <main <?php echo e($attributes->merge(['class' => 'container mx-auto  p-4'])); ?> />
-    <?php echo e($slot); ?>
+        <main
+            <?php echo e($attributes->merge(["class" => "container mx-auto  p-4"])); ?>
 
-    </main>
+        >
+            <?php echo e($slot); ?>
 
+        </main>
 
-    <?php if($footer): ?>
-        <?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
+        <?php if($footer): ?>
+            <?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal8a8716efb3c62a45938aca52e78e0322 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.footer','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('footer'); ?>
@@ -102,10 +103,7 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal8a8716efb3c62a45938aca52e78e0322; ?>
 <?php unset($__componentOriginal8a8716efb3c62a45938aca52e78e0322); ?>
 <?php endif; ?>
-    <?php endif; ?>
-
-
-
-</body>
-
-</html><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/layout.blade.php ENDPATH**/ ?>
+        <?php endif; ?>
+    </body>
+</html>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/layout.blade.php ENDPATH**/ ?>

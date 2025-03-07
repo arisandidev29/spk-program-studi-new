@@ -1,6 +1,6 @@
 @props([
-    'svg'
+    "svg",
 ])
-<span  {{$attributes->merge(['class' => 'w-2 h-6'])}}>
+<span {{ $attributes->merge(["class" => "w-2 h-6"]) }}>
     {!! $svg !!}
 </span>

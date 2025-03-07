@@ -1,12 +1,15 @@
 @props([
-    'programStudy' => 'Sistem Informasi',
-    'percentage' => '50',
+    "programStudy" => "Sistem Informasi",
+    "percentage" => "50",
 ])
-<div class="flex gap-4 items-center my-3">
+<div class="my-3 flex items-center gap-4">
     <p
-        class="text-primary  w-12 h-12 border border-primary rounded-full grid place-content-center  ">{{$percentage }}</p>
+        class="text-primary border-primary grid h-12 w-12 place-content-center rounded-full border"
+    >
+        {{ $percentage }}
+    </p>
     <div>
-        <span class="text-sm my-1 block">{{$programStudy}}</span>
-        <p class="h-2  bg-primary " style="width: {{$percentage}}"></p>
+        <span class="my-1 block text-sm">{{ $programStudy }}</span>
+        <p class="bg-primary h-2" style="width: {{ $percentage }}"></p>
     </div>
 </div>

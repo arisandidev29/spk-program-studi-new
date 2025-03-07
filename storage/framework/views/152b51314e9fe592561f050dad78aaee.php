@@ -2,8 +2,8 @@
 
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
-    'title' => 'dashboard',
-    'breadcrumbs' => 'dashboard'
+    "title" => "dashboard",
+    "breadcrumbs" => "dashboard",
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -20,8 +20,8 @@ unset($__propNames);
 unset($__newAttributes);
 
 foreach (array_filter(([
-    'title' => 'dashboard',
-    'breadcrumbs' => 'dashboard'
+    "title" => "dashboard",
+    "breadcrumbs" => "dashboard",
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -35,14 +35,14 @@ foreach ($attributes->all() as $__key => $__value) {
 unset($__defined_vars); ?>
 <?php if (isset($component)) { $__componentOriginal23a33f287873b564aaf305a1526eada4 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal23a33f287873b564aaf305a1526eada4 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => ['header' => false,'footer' => false,'class' => ' grid grid-cols-[345px_1fr] max-w-full! p-0!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => ['header' => false,'footer' => false,'class' => 'grid max-w-full! grid-cols-[345px_1fr] p-0!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('layout'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['header' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'footer' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'class' => ' grid grid-cols-[345px_1fr] max-w-full! p-0!']); ?>
+<?php $component->withAttributes(['header' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'footer' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'class' => 'grid max-w-full! grid-cols-[345px_1fr] p-0!']); ?>
     <?php if (isset($component)) { $__componentOriginal2880b66d47486b4bfeaf519598a469d6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2880b66d47486b4bfeaf519598a469d6 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.sidebar','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -99,4 +99,5 @@ unset($__defined_vars); ?>
 <?php if (isset($__componentOriginal23a33f287873b564aaf305a1526eada4)): ?>
 <?php $component = $__componentOriginal23a33f287873b564aaf305a1526eada4; ?>
 <?php unset($__componentOriginal23a33f287873b564aaf305a1526eada4); ?>
-<?php endif; ?><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/admin-layout.blade.php ENDPATH**/ ?>
+<?php endif; ?>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/admin-layout.blade.php ENDPATH**/ ?>

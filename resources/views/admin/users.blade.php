@@ -1,18 +1,18 @@
 <x-admin-layout title="Users" breadcrumbs="users">
-    <div class="flex flex-col xl:flex-row gap-4">
+    <div class="flex flex-col gap-4 xl:flex-row">
+        <livewire:users-table />
 
-       <livewire:users-table />
-
-        <x-card class="self-start order-2 xl:order-1 w-full xl:w-64 flex flex-col items-center gap-4">
+        <x-card
+            class="order-2 flex w-full flex-col items-center gap-4 self-start xl:order-1 xl:w-64"
+        >
             <p>User Register Token</p>
-            <h2 class="text-dark-secondary text-4xl font-poppins font-bold ">fjdkfjd</h2>
-            <x-button class="bg-primary text-white flex gap-2 items-center">
+            <h2 class="text-dark-secondary font-poppins text-4xl font-bold">
+                fjdkfjd
+            </h2>
+            <x-button class="bg-primary flex items-center gap-2 text-white">
                 Refresh
-                <img src="/asset/reload.png" alt="reload" class="w-6 ">
+                <img src="/asset/reload.png" alt="reload" class="w-6" />
             </x-button>
         </x-card>
-
-        
-       
     </div>
 </x-admin-layout>
