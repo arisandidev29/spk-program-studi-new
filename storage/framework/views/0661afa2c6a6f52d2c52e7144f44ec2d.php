@@ -25,7 +25,10 @@
             <p>Kriteria</p>
         </div>
 
-        <a href="" class="my-4 inline-block">
+        <a
+            href="<?php echo e(route("admin.kriteria.create")); ?>"
+            class="my-4 inline-block"
+        >
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -47,7 +50,14 @@
 <?php endif; ?>
         </a>
 
-        <div class="flex flex-col gap-4 p-8">
+        <div
+            x-data="{
+                modal: {
+                    show: false,
+                },
+            }"
+            class="flex flex-col gap-4 p-8"
+        >
             
             <?php for($i = 0; $i < 10; $i++): ?>
                 <div class="relative">
@@ -68,14 +78,10 @@
                             >
                                 Bobot : 40
                             </p>
-                            <p
-                                class="border-dark-primary text-dark-primary inline-block rounded-full border p-2 text-xs"
-                            >
-                                Bobot : 40
-                            </p>
                         </div>
                         <div class="flex items-center gap-4">
-                            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+                            <a href="">
+                                <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'group bg-secondary flex items-center gap-2 px-2! text-sm text-black duration-300 hover:bg-amber-500']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
@@ -85,49 +91,49 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'group bg-secondary flex items-center gap-2 px-2! text-sm text-black duration-300 hover:bg-amber-500']); ?>
-                                Edit
-                                <svg
-                                    class="w-4"
-                                    width="20"
-                                    height="19.991"
-                                    viewBox="0 0 20 19.991"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <g>
-                                        <rect width="20" height="19.991" />
-                                        <g
-                                            id="Complete"
-                                            transform="translate(1.667 1.666)"
-                                        >
-                                            <g id="edit">
-                                                <g id="Group">
-                                                    <path
-                                                        id="Path"
-                                                        d="M15 9.99527C15 9.99527 15 13.327 15 13.327C15 14.2471 14.2538 14.9929 13.3333 14.9929C13.3333 14.9929 1.66667 14.9929 1.66667 14.9929C0.746192 14.9929 0 14.2471 0 13.327C0 13.327 0 1.66588 0 1.66588C0 0.745839 0.746192 0 1.66667 0C1.66667 0 5 0 5 0"
-                                                        fill="none"
-                                                        stroke-width="2"
-                                                        stroke="#000000"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        transform="translate(0 1.666)"
-                                                    />
-                                                    <path
-                                                        id="Path"
-                                                        d="M3.75 11.4946L11.6667 3.49834L8.16667 0L0.25 7.91292L0 11.6611L3.75 11.4946L3.75 11.4946Z"
-                                                        fill="none"
-                                                        stroke-width="2"
-                                                        stroke="#000000"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        transform="translate(5 0)"
-                                                    />
+                                    Edit
+                                    <svg
+                                        class="w-4"
+                                        width="20"
+                                        height="19.991"
+                                        viewBox="0 0 20 19.991"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g>
+                                            <rect width="20" height="19.991" />
+                                            <g
+                                                id="Complete"
+                                                transform="translate(1.667 1.666)"
+                                            >
+                                                <g id="edit">
+                                                    <g id="Group">
+                                                        <path
+                                                            id="Path"
+                                                            d="M15 9.99527C15 9.99527 15 13.327 15 13.327C15 14.2471 14.2538 14.9929 13.3333 14.9929C13.3333 14.9929 1.66667 14.9929 1.66667 14.9929C0.746192 14.9929 0 14.2471 0 13.327C0 13.327 0 1.66588 0 1.66588C0 0.745839 0.746192 0 1.66667 0C1.66667 0 5 0 5 0"
+                                                            fill="none"
+                                                            stroke-width="2"
+                                                            stroke="#000000"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            transform="translate(0 1.666)"
+                                                        />
+                                                        <path
+                                                            id="Path"
+                                                            d="M3.75 11.4946L11.6667 3.49834L8.16667 0L0.25 7.91292L0 11.6611L3.75 11.4946L3.75 11.4946Z"
+                                                            fill="none"
+                                                            stroke-width="2"
+                                                            stroke="#000000"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            transform="translate(5 0)"
+                                                        />
+                                                    </g>
                                                 </g>
                                             </g>
                                         </g>
-                                    </g>
-                                </svg>
-                             <?php echo $__env->renderComponent(); ?>
+                                    </svg>
+                                 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -137,16 +143,17 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
+                            </a>
                             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 p-1! duration-300 hover:bg-red-700']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'modal.show = !modal.show','class' => 'bg-red-500 p-1! duration-300 hover:bg-red-700']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-red-500 p-1! duration-300 hover:bg-red-700']); ?>
+<?php $component->withAttributes(['@click' => 'modal.show = !modal.show','class' => 'bg-red-500 p-1! duration-300 hover:bg-red-700']); ?>
                                 <svg
                                     class="w-6"
                                     width="23"
@@ -251,6 +258,70 @@ if (isset($__slots)) unset($__slots);
                 </div>
                 <hr class="text-divider my-4" />
             <?php endfor; ?>
+
+            <?php if (isset($component)) { $__componentOriginal9f64f32e90b9102968f2bc548315018c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal9f64f32e90b9102968f2bc548315018c = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal','data' => ['show' => 'modal.show']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('modal'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['show' => 'modal.show']); ?>
+                <h2 class="text-center text-2xl">Yakin hapus Kriteria ini ?</h2>
+                <div class="mt-6 flex justify-center gap-4">
+                    <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('button'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'bg-red-500 text-white']); ?>Ya <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+                    <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'modal.show = !modal.show','class' => 'bg-primary text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('button'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['@click' => 'modal.show = !modal.show','class' => 'bg-primary text-white']); ?>
+                        Tidak
+                     <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+                </div>
+             <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal9f64f32e90b9102968f2bc548315018c)): ?>
+<?php $attributes = $__attributesOriginal9f64f32e90b9102968f2bc548315018c; ?>
+<?php unset($__attributesOriginal9f64f32e90b9102968f2bc548315018c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal9f64f32e90b9102968f2bc548315018c)): ?>
+<?php $component = $__componentOriginal9f64f32e90b9102968f2bc548315018c; ?>
+<?php unset($__componentOriginal9f64f32e90b9102968f2bc548315018c); ?>
+<?php endif; ?>
         </div>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

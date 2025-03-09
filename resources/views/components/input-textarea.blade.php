@@ -1,15 +1,12 @@
 @props([
     "placeholder" => "",
-    "type" => "text",
     "value" => "",
-    "icon" => null,
-    "error" => null
+    "parrentClass" => "",
 ])
-<div x-data="{ value: @js($value) }" class="relative">
-    <input
+<div x-data="{ value: @js($value) }" class="{{ $parrentClass }} relative">
+    <textarea
         id="{{ $placeholder }}"
         x-model="value"
-        type="{{ $type }}"
         value="{{ $value }}"
         {{
             $attributes->class([
@@ -18,17 +15,7 @@
             ])
         }}
         {{ $attributes }}
-    />
-
-    {{-- icon --}}
-
-    @if ($icon)
-        <img
-            src="{{ $icon }}"
-            alt=""
-            class="absolute top-5 right-1 mr-2 block w-4"
-        />
-    @endif
+    ></textarea>
 
     <label
         for="{{ $placeholder }}"
@@ -38,7 +25,7 @@
         {{ $placeholder }}
     </label>
 
-    @error($error ?? $placeholder)
+    @error($placeholder)
         <p class="text-sm text-red-500">{{ $message }}</p>
     @enderror
 </div>

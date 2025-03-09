@@ -7,11 +7,21 @@
             <p>Kriteria</p>
         </div>
 
-        <a href="" class="my-4 inline-block">
+        <a
+            href="{{ route("admin.kriteria.create") }}"
+            class="my-4 inline-block"
+        >
             <x-button class="bg-primary text-white">Buat Kriteria</x-button>
         </a>
 
-        <div class="flex flex-col gap-4 p-8">
+        <div
+            x-data="{
+                modal: {
+                    show: false,
+                },
+            }"
+            class="flex flex-col gap-4 p-8"
+        >
             {{-- kriteria --}}
             @for ($i = 0; $i < 10; $i++)
                 <div class="relative">
@@ -32,60 +42,58 @@
                             >
                                 Bobot : 40
                             </p>
-                            <p
-                                class="border-dark-primary text-dark-primary inline-block rounded-full border p-2 text-xs"
-                            >
-                                Bobot : 40
-                            </p>
                         </div>
                         <div class="flex items-center gap-4">
-                            <x-button
-                                class="group bg-secondary flex items-center gap-2 px-2! text-sm text-black duration-300 hover:bg-amber-500"
-                            >
-                                Edit
-                                <svg
-                                    class="w-4"
-                                    width="20"
-                                    height="19.991"
-                                    viewBox="0 0 20 19.991"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
+                            <a href="">
+                                <x-button
+                                    class="group bg-secondary flex items-center gap-2 px-2! text-sm text-black duration-300 hover:bg-amber-500"
                                 >
-                                    <g>
-                                        <rect width="20" height="19.991" />
-                                        <g
-                                            id="Complete"
-                                            transform="translate(1.667 1.666)"
-                                        >
-                                            <g id="edit">
-                                                <g id="Group">
-                                                    <path
-                                                        id="Path"
-                                                        d="M15 9.99527C15 9.99527 15 13.327 15 13.327C15 14.2471 14.2538 14.9929 13.3333 14.9929C13.3333 14.9929 1.66667 14.9929 1.66667 14.9929C0.746192 14.9929 0 14.2471 0 13.327C0 13.327 0 1.66588 0 1.66588C0 0.745839 0.746192 0 1.66667 0C1.66667 0 5 0 5 0"
-                                                        fill="none"
-                                                        stroke-width="2"
-                                                        stroke="#000000"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        transform="translate(0 1.666)"
-                                                    />
-                                                    <path
-                                                        id="Path"
-                                                        d="M3.75 11.4946L11.6667 3.49834L8.16667 0L0.25 7.91292L0 11.6611L3.75 11.4946L3.75 11.4946Z"
-                                                        fill="none"
-                                                        stroke-width="2"
-                                                        stroke="#000000"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        transform="translate(5 0)"
-                                                    />
+                                    Edit
+                                    <svg
+                                        class="w-4"
+                                        width="20"
+                                        height="19.991"
+                                        viewBox="0 0 20 19.991"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g>
+                                            <rect width="20" height="19.991" />
+                                            <g
+                                                id="Complete"
+                                                transform="translate(1.667 1.666)"
+                                            >
+                                                <g id="edit">
+                                                    <g id="Group">
+                                                        <path
+                                                            id="Path"
+                                                            d="M15 9.99527C15 9.99527 15 13.327 15 13.327C15 14.2471 14.2538 14.9929 13.3333 14.9929C13.3333 14.9929 1.66667 14.9929 1.66667 14.9929C0.746192 14.9929 0 14.2471 0 13.327C0 13.327 0 1.66588 0 1.66588C0 0.745839 0.746192 0 1.66667 0C1.66667 0 5 0 5 0"
+                                                            fill="none"
+                                                            stroke-width="2"
+                                                            stroke="#000000"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            transform="translate(0 1.666)"
+                                                        />
+                                                        <path
+                                                            id="Path"
+                                                            d="M3.75 11.4946L11.6667 3.49834L8.16667 0L0.25 7.91292L0 11.6611L3.75 11.4946L3.75 11.4946Z"
+                                                            fill="none"
+                                                            stroke-width="2"
+                                                            stroke="#000000"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            transform="translate(5 0)"
+                                                        />
+                                                    </g>
                                                 </g>
                                             </g>
                                         </g>
-                                    </g>
-                                </svg>
-                            </x-button>
+                                    </svg>
+                                </x-button>
+                            </a>
                             <x-button
+                                @click="modal.show = !modal.show"
                                 class="bg-red-500 p-1! duration-300 hover:bg-red-700"
                             >
                                 <svg
@@ -125,6 +133,19 @@
                 </div>
                 <hr class="text-divider my-4" />
             @endfor
+
+            <x-modal show="modal.show">
+                <h2 class="text-center text-2xl">Yakin hapus Kriteria ini ?</h2>
+                <div class="mt-6 flex justify-center gap-4">
+                    <x-button class="bg-red-500 text-white">Ya</x-button>
+                    <x-button
+                        @click="modal.show = !modal.show"
+                        class="bg-primary text-white"
+                    >
+                        Tidak
+                    </x-button>
+                </div>
+            </x-modal>
         </div>
     </x-card>
 </x-admin-layout>

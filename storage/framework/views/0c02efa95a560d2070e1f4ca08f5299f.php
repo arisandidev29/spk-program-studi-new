@@ -3,10 +3,8 @@
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "placeholder" => "",
-    "type" => "text",
     "value" => "",
-    "icon" => null,
-    "error" => null
+    "parrentClass" => "",
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -24,10 +22,8 @@ unset($__newAttributes);
 
 foreach (array_filter(([
     "placeholder" => "",
-    "type" => "text",
     "value" => "",
-    "icon" => null,
-    "error" => null
+    "parrentClass" => "",
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -39,11 +35,10 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<div x-data="{ value: <?php echo \Illuminate\Support\Js::from($value)->toHtml() ?> }" class="relative">
-    <input
+<div x-data="{ value: <?php echo \Illuminate\Support\Js::from($value)->toHtml() ?> }" class="<?php echo e($parrentClass); ?> relative">
+    <textarea
         id="<?php echo e($placeholder); ?>"
         x-model="value"
-        type="<?php echo e($type); ?>"
         value="<?php echo e($value); ?>"
         <?php echo e($attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
@@ -52,17 +47,7 @@ unset($__defined_vars); ?>
 
         <?php echo e($attributes); ?>
 
-    />
-
-    
-
-    <!--[if BLOCK]><![endif]--><?php if($icon): ?>
-        <img
-            src="<?php echo e($icon); ?>"
-            alt=""
-            class="absolute top-5 right-1 mr-2 block w-4"
-        />
-    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+    ></textarea>
 
     <label
         for="<?php echo e($placeholder); ?>"
@@ -73,7 +58,7 @@ unset($__defined_vars); ?>
 
     </label>
 
-    <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$error ?? $placeholder];
+    <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$placeholder];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -84,4 +69,4 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 </div>
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/input.blade.php ENDPATH**/ ?>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/input-textarea.blade.php ENDPATH**/ ?>
