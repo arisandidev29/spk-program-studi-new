@@ -8,9 +8,8 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Users','breadcrumbs' => 'users']); ?>
-    <div class="flex flex-col xl:flex-row gap-4">
-
-       <?php
+    <div class="flex flex-col gap-4 xl:flex-row">
+        <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -29,28 +28,30 @@ if (isset($__slots)) unset($__slots);
 
         <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'self-start order-2 xl:order-1 w-full xl:w-64 flex flex-col items-center gap-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'order-2 flex w-full flex-col items-center gap-4 self-start xl:order-1 xl:w-64']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'self-start order-2 xl:order-1 w-full xl:w-64 flex flex-col items-center gap-4']); ?>
+<?php $component->withAttributes(['class' => 'order-2 flex w-full flex-col items-center gap-4 self-start xl:order-1 xl:w-64']); ?>
             <p>User Register Token</p>
-            <h2 class="text-dark-secondary text-4xl font-poppins font-bold ">fjdkfjd</h2>
+            <h2 class="text-dark-secondary font-poppins text-4xl font-bold">
+                fjdkfjd
+            </h2>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white flex gap-2 items-center']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary flex items-center gap-2 text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary text-white flex gap-2 items-center']); ?>
+<?php $component->withAttributes(['class' => 'bg-primary flex items-center gap-2 text-white']); ?>
                 Refresh
-                <img src="/asset/reload.png" alt="reload" class="w-6 ">
+                <img src="/asset/reload.png" alt="reload" class="w-6" />
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
@@ -71,9 +72,6 @@ if (isset($__slots)) unset($__slots);
 <?php $component = $__componentOriginal53747ceb358d30c0105769f8471417f6; ?>
 <?php unset($__componentOriginal53747ceb358d30c0105769f8471417f6); ?>
 <?php endif; ?>
-
-        
-       
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

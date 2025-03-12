@@ -3,13 +3,12 @@ import { Chart } from "chart.js/auto";
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 
-const userRegistration = document.getElementById('myChart');
+const userRegistration = document.getElementById('UserRegistration');
 
 new Chart(userRegistration, {
     type: 'bar',
     data: {
         labels: labels,
-        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: "User Registration 2025",
             data: [12, 19, 3, 5, 2],
@@ -18,9 +17,12 @@ new Chart(userRegistration, {
         }]
     },
     options: {
+        responsive : true,
+        maintainAspectRatio: false,
+        aspectRatio: 1,
         plugins: {
             tooltip: 'true'
-        }
+        },
     },
 
 });

@@ -1,4 +1,4 @@
-<div x-data="{ show: false }" class="flex items-center gap-4">
+<div x-cloak x-data="{ show: false }" class="flex items-center gap-4">
     <p>Arisandi</p>
     <div class="relative">
         <img

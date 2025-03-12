@@ -22,8 +22,8 @@
                     </a>
                 </div>
             </x-card>
-            <x-card class="my-4 w-full">
-                <canvas id="myChart"></canvas>
+            <x-card class="my-2 w-full aspect-video">
+                    <canvas id="UserRegistration" width="200px"></canvas>
             </x-card>
         </div>
         <div>
@@ -49,7 +49,7 @@
             </x-card>
 
             <x-card class="my-4">
-                <canvas id="TotalUserChart"></canvas>
+                <canvas  id="TotalUserChart"></canvas>
             </x-card>
         </div>
     </div>

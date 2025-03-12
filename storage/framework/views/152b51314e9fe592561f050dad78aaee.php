@@ -35,14 +35,14 @@ foreach ($attributes->all() as $__key => $__value) {
 unset($__defined_vars); ?>
 <?php if (isset($component)) { $__componentOriginal23a33f287873b564aaf305a1526eada4 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal23a33f287873b564aaf305a1526eada4 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => ['header' => false,'footer' => false,'class' => 'grid max-w-full! grid-cols-[345px_1fr] p-0!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => ['xData' => '{ sidebar: false, isMobile: window.innerWidth < 768 }','xInit' => 'window.addEventListener(\'resize\', () => { isMobile = window.innerWidth < 768 })','header' => false,'footer' => false,'class' => 'grid max-w-full! grid-cols-1 md:grid-cols-[345px_1fr] p-0!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('layout'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['header' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'footer' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'class' => 'grid max-w-full! grid-cols-[345px_1fr] p-0!']); ?>
+<?php $component->withAttributes(['x-data' => '{ sidebar: false, isMobile: window.innerWidth < 768 }','x-init' => 'window.addEventListener(\'resize\', () => { isMobile = window.innerWidth < 768 })','header' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'footer' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(false),'class' => 'grid max-w-full! grid-cols-1 md:grid-cols-[345px_1fr] p-0!']); ?>
     <?php if (isset($component)) { $__componentOriginal2880b66d47486b4bfeaf519598a469d6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2880b66d47486b4bfeaf519598a469d6 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.sidebar','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>

@@ -31,3 +31,4 @@ Breadcrumbs::for('buat kriteria', function (BreadcrumbTrail $trail) {
     $trail->parent('kriteria');
     $trail->push('buat kriteria', route('admin.kriteria.create'));
 });
+
