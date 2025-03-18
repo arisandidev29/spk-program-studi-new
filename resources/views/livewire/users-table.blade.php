@@ -143,7 +143,7 @@
 
     {{-- modal --}}
 
-    <x-modal show="modal.show">
+    <x-modal x-cloak show="modal.show">
         <h1 class="font-poppins text-center text-xl">
             <span>Yakin Hapus User ?</span>
             <img

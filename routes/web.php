@@ -26,3 +26,4 @@ Route::view('/admin/dashboard','admin.dashboard')->name('admin.dashboard');
 Route::view('/admin/users','admin.users')->name('admin.users');
 Route::view('/admin/kriteria','admin.kriteria')->name('admin.kriteria');
 Route::view('/admin/kriteria/create','admin.buat_kriteria')->name('admin.kriteria.create');
+Route::view("/admin/bobot",'admin.bobot')->name('admin.bobot');

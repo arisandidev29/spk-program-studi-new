@@ -1,16 +1,21 @@
 @props([
     "placeholder" => "",
     "type" => "text",
-    "value" => "",
+    "value" => null,
     "icon" => null,
-    "error" => null
+    "error" => null,
 ])
-<div x-data="{ value: @js($value) }" class="relative">
+<div
+    x-data="{
+        value : '{{$value}}' ?? @entangle($attributes->wire('model'))
+    }"
+    class="relative"
+>
     <input
         id="{{ $placeholder }}"
-        x-model="value"
-        type="{{ $type }}"
+        x-ref="{{ "input" . $placeholder }}"
         value="{{ $value }}"
+        x-model="value"
         {{
             $attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",

@@ -32,6 +32,10 @@
     table th {
         @apply border border-divider p-2;
     }
+
+    dialog {
+        margin: auto;
+    }
 }
 
 @layer components {

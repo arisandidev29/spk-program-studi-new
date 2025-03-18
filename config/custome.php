@@ -25,8 +25,8 @@ return [
         [
             'name' => 'Bobot',
             'icon' => 'svg.bobot', 
-            'route' => '',
-            'active_route' => '',
+            'route' => 'admin/bobot',
+            'active_route' => 'admin.bobot*',
         ],
         [
             'name' => 'Alternative',

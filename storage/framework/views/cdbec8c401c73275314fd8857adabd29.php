@@ -1,5 +1,5 @@
 <div
-    <?php echo e($attributes->merge(["class" => "bg-white shadow- shadow-xl rounded-2xl p-8"])); ?>
+    <?php echo e($attributes->merge(["class" => "bg-white shadow shadow-xl rounded-2xl p-8"])); ?>
 
 >
     <?php echo e($slot); ?>

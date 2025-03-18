@@ -4,9 +4,9 @@ $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "placeholder" => "",
     "type" => "text",
-    "value" => "",
+    "value" => null,
     "icon" => null,
-    "error" => null
+    "error" => null,
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -25,9 +25,9 @@ unset($__newAttributes);
 foreach (array_filter(([
     "placeholder" => "",
     "type" => "text",
-    "value" => "",
+    "value" => null,
     "icon" => null,
-    "error" => null
+    "error" => null,
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -39,12 +39,17 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<div x-data="{ value: <?php echo \Illuminate\Support\Js::from($value)->toHtml() ?> }" class="relative">
+<div
+    x-data="{
+        value : '<?php echo e($value); ?>' ?? <?php if ((object) ($attributes->wire('model')) instanceof \Livewire\WireDirective) : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire('model')->value()); ?>')<?php echo e($attributes->wire('model')->hasModifier('live') ? '.live' : ''); ?><?php else : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire('model')); ?>')<?php endif; ?>
+    }"
+    class="relative"
+>
     <input
         id="<?php echo e($placeholder); ?>"
-        x-model="value"
-        type="<?php echo e($type); ?>"
+        x-ref="<?php echo e("input" . $placeholder); ?>"
         value="<?php echo e($value); ?>"
+        x-model="value"
         <?php echo e($attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
                 "border-red-500!" => $errors->has($placeholder),

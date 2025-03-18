@@ -32,3 +32,7 @@ Breadcrumbs::for('buat kriteria', function (BreadcrumbTrail $trail) {
     $trail->push('buat kriteria', route('admin.kriteria.create'));
 });
 
+Breadcrumbs::for('bobot', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('bobot', route('admin.bobot'));
+});
