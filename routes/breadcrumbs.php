@@ -36,3 +36,8 @@ Breadcrumbs::for('bobot', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push('bobot', route('admin.bobot'));
 });
+
+Breadcrumbs::for('alternative', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('alternative',route('admin.alternative'));
+});

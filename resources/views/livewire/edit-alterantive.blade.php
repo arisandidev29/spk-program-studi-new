@@ -1,13 +1,11 @@
 <x-modal-dialog
     x-data="{
         show : $wire.entangle('modalOpen'),
-        bobot : '',
-        keterangan : ''
+        name : ''
         }"
     x-on:modaledit-open.window="
         show = true;
-       $wire.set('bobot',$event.detail.value.bobot);
-        $wire.set('keterangan',$event.detail.value.keterangan);
+       $wire.set('name',$event.detail.value.name);
 
     "
     x-on:modaledit-close.window="show = false"
@@ -15,20 +13,14 @@
     <h1
         class="text-primary font-poppins my-3 text-center text-lg font-bold md:text-2xl"
     >
-        Edit Bobot 
+         Edit Alternative
     </h1>
 
     <x-input
-        placeholder="bobot"
+        placeholder="name"
         class="w-[90%]"
-        wire:model="bobot"
-        value="bobot"
-    />
-    <x-input
-        placeholder="keterangan"
-        class="w-[90%]"
-        wire:model="keterangan"
-        value="keterangan"
+        wire:model="name"
+        value="name"
     />
 
     <div

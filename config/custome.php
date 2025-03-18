@@ -31,8 +31,8 @@ return [
         [
             'name' => 'Alternative',
             'icon' =>  'svg.alternative',
-            'route' => '',
-            'active_route' => '',
+            'route' => 'admin/alternative',
+            'active_route' => 'admin.alternative*',
         ],
     ],
 ];
