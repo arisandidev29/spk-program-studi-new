@@ -1,8 +1,8 @@
-<div class="my-2">
+<div class="my-4">
     <div
         class="border-primary text-primary mt-2 rounded-lg border px-4 py-2 shadow-xl"
     >
-        <p>{{ $programStudi }}</p>
+        <p class="text-sm md:text-base">{{ $programStudi }}</p>
         @if ($description)
             <p class="mt-2 text-sm text-black">{{ $description }}</p>
         @endif

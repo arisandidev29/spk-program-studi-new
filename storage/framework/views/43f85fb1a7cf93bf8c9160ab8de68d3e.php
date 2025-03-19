@@ -31,14 +31,14 @@
         <div>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary flex gap-2 rounded-lg px-2! text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary flex w-max gap-2 rounded-lg px-2! text-sm text-white md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary flex gap-2 rounded-lg px-2! text-white']); ?>
+<?php $component->withAttributes(['class' => 'bg-primary flex w-max gap-2 rounded-lg px-2! text-sm text-white md:text-base']); ?>
                 Filter
                 <img src="/asset/filter.svg" alt="filter" />
              <?php echo $__env->renderComponent(); ?>
@@ -77,44 +77,73 @@
         </div>
     </div>
 
-    <table class="my-2">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>User Type</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="text-sm">
-                <td>1</td>
-                <td>arisandi</td>
-                <td>arisandi@examble.com</td>
-                <td>
-                    <span
-                        class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
-                    >
-                        Sudah Daftar
-                    </span>
-                </td>
-                <td>Mahasiswa</td>
-                <td>
-                    <a href="">
-                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+    <div class="overflow-auto">
+        <table class="my-2 table-auto">
+            <thead>
+                <tr class="text-xs md:text-sm">
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>User Type</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-xs sm:text-sm">
+                    <td class="whitespace-nowrap">1</td>
+                    <td class="whitespace-nowrap">arisandi</td>
+                    <td class="whitespace-nowrap">arisandi@examble.com</td>
+                    <td class="whitespace-nowrap">
+                        <span
+                            class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
+                        >
+                            Sudah Daftar
+                        </span>
+                    </td>
+                    <td class="whitespace-nowrap">Mahasiswa</td>
+                    <td>
+                        <a href="">
+                            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-dark-primary px-2! text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-dark-primary w-max px-2! text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-dark-primary px-2! text-white']); ?>
-                            lihat hasil
+<?php $component->withAttributes(['class' => 'bg-dark-primary w-max px-2! text-white']); ?>
+                                lihat hasil
+                             <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+                        </a>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'modal.show = !modal.show','class' => 'w-6 rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('button'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['@click' => 'modal.show = !modal.show','class' => 'w-6 rounded-lg bg-red-500 px-1!']); ?>
+                            <img
+                                src="/asset/trash.svg"
+                                alt="trash"
+                                class="h-6 w-6"
+                            />
                          <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
@@ -125,95 +154,12 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-                    </a>
-                </td>
-                <td>
-                    <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'modal.show = !modal.show','class' => 'rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('button'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['@click' => 'modal.show = !modal.show','class' => 'rounded-lg bg-red-500 px-1!']); ?>
-                        <img src="/asset/trash.svg" alt="trash" class="w-6" />
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-                </td>
-            </tr>
-            <tr class="text-sm">
-                <td>1</td>
-                <td>arisandi</td>
-                <td>arisandi@examble.com</td>
-                <td>
-                    <span
-                        class="bg-secondary inline-block w-max rounded-full px-2 py-1 text-black"
-                    >
-                        Belum Daftar
-                    </span>
-                </td>
-                <td>Mahasiswa</td>
-                <td>
-                    <a href="">
-                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-dark-primary px-2! text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('button'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-dark-primary px-2! text-white']); ?>
-                            lihat hasil
-                         <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-                    </a>
-                </td>
-                <td>
-                    <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('button'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'rounded-lg bg-red-500 px-1!']); ?>
-                        <img src="/asset/trash.svg" alt="trash" class="w-6" />
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
 
     
     <div class="mx-auto mt-8 flex w-max items-center gap-4">
@@ -226,27 +172,27 @@
                 class="mx-auto w-[90%]"
             />
         </div>
-        <div class="flex gap-2">
-            <div
-                class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1 text-white"
+        <div class="flex gap-2 text-sm md:text-base">
+            <p
+                class="bg-dark-primary grid h-8 w-6 place-content-center rounded-full py-1 text-white md:w-10"
             >
                 1
-            </div>
-            <div
-                class="grid h-8 w-10 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500"
+            </p>
+            <p
+                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
             >
                 1
-            </div>
-            <div
-                class="grid h-8 w-10 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500"
+            </p>
+            <p
+                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
             >
                 ....
-            </div>
-            <div
-                class="grid h-8 w-10 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500"
+            </p>
+            <p
+                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
             >
                 8
-            </div>
+            </p>
         </div>
         <div
             class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"

@@ -7,7 +7,7 @@ use function Livewire\Volt\{state};
 ?>
 
 <form
-    class="relative mx-auto my-6 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:px-10 md:py-14"
+    class="relative mx-auto my-2 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:my-6 md:px-10 md:py-14"
 >
     <x-input placeholder="Username" type="text" />
 

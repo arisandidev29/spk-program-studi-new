@@ -1,5 +1,5 @@
 <x-admin-layout title="Users" breadcrumbs="users">
-    <div class="flex flex-col gap-4 xl:flex-row">
+    <div class="flex flex-col-reverse gap-4 xl:flex-row">
         <livewire:users-table />
 
         <x-card

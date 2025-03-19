@@ -7,7 +7,7 @@
 ])
 <div
     x-data="{
-        value : '{{$value}}' ?? @entangle($attributes->wire('model'))
+        value: '{{ $value }}' ?? @entangle($attributes->wire("model")),
     }"
     class="relative"
 >

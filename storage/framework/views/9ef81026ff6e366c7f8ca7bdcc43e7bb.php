@@ -8,7 +8,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Users','breadcrumbs' => 'users']); ?>
-    <div class="flex flex-col gap-4 xl:flex-row">
+    <div class="flex flex-col-reverse gap-4 xl:flex-row">
         <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];

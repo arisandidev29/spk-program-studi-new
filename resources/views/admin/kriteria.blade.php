@@ -1,5 +1,5 @@
 <x-admin-layout title="Kriteria" breadcrumbs="kriteria">
-    <x-card class="mx-auto max-w-5xl">
+    <x-card class="mx-auto max-w-5xl p-3!">
         <div class="flex items-center gap-4">
             <div class="bg-primary w-max rounded-xl p-4">
                 <img src="/asset/kriteria.svg" alt="user" class="w-6" />
@@ -11,7 +11,9 @@
             href="{{ route("admin.kriteria.create") }}"
             class="my-4 inline-block"
         >
-            <x-button class="bg-primary text-white">Buat Kriteria</x-button>
+            <x-button class="bg-primary text-sm text-white md:text-base">
+                Buat Kriteria
+            </x-button>
         </a>
 
         <div
@@ -20,13 +22,15 @@
                     show: false,
                 },
             }"
-            class="flex flex-col gap-4 p-8"
+            class="flex flex-col gap-4 p-2 md:p-8"
         >
             {{-- kriteria --}}
-            @for ($i = 0; $i < 10; $i++)
+            @for ($i = 1; $i < 10; $i++)
                 <div class="relative">
-                    <div class="flex items-center justify-between">
-                        <div>
+                    <div
+                        class="flex flex-col-reverse items-center justify-between gap-2 md:flex-row"
+                    >
+                        <div class="">
                             <p
                                 class="border-primary text-primary inline-block rounded-full border p-2 text-xs"
                             >

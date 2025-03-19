@@ -33,4 +33,5 @@ if (isset($__slots)) unset($__slots);
 <?php if (isset($__componentOriginale0f1cdd055772eb1d4a99981c240763e)): ?>
 <?php $component = $__componentOriginale0f1cdd055772eb1d4a99981c240763e; ?>
 <?php unset($__componentOriginale0f1cdd055772eb1d4a99981c240763e); ?>
-<?php endif; ?><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/bobot.blade.php ENDPATH**/ ?>
+<?php endif; ?>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/bobot.blade.php ENDPATH**/ ?>

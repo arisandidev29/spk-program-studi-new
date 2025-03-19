@@ -10,14 +10,14 @@
 <?php $component->withAttributes(['title' => 'Kriteria','breadcrumbs' => 'kriteria']); ?>
     <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'mx-auto max-w-5xl']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'mx-auto max-w-5xl p-3!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'mx-auto max-w-5xl']); ?>
+<?php $component->withAttributes(['class' => 'mx-auto max-w-5xl p-3!']); ?>
         <div class="flex items-center gap-4">
             <div class="bg-primary w-max rounded-xl p-4">
                 <img src="/asset/kriteria.svg" alt="user" class="w-6" />
@@ -31,14 +31,16 @@
         >
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-sm text-white md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary text-white']); ?>Buat Kriteria <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'bg-primary text-sm text-white md:text-base']); ?>
+                Buat Kriteria
+             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -56,13 +58,15 @@
                     show: false,
                 },
             }"
-            class="flex flex-col gap-4 p-8"
+            class="flex flex-col gap-4 p-2 md:p-8"
         >
             
-            <?php for($i = 0; $i < 10; $i++): ?>
+            <?php for($i = 1; $i < 10; $i++): ?>
                 <div class="relative">
-                    <div class="flex items-center justify-between">
-                        <div>
+                    <div
+                        class="flex flex-col-reverse items-center justify-between gap-2 md:flex-row"
+                    >
+                        <div class="">
                             <p
                                 class="border-primary text-primary inline-block rounded-full border p-2 text-xs"
                             >

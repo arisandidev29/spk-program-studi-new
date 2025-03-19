@@ -3,23 +3,23 @@
     x-show="isVisible"
     @keydown.escape="isVisible = false"
     class="fixed inset-0 z-50 flex items-start justify-center bg-black/40 pt-[15vh]"
-    x-data="{ isVisible: {{ $show ? 'true' : 'false' }} }"
+    x-data="{ isVisible: {{ $show ? "true" : "false" }} }"
     x-on:close="$dispatch('close')"
 >
     <div
         x-show="isVisible"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 scale-95"
-        x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 scale-95"
-        class="relative bg-white rounded-xl shadow-lg p-4 {{ $maxWidth ?? 'max-w-md' }} w-full mx-4"
+        x-transition:enter="transition duration-300 ease-out"
+        x-transition:enter-start="scale-95 opacity-0"
+        x-transition:enter-end="scale-100 opacity-100"
+        x-transition:leave="transition duration-200 ease-in"
+        x-transition:leave-start="scale-100 opacity-100"
+        x-transition:leave-end="scale-95 opacity-0"
+        class="{{ $maxWidth ?? "max-w-md" }} relative mx-4 w-full rounded-xl bg-white p-4 shadow-lg"
         @click.outside="isVisible = false; $dispatch('close')"
     >
         <!-- Header (opsional) -->
         @if ($title)
-            <div class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">
+            <div class="mb-4 border-b pb-2 text-lg font-semibold text-gray-800">
                 {{ $title }}
             </div>
         @endif

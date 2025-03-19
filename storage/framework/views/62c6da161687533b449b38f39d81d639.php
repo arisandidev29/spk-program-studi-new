@@ -16,7 +16,7 @@
                 <a
                     href="<?php echo e(url($list["route"])); ?>"
                     class="<?php echo \Illuminate\Support\Arr::toCssClasses([
-                        "group flex w-full items-center gap-4 rounded-lg p-3 duration-300 hover:bg-white",
+                        "group flex w-full items-center gap-4 rounded-lg p-3 text-sm duration-300 hover:bg-white md:text-base",
                         "text-primary bg-white" => request()->routeIs($list["active_route"]),
                     ]); ?>"
                 >

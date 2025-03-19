@@ -15,7 +15,7 @@
     <h1
         class="text-primary font-poppins my-3 text-center text-lg font-bold md:text-2xl"
     >
-        Edit Bobot 
+        Edit Bobot
     </h1>
 
     <x-input

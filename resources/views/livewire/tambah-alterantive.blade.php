@@ -6,15 +6,15 @@
     <h1
         class="text-primary font-poppins my-3 text-center text-lg font-bold md:text-2xl"
     >
-        Tambah Alternative 
+        Tambah Alternative
     </h1>
 
-    <x-input placeholder="name" class="w-[90%]"  wire:model="name" />
+    <x-input placeholder="name" class="w-[90%]" wire:model="name" />
 
     <div
         class="mt-4 flex w-full flex-col justify-center gap-2 text-sm md:flex-row md:gap-8 md:text-base"
     >
-        <x-button class="bg-primary text-white"  wire:click="saveAlternative">
+        <x-button class="bg-primary text-white" wire:click="saveAlternative">
             Tambah
         </x-button>
         <x-button

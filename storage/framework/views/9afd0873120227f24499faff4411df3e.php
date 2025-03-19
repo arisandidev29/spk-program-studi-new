@@ -29,7 +29,7 @@
     <h1
         class="text-primary font-poppins my-3 text-center text-lg font-bold md:text-2xl"
     >
-        Edit Bobot 
+        Edit Bobot
     </h1>
 
     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>

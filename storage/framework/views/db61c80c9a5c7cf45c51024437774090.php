@@ -1,8 +1,8 @@
-<div class="my-2">
+<div class="my-4">
     <div
         class="border-primary text-primary mt-2 rounded-lg border px-4 py-2 shadow-xl"
     >
-        <p><?php echo e($programStudi); ?></p>
+        <p class="text-sm md:text-base"><?php echo e($programStudi); ?></p>
         <!--[if BLOCK]><![endif]--><?php if($description): ?>
             <p class="mt-2 text-sm text-black"><?php echo e($description); ?></p>
         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->

@@ -8,7 +8,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'alternative','breadcrumbs' => 'alternative']); ?>
-        <?php
+    <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
@@ -33,4 +33,5 @@ if (isset($__slots)) unset($__slots);
 <?php if (isset($__componentOriginale0f1cdd055772eb1d4a99981c240763e)): ?>
 <?php $component = $__componentOriginale0f1cdd055772eb1d4a99981c240763e; ?>
 <?php unset($__componentOriginale0f1cdd055772eb1d4a99981c240763e); ?>
-<?php endif; ?><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/alternative.blade.php ENDPATH**/ ?>
+<?php endif; ?>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/alternative.blade.php ENDPATH**/ ?>

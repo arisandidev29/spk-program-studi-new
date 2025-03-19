@@ -37,20 +37,23 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<div class="relative rounded-xl bg-white p-8 shadow-xl">
+<div class="relative rounded-xl bg-white p-4 shadow-xl md:p-8">
     <h1 class="font-poppins font-bold"><?php echo e($kriteria); ?></h1>
-    <p class="font-roboto text-sm text-gray-600"><?php echo e($question); ?></p>
+    <p class="font-roboto text-xs leading-6 text-gray-600 md:text-sm">
+        <?php echo e($question); ?>
+
+    </p>
 
     <?php if($note): ?>
         <hr class="border-divider my-4" />
         <span class="bg-primary rounded-2xl px-2 py-2 text-sm text-white">
             Note !
         </span>
-        <p class="my-2 text-sm"><?php echo e($note); ?></p>
+        <p class="my-2 text-xs md:text-sm"><?php echo e($note); ?></p>
     <?php endif; ?>
 
     <span
-        class="bg-primary absolute top-5 -left-12 flex h-8 w-8 items-center justify-center rounded-full text-white"
+        class="bg-primary absolute -top-3 -left-4 flex h-8 w-8 items-center justify-center rounded-full text-white md:top-5 md:-left-12"
     >
         <?php echo e($number); ?>
 

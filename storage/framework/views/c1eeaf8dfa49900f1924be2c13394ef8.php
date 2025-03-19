@@ -50,11 +50,11 @@ unset($__defined_vars); ?>
     />
     <p
         :class="{ 'bg-dark-primary text-white! hover:bg-dark-primary! ': selected === <?php echo e($value); ?> }"
-        class="border-primary text-primary hover:bg-primary grid h-12 w-12 place-content-center rounded-full border transition duration-300 hover:text-white"
+        class="border-primary text-primary hover:bg-primary grid h-8 w-8 place-content-center rounded-full border text-sm transition duration-300 hover:text-white md:h-12 md:w-12 md:text-base"
     >
         <?php echo e($label); ?>
 
     </p>
-    <small><?php echo e($description); ?></small>
+    <small class="text-xs md:text-sm"><?php echo e($description); ?></small>
 </label>
 <?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/radio-option.blade.php ENDPATH**/ ?>

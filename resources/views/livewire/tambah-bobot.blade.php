@@ -9,13 +9,13 @@
         Tambah Bobot
     </h1>
 
-    <x-input placeholder="bobot" class="w-[90%]"  wire:model="bobot" />
+    <x-input placeholder="bobot" class="w-[90%]" wire:model="bobot" />
     <x-input placeholder="keterangan" class="w-[90%]" wire:model="keterangan" />
 
     <div
         class="mt-4 flex w-full flex-col justify-center gap-2 text-sm md:flex-row md:gap-8 md:text-base"
     >
-        <x-button class="bg-primary text-white"  wire:click="saveBobot">
+        <x-button class="bg-primary text-white" wire:click="saveBobot">
             Tambah
         </x-button>
         <x-button

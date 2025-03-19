@@ -41,7 +41,7 @@ foreach ($attributes->all() as $__key => $__value) {
 unset($__defined_vars); ?>
 <div
     x-data="{
-        value : '<?php echo e($value); ?>' ?? <?php if ((object) ($attributes->wire('model')) instanceof \Livewire\WireDirective) : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire('model')->value()); ?>')<?php echo e($attributes->wire('model')->hasModifier('live') ? '.live' : ''); ?><?php else : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire('model')); ?>')<?php endif; ?>
+        value: '<?php echo e($value); ?>' ?? <?php if ((object) ($attributes->wire("model")) instanceof \Livewire\WireDirective) : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")->value()); ?>')<?php echo e($attributes->wire("model")->hasModifier('live') ? '.live' : ''); ?><?php else : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")); ?>')<?php endif; ?>,
     }"
     class="relative"
 >

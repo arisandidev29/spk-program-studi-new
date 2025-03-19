@@ -1,3 +1,3 @@
 <x-admin-layout title="alternative" breadcrumbs="alternative">
-        <livewire:alternative-table />
+    <livewire:alternative-table />
 </x-admin-layout>

@@ -7,7 +7,7 @@
     x-init="window.addEventListener('resize', () => { isMobile = window.innerWidth < 768 })"
     :header="false"
     :footer="false"
-    class="grid max-w-full! grid-cols-1 md:grid-cols-[345px_1fr] p-0!"
+    class="grid max-w-full! grid-cols-1 bg-gray-100 p-0! md:grid-cols-[345px_1fr]"
 >
     <x-sidebar />
     <div class="p-3">

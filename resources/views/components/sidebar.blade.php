@@ -16,11 +16,14 @@
                 <a
                     href="{{ url($list["route"]) }}"
                     @class([
-                        "group flex w-full items-center gap-4 rounded-lg p-3 duration-300 hover:bg-white",
+                        "group flex w-full items-center gap-4 rounded-lg p-3 text-sm duration-300 hover:bg-white md:text-base",
                         "text-primary bg-white" => request()->routeIs($list["active_route"]),
                     ])
                 >
-                    <x-dynamic-component :component="$list['icon']"  class="{{request()->routeIs($list['active_route']) ? 'text-primary! ' : ''}}"/>
+                    <x-dynamic-component
+                        :component="$list['icon']"
+                        class="{{request()->routeIs($list['active_route']) ? 'text-primary! ' : ''}}"
+                    />
                     <p
                         @class([
                             "font-poppins text-md group-hover:text-primary font-bold text-white duration-300",

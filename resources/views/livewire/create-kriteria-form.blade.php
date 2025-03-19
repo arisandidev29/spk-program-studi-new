@@ -1,5 +1,11 @@
 <form wire:submit="save" class="my-2 grid grid-cols-2 justify-stretch gap-4">
-    <x-input placeholder="Id Kriteria" type="text" value="c1" readonly class="text-slate-500" />
+    <x-input
+        placeholder="Id Kriteria"
+        type="text"
+        value="c1"
+        readonly
+        class="text-slate-500"
+    />
     <x-input placeholder="kriteria" type="text" wire:model="kriteria" />
     <x-input-textarea
         wire:model="pertanyaan"
@@ -7,14 +13,19 @@
         parrentClass=" col-span-2 "
         class="h-40"
     />
-    <x-input-dropdown name="bobot" wire:model="bobot" >
+    <x-input-dropdown name="bobot" wire:model="bobot">
         <option value="tes">tes</option>
         <option value="tes1">tes1</option>
     </x-input-dropdown>
-    <x-input-dropdown name="kategori" wire:model="kategori"/>
+    <x-input-dropdown name="kategori" wire:model="kategori" />
 
     @foreach ($pilihan as $key => $value)
-        <x-input placeholder="{{$key}}" error="pilihan.{{$key}}" type="text" wire:model="pilihan.{{$key}}"/>
+        <x-input
+            placeholder="{{$key}}"
+            error="pilihan.{{$key}}"
+            type="text"
+            wire:model="pilihan.{{$key}}"
+        />
     @endforeach
 
     <div class="flex gap-2">

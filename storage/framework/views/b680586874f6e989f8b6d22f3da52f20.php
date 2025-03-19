@@ -1,40 +1,50 @@
 <?php if (isset($component)) { $__componentOriginale0f1cdd055772eb1d4a99981c240763e = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginale0f1cdd055772eb1d4a99981c240763e = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin-layout','data' => ['title' => 'testing']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admin-layout','data' => ['title' => 'Dashboard']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('admin-layout'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['title' => 'testing']); ?>
+<?php $component->withAttributes(['title' => 'Dashboard']); ?>
     <div class="flex flex-col gap-4 sm:flex-row">
         <div class="flex-grow">
             <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'grid grid-cols-3 gap-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'grid grid-cols-3 gap-2 text-center md:gap-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'grid grid-cols-3 gap-4']); ?>
-                <div class="font-poppins border border-gray-400 p-4">
-                    <h1 class="text-lg text-gray-500">Total User</h1>
-                    <p class="my-2 text-2xl">100</p>
+<?php $component->withAttributes(['class' => 'grid grid-cols-3 gap-2 text-center md:gap-4']); ?>
+                <div
+                    class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
+                >
+                    <h1 class="text-sm text-gray-500 md:text-lg">Total User</h1>
+                    <p class="my-2 text-xl md:text-2xl">100</p>
                     <a href="" class="text-primary text-xs">Visit User Page</a>
                 </div>
-                <div class="font-poppins border border-gray-400 p-4">
-                    <h1 class="text-lg text-gray-500">Total Kriteria</h1>
-                    <p class="my-2 text-2xl">100</p>
+                <div
+                    class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
+                >
+                    <h1 class="text-sm text-gray-500 md:text-lg">
+                        Total Kriteria
+                    </h1>
+                    <p class="my-2 text-xl md:text-2xl">100</p>
                     <a href="" class="text-primary text-xs">
                         Visit Kriteria Page
                     </a>
                 </div>
-                <div class="font-poppins border border-gray-400 p-4">
-                    <h1 class="text-lg text-gray-500">Total Alternative</h1>
-                    <p class="my-2 text-2xl">100</p>
+                <div
+                    class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
+                >
+                    <h1 class="text-sm text-gray-500 md:text-lg">
+                        Total Alternative
+                    </h1>
+                    <p class="my-2 text-xl md:text-2xl">100</p>
                     <a href="" class="text-primary text-xs">
                         Visit Alternative Page
                     </a>
@@ -51,15 +61,15 @@
 <?php endif; ?>
             <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'my-2 w-full aspect-video']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'my-2 aspect-video w-full']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'my-2 w-full aspect-video']); ?>
-                    <canvas id="UserRegistration" width="200px"></canvas>
+<?php $component->withAttributes(['class' => 'my-2 aspect-video w-full']); ?>
+                <canvas id="UserRegistration" width="200px"></canvas>
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal53747ceb358d30c0105769f8471417f6)): ?>
@@ -169,7 +179,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'my-4']); ?>
-                <canvas  id="TotalUserChart"></canvas>
+                <canvas id="TotalUserChart"></canvas>
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal53747ceb358d30c0105769f8471417f6)): ?>
