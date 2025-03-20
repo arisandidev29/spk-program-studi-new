@@ -1,18 +1,22 @@
-<header class=" relative flex items-center gap-8 px-4 py-2 h-max">
+<header class="relative flex h-max items-center gap-8 px-4 py-2">
     {{-- logo --}}
-    <img src="/asset/logo.svg" alt="logo" class="  md:w-36">
+    <img src="/asset/logo.svg" alt="logo" class="w-16 md:w-36" />
     <x-navbar />
 
     <div id="right header" class="flex items-center gap-4">
-        <a href="{{ Route('login') }}"><x-button class="bg-primary text-white ">Login</x-button></a>
+        <a href="{{ Route("login") }}">
+            <x-button class="bg-primary text-sm text-white md:text-base">
+                Login
+            </x-button>
+        </a>
 
         {{-- user login navbar --}}
-        <x-user-navbar />
-        
+
+        @auth
+            <x-user-navbar />
+        @endauth
     </div>
 
     {{-- line --}}
-    <div class=" absolute left-0 -bottom-1 w-full  h-0.5 bg-divider">
-    </div>
-
+    <div class="bg-divider absolute -bottom-1 left-0 h-0.5 w-full"></div>
 </header>
