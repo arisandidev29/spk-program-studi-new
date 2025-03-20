@@ -47,8 +47,8 @@
                                 Bobot : 40
                             </p>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <a href="">
+                        <div   class="flex items-center gap-4">
+                            <a wire:navigate  href="{{route('admin.kriteria.edit', $i)}}">
                                 <x-button
                                     class="group bg-secondary flex items-center gap-2 px-2! text-sm text-black duration-300 hover:bg-amber-500"
                                 >
@@ -97,7 +97,7 @@
                                 </x-button>
                             </a>
                             <x-button
-                                @click="modal.show = !modal.show"
+                                @click="$dispatch('modaldelete-open' )"
                                 class="bg-red-500 p-1! duration-300 hover:bg-red-700"
                             >
                                 <svg
@@ -138,18 +138,25 @@
                 <hr class="text-divider my-4" />
             @endfor
 
-            <x-modal show="modal.show">
-                <h2 class="text-center text-2xl">Yakin hapus Kriteria ini ?</h2>
+            <x-modal-dialog 
+                x-data="{
+                    show : false 
+                }"
+                x-show="show"
+                x-on:modaldelete-open.window="show = true"
+                x-on:modaldelete-close.window="show = false"
+            >
+                <h2 class="text-center text-lg md:text-2xl">Yakin hapus Kriteria ini ?</h2>
                 <div class="mt-6 flex justify-center gap-4">
-                    <x-button class="bg-red-500 text-white">Ya</x-button>
+                    <x-button class="bg-red-500 text-white text-sm md:text-base">Ya</x-button>
                     <x-button
-                        @click="modal.show = !modal.show"
-                        class="bg-primary text-white"
+                        @click="show = false"
+                        class="bg-primary text-white text-sm md:text-base"
                     >
                         Tidak
                     </x-button>
                 </div>
-            </x-modal>
+            </x-modal-dialog>
         </div>
     </x-card>
 </x-admin-layout>

@@ -9,18 +9,18 @@ use function Livewire\Volt\{state};
 <form
     class="relative mx-auto my-2 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:my-6 md:px-10 md:py-14"
 >
-    <x-input placeholder="Username" type="text" />
+    <x-input placeholder="Username" type="text" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base" />
 
-    <x-input placeholder="Password" type="password" class=" " />
+    <x-input placeholder="Password" type="password" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base " />
 
     <a href="" class="-mt-2 mb-2 block">
-        <small class="font-roboto font-xs text-primary font-extralight italic">
+        <small class="font-roboto text-xs text-primary font-extralight italic">
             Lupa password
         </small>
     </a>
 
-    <x-button class="bg-primary w-full font-bold text-white">Login</x-button>
-    <small class="font-xs text-primary block text-center italic">
+    <x-button class="bg-primary w-full font-bold text-sm md:text-base text-white">Login</x-button>
+    <small class="text-xs text-primary block text-center italic">
         Belum punya akun ?
         <a href="{{ route("register") }}" class="underline">Register disini</a>
     </small>

@@ -6,7 +6,7 @@
         <livewire:program-studi-answer programStudi="Manajemen informatika" />
     </div>
 
-    <x-button class="bg-secondary mt-4 text-black" wire:click="submit()">
+    <x-button class="bg-secondary text-sm md:text-base font-bold mt-4 text-black" wire:click="submit()">
         Submit
     </x-button>
 </div>

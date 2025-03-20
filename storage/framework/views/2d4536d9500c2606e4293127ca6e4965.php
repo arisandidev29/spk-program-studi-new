@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <div class="flex min-h-[80vh] flex-col items-center justify-center gap-2">
-        <h1 class="my-2 text-4xl">
+        <h1 class="my-2 text-xl md:text-4xl">
             Selamat Datang
             <span class="text-primary">Username</span>
         </h1>
@@ -17,23 +17,23 @@
         <img
             src="/asset/girls-with-tree.svg"
             alt="girls with tree"
-            class="my-2"
+            class="my-2 w-[60%] max-w-sm "
         />
 
-        <p class="my-2 w-64 text-xl">
+        <p class="my-2 w-64 text-sm text-center md:text-xl">
             Yuk Cari tau Rekomendasi Program Studi Untuk Mu !
         </p>
 
         <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-secondary flex gap-4 font-bold text-black']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-secondary flex gap-4 text-sm md:text-base font-bold text-black']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-secondary flex gap-4 font-bold text-black']); ?>
+<?php $component->withAttributes(['class' => 'bg-secondary flex gap-4 text-sm md:text-base font-bold text-black']); ?>
             Mulai
             <img src="/asset/play.svg" alt="play" class="w-3" />
          <?php echo $__env->renderComponent(); ?>
