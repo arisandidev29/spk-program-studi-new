@@ -5,7 +5,7 @@
         </div>
         <div>
             <h2 class="text-center text-primary  text-xl md:text-2xl text-bold font-poppins">Register Your Account</h2>
-            <livewire:singupform />
+            <livewire:singup-form/>
         </div>
     </div>
     

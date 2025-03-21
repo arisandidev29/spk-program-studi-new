@@ -11,7 +11,7 @@
     <div class="flex min-h-[80vh] flex-col items-center justify-center gap-2">
         <h1 class="my-2 text-xl md:text-4xl">
             Selamat Datang
-            <span class="text-primary">Username</span>
+            <span class="text-primary"><?php echo e(auth()->user()->name); ?></span>
         </h1>
 
         <img

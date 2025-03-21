@@ -4,17 +4,17 @@
     <x-navbar />
 
     <div id="right header" class="flex items-center gap-4">
-        <a href="{{ Route("login") }}">
-            <x-button class="bg-primary text-sm text-white md:text-base">
-                Login
-            </x-button>
-        </a>
+        @if (! auth()->check())
+            <a href="{{ Route("login") }}">
+                <x-button class="bg-primary text-sm text-white md:text-base">
+                    Login
+                </x-button>
+            </a>
+        @else
+            {{-- user login navbar --}}
 
-        {{-- user login navbar --}}
-
-        @auth
             <x-user-navbar />
-        @endauth
+        @endif
     </div>
 
     {{-- line --}}

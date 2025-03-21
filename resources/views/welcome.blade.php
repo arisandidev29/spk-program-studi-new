@@ -22,9 +22,11 @@
                 that matches your interests and potential.
             </small>
 
-            <x-button class="bg-secondary block mx-auto md:mx-0 text-black text-xs md:text-base ">
-                Mulai Pilihan Mu
-            </x-button>
+            <a href="{{route('login')}}">
+                <x-button class="bg-secondary block mx-auto md:mx-0 text-black text-xs md:text-base ">
+                    Mulai Pilihan Mu
+                </x-button>
+            </a>
 
             <small class="my-4 flex items-center gap-2 justify-center md:justify-start ">
                 A Product From

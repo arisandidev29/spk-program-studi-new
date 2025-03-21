@@ -1,44 +1,24 @@
-<?php
-use function Livewire\Volt\{state};
-use function Livewire\Volt\{rules};
-
-state([
-    "Name" => "",
-    "Username" => "",
-    "Email" => "",
-    "Password" => "",
-    "Password_Confirmasi" => "",
-    "Token" => "",
-]);
-
-rules([
-    "Name" => "required",
-    "Username" => "required",
-    "Email" => "required",
-    "Password" => "required",
-    "Password_Confirmasi" => "required",
-    "Token" => "required",
-]);
-
-$register = function () {
-    $this->validate();
-};
-?>
-
 <form
     wire:submit="register"
     class="relative order-1 mx-auto my-6 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:px-10 md:py-14"
 >
-    <x-input placeholder="name" type="text" value="testing" wire:model="Name" />
-    <x-input placeholder="Username" type="text" wire:model="Username" />
-    <x-input placeholder="Email" type="Email" wire:model="Email" />
-    <x-input placeholder="Password" type="password" wire:model="Password" />
+
+
+{{-- @if($errors->any())
+@php
+    dump($errors)
+@endphp
+@endif --}}
+    <x-input placeholder="Username" error="username" type="text" wire:model="username" />
+    <x-input placeholder="Email" error="email" type="Email" wire:model="email" />
+    <x-input placeholder="Password" error="password" type="password" wire:model="password" />
     <x-input
-        placeholder="Password_Confirmasi"
+        placeholder="Password Konfirmasi"
         type="password"
-        wire:model="Password_Confirmasi"
+        error="password_confirm"
+        wire:model="password_confirm"
     />
-    <x-input placeholder="Token" type="text" wire:model="Token" />
+    <x-input placeholder="Token" error="token" type="text" error="token" wire:model="token" />
     <a
         href=""
         class="text-primary hover:text-dark-primary -mt-2 block text-xs italic underline"
@@ -46,7 +26,7 @@ $register = function () {
         Cara mendapatkan Token
     </a>
 
-    <x-input-file-upload>
+    <x-input-file-upload wire:model="profile_pic" placeholder="Profile Pic" error="profile_pic">
         <div
             class="font-roboto my-1 flex flex-col text-sm text-gray-500 italic"
         >

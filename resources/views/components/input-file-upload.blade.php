@@ -1,5 +1,7 @@
 @props([
     "id" => "id",
+    "placeholder" => 'Upload File',
+    "error" => null
 ])
 <label x-data="{ fileName: '' }" class="my-2 block">
     <input
@@ -14,7 +16,7 @@
         class="border-primary flex items-center gap-4 overflow-x-auto rounded-md border p-2"
     >
         <x-button type="button" class="bg-secondary min-w-max p-1! text-xs">
-            Upload File
+            {{$placeholder}}
         </x-button>
         <span
             class="line-clamp-1 text-sm"
@@ -23,4 +25,8 @@
     </div>
 
     {{ $slot }}
+
+    @error($error ?? $placeholder)
+        <p class="text-sm text-red-500">{{ $message }}</p>
+    @enderror
 </label>

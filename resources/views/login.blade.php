@@ -7,7 +7,7 @@
         <div>
             <h1 class="text-lg md:text-3xl text-primary font-poppins font-bold text-center">Login to Your Acccount</h1>
 
-            <livewire:loginform />
+            <livewire:login-form/>
 
         </div>
 

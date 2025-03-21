@@ -18,7 +18,7 @@
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('singupform', []);
+[$__name, $__params] = $__split('singup-form', []);
 
 $__html = app('livewire')->mount($__name, $__params, 'lw-874706179-0', $__slots ?? [], get_defined_vars());
 

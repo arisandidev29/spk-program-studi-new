@@ -23,8 +23,9 @@
 <?php endif; ?>
 
     <div id="right header" class="flex items-center gap-4">
-        <a href="<?php echo e(Route("login")); ?>">
-            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+        <?php if(! auth()->check()): ?>
+            <a href="<?php echo e(Route("login")); ?>">
+                <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-sm text-white md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
@@ -34,8 +35,8 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'bg-primary text-sm text-white md:text-base']); ?>
-                Login
-             <?php echo $__env->renderComponent(); ?>
+                    Login
+                 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -45,11 +46,10 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-        </a>
+            </a>
+        <?php else: ?>
+            
 
-        
-
-        <?php if(auth()->guard()->check()): ?>
             <?php if (isset($component)) { $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $attributes; } ?>
 <?php $component = App\View\Components\UserNavbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>

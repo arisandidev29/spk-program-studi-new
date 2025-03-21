@@ -50,6 +50,7 @@ unset($__defined_vars); ?>
         x-ref="<?php echo e("input" . $placeholder); ?>"
         value="<?php echo e($value); ?>"
         x-model="value"
+        type="<?php echo e($type); ?>"
         <?php echo e($attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
                 "border-red-500!" => $errors->has($placeholder),
