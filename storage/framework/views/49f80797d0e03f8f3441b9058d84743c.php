@@ -45,10 +45,10 @@
 <?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
-    <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'Password','error' => 'password','type' => 'password','wire:model' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input'); ?>
+    <?php if (isset($component)) { $__componentOriginal88cfe17a0624537feef452f30f31deda = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal88cfe17a0624537feef452f30f31deda = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-password','data' => ['placeholder' => 'Password','error' => 'password','type' => 'password','wire:model' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('input-password'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
@@ -57,18 +57,18 @@
 <?php $component->withAttributes(['placeholder' => 'Password','error' => 'password','type' => 'password','wire:model' => 'password']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $attributes = $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__attributesOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $attributes = $__attributesOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__attributesOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__componentOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $component = $__componentOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__componentOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
-    <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'Password Konfirmasi','type' => 'password','error' => 'password_confirm','wire:model' => 'password_confirm']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input'); ?>
+    <?php if (isset($component)) { $__componentOriginal88cfe17a0624537feef452f30f31deda = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal88cfe17a0624537feef452f30f31deda = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-password','data' => ['placeholder' => 'Password Konfirmasi','type' => 'password','error' => 'password_confirm','wire:model' => 'password_confirm']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('input-password'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
@@ -77,13 +77,13 @@
 <?php $component->withAttributes(['placeholder' => 'Password Konfirmasi','type' => 'password','error' => 'password_confirm','wire:model' => 'password_confirm']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $attributes = $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__attributesOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $attributes = $__attributesOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__attributesOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__componentOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $component = $__componentOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__componentOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>

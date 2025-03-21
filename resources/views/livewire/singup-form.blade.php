@@ -11,8 +11,8 @@
 @endif --}}
     <x-input placeholder="Username" error="username" type="text" wire:model="username" />
     <x-input placeholder="Email" error="email" type="Email" wire:model="email" />
-    <x-input placeholder="Password" error="password" type="password" wire:model="password" />
-    <x-input
+    <x-input-password placeholder="Password" error="password" type="password" wire:model="password" />
+    <x-input-password
         placeholder="Password Konfirmasi"
         type="password"
         error="password_confirm"

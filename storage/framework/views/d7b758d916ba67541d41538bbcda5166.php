@@ -3,9 +3,9 @@
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "placeholder" => "",
-    "type" => "text",
     "value" => null,
     "icon" => null,
+    "type" => "password",
     "error" => null,
 ]));
 
@@ -24,9 +24,9 @@ unset($__newAttributes);
 
 foreach (array_filter(([
     "placeholder" => "",
-    "type" => "text",
     "value" => null,
     "icon" => null,
+    "type" => "password",
     "error" => null,
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
@@ -42,6 +42,7 @@ unset($__defined_vars); ?>
 <div
     x-data="{
         value: '<?php echo e($value); ?>' ?? <?php if ((object) ($attributes->wire("model")) instanceof \Livewire\WireDirective) : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")->value()); ?>')<?php echo e($attributes->wire("model")->hasModifier('live') ? '.live' : ''); ?><?php else : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")); ?>')<?php endif; ?>,
+        showPassword: false,
     }"
     class="relative"
 >
@@ -50,7 +51,7 @@ unset($__defined_vars); ?>
         x-ref="<?php echo e("input" . $placeholder); ?>"
         value="<?php echo e($value); ?>"
         x-model="value"
-        type="<?php echo e($type); ?>"
+        :type="showPassword ? 'text' : '<?php echo e($type); ?>'"
         <?php echo e($attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
                 "border-red-500!" => $errors->has($placeholder),
@@ -66,7 +67,7 @@ unset($__defined_vars); ?>
         <img
             src="<?php echo e($icon); ?>"
             alt=""
-            class="absolute top-5 right-1 mr-2 block w-4 <?php echo e($attributes->get('icon-class')); ?>"
+            class="<?php echo e($attributes->get("icon-class")); ?> absolute top-5 right-1 mr-2 block w-4"
         />
     <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
 
@@ -79,8 +80,22 @@ unset($__defined_vars); ?>
 
     </label>
 
-    <?php echo e($slot); ?>
-
+    <button
+        type="button"
+        for="<?php echo e($placeholder); ?>"
+        @click="showPassword = !showPassword"
+        class="flex cursor-pointer items-center gap-2"
+    >
+        <img
+            :src="showPassword ? '/asset/eye-slash.svg' : '/asset/eye.svg'"
+            alt="eye"
+            class="w-4"
+        />
+        <span
+            class="text-sm"
+            x-text="showPassword ? 'Hide Password' : 'Show Password'"
+        ></span>
+    </button>
 
     <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$error ?? $placeholder];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -93,4 +108,4 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 </div>
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/input.blade.php ENDPATH**/ ?>
+<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/input-password.blade.php ENDPATH**/ ?>

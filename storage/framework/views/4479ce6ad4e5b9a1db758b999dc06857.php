@@ -11,14 +11,14 @@
     <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'username','type' => 'text','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base','wire:model' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'username','type' => 'text','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base','icon' => '/asset/user-2.svg','wire:model' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('input'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['placeholder' => 'username','type' => 'text','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base','wire:model' => 'username']); ?>
+<?php $component->withAttributes(['placeholder' => 'username','type' => 'text','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base','icon' => '/asset/user-2.svg','wire:model' => 'username']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
@@ -30,25 +30,27 @@
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
 
-    <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'password','type' => 'password','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base ','wire:model' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input'); ?>
+    
+
+    <?php if (isset($component)) { $__componentOriginal88cfe17a0624537feef452f30f31deda = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal88cfe17a0624537feef452f30f31deda = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-password','data' => ['placeholder' => 'password','type' => 'password','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base ','icon' => '/asset/password.svg','wire:model' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('input-password'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['placeholder' => 'password','type' => 'password','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base ','wire:model' => 'password']); ?>
+<?php $component->withAttributes(['placeholder' => 'password','type' => 'password','class' => 'text-sm md:text-base placeholder:text-sm md:placeholder:text-base ','icon' => '/asset/password.svg','wire:model' => 'password']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $attributes = $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__attributesOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $attributes = $__attributesOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__attributesOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
-<?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
-<?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
+<?php if (isset($__componentOriginal88cfe17a0624537feef452f30f31deda)): ?>
+<?php $component = $__componentOriginal88cfe17a0624537feef452f30f31deda; ?>
+<?php unset($__componentOriginal88cfe17a0624537feef452f30f31deda); ?>
 <?php endif; ?>
 
     <div class="flex justify-between items-center my-2 ">

@@ -9,9 +9,11 @@
     @if(session()->has('message'))
         <p class="bg-primary mb-2 text-white p-2 text-sm md:text-base text-center font-roboto rounded-lg">{{session()->get("message")}}</p>
     @endif
-    <x-input placeholder="username" type="text" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base" wire:model="username" />
+    <x-input placeholder="username" type="text" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base" icon="/asset/user-2.svg" wire:model="username" />
 
-    <x-input placeholder="password" type="password" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base " wire:model="password" />
+    {{-- <x-input placeholder="password" type="password" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base " icon="/asset/password.svg" wire:model="password" /> --}}
+
+    <x-input-password placeholder="password" type="password" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base " icon="/asset/password.svg" wire:model="password" />
 
     <div class="flex justify-between items-center my-2 ">
         <label for="rememberMe" class="flex items-center gap-2">
