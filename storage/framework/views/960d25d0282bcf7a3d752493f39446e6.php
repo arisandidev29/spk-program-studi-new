@@ -3,6 +3,8 @@
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "id" => "id",
+    "placeholder" => 'Upload File',
+    "error" => null
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -20,6 +22,8 @@ unset($__newAttributes);
 
 foreach (array_filter(([
     "id" => "id",
+    "placeholder" => 'Upload File',
+    "error" => null
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -54,7 +58,8 @@ unset($__defined_vars); ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['type' => 'button','class' => 'bg-secondary min-w-max p-1! text-xs']); ?>
-            Upload File
+            <?php echo e($placeholder); ?>
+
          <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
@@ -73,5 +78,16 @@ unset($__defined_vars); ?>
 
     <?php echo e($slot); ?>
 
+
+    <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$error ?? $placeholder];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+        <p class="text-sm text-red-500"><?php echo e($message); ?></p>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 </label>
 <?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/input-file-upload.blade.php ENDPATH**/ ?>

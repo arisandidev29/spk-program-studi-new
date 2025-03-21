@@ -20,7 +20,7 @@
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('loginform', []);
+[$__name, $__params] = $__split('login-form', []);
 
 $__html = app('livewire')->mount($__name, $__params, 'lw-1976980402-0', $__slots ?? [], get_defined_vars());
 

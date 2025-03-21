@@ -16,6 +16,7 @@
         x-ref="{{ "input" . $placeholder }}"
         value="{{ $value }}"
         x-model="value"
+        type="{{$type}}"
         {{
             $attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
