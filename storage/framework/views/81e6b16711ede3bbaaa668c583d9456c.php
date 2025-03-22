@@ -1,9 +1,9 @@
 <div x-cloak x-data="{ show: false}" class="flex items-center gap-1 md:gap-4 ">
-    <p class="text-xs md:text-base"><?php echo e(auth()->user()->name); ?></p>
+    <p class="text-xs md:text-base"><?php echo e($user->name); ?></p>
     <div class="relative">
         <img
             @click="show = !show"
-            src="<?php echo e(asset("storage/". auth()->user()->profile_pic)); ?>"
+            src="<?php echo e(asset("storage/". $user->profile_pic)); ?>"
             alt="profile picture"
             class="w-6 h-6 md:h-10 md:w-10 rounded-full cursor-pointer"
         />
@@ -12,7 +12,7 @@
             x-show="show"
             class="bg-white-light absolute top-10 md:top-14 right-0 z-10 w-60 md:w-72 rounded-md border-2 border-solid border-black p-4 shadow-md"
         >
-            <p class="font-poppins text-sm md:text-base my-3 text-center text-gray-400 italic"><?php echo e(auth()->user()->email); ?></p>
+            <p class="font-poppins text-sm md:text-base my-3 text-center text-gray-400 italic"><?php echo e($user->email); ?></p>
             <ul class="font-poppins flex flex-col gap-1 text-sm md:text-base">
                 <li>
                     <a
@@ -62,5 +62,4 @@
             </ul>
         </div>
     </div>
-</div>
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/user-navbar.blade.php ENDPATH**/ ?>
+</div><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/livewire/user-navbar.blade.php ENDPATH**/ ?>

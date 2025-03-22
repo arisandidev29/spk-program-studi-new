@@ -50,26 +50,22 @@
         <?php else: ?>
             
 
-            <?php if (isset($component)) { $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8 = $attributes; } ?>
-<?php $component = App\View\Components\UserNavbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('user-navbar'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\UserNavbar::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8)): ?>
-<?php $attributes = $__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8; ?>
-<?php unset($__attributesOriginalfb76cbe94144266fbc79a90e7c82b4e8); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8)): ?>
-<?php $component = $__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8; ?>
-<?php unset($__componentOriginalfb76cbe94144266fbc79a90e7c82b4e8); ?>
-<?php endif; ?>
+            <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('user-navbar', []);
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-1903567846-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
         <?php endif; ?>
     </div>
 

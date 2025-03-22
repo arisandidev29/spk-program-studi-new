@@ -1,9 +1,9 @@
 <div x-cloak x-data="{ show: false}" class="flex items-center gap-1 md:gap-4 ">
-    <p class="text-xs md:text-base"><?php echo e(auth()->user()->name); ?></p>
+    <p class="text-xs md:text-base">{{$user->name}}</p>
     <div class="relative">
         <img
             @click="show = !show"
-            src="<?php echo e(asset("storage/". auth()->user()->profile_pic)); ?>"
+            src="{{asset("storage/". $user->profile_pic)}}"
             alt="profile picture"
             class="w-6 h-6 md:h-10 md:w-10 rounded-full cursor-pointer"
         />
@@ -12,11 +12,11 @@
             x-show="show"
             class="bg-white-light absolute top-10 md:top-14 right-0 z-10 w-60 md:w-72 rounded-md border-2 border-solid border-black p-4 shadow-md"
         >
-            <p class="font-poppins text-sm md:text-base my-3 text-center text-gray-400 italic"><?php echo e(auth()->user()->email); ?></p>
+            <p class="font-poppins text-sm md:text-base my-3 text-center text-gray-400 italic">{{$user->email}}</p>
             <ul class="font-poppins flex flex-col gap-1 text-sm md:text-base">
                 <li>
                     <a
-                        href="<?php echo e(route("dashboard")); ?>"
+                        href="{{ route("dashboard") }}"
                         class="group flex items-center gap-2 md:gap-4 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500"
                     >
                         <img
@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a
-                        href="<?php echo e(route('user.profile')); ?>"
+                        href="{{route('user.profile')}}"
                         class="group flex items-center gap-2 md:Jgap-4 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500"
                     >
                         <img
@@ -46,7 +46,7 @@
                 </li>
                 <li>
                     <a
-                        href="<?php echo e(route('logout')); ?>"
+                        href="{{route('logout')}}"
                         class="group flex items-center gap-2 md:gap-4 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500"
                     >
                         <img
@@ -63,4 +63,3 @@
         </div>
     </div>
 </div>
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/user-navbar.blade.php ENDPATH**/ ?>

@@ -19,13 +19,13 @@
         <title>{{ $title ?? "SPK Pemilihan Program studi" }}</title>
     </head>
 
-    <body class="flex min-h-screen flex-col">
+    <body class=" flex flex-col min-h-screen ">
         @if ($header)
             <x-header />
         @endif
 
         <main
-            {{ $attributes->merge(["class" => "container mx-auto  p-4"]) }}
+            {{ $attributes->merge(["class" => "container mx-auto flex-1 p-4"]) }}
         >
             {{ $slot }}
         </main>

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Service\TokenServiceInterface;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Validate;
@@ -57,7 +58,8 @@ class SingupForm extends Component
 
     public function uploadPhoto($user) {
         $extension = $this->profile_pic->getClientOriginalExtension();
-        $uploadedFile = $this->profile_pic->storeAs(path: "users/{$user->name}",name: "avatar.$extension", options: 'public');
+        $random = Str::random(6);
+        $uploadedFile = $this->profile_pic->storeAs(path: "users",name: "{$user->name}-$random-avatar.$extension", options: 'public');
         return $uploadedFile;
     }
 

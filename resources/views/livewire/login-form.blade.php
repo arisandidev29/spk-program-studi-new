@@ -17,7 +17,7 @@
 
     <div class="flex justify-between items-center my-2 ">
         <label for="rememberMe" class="flex items-center gap-2">
-            <input type="checkbox" class="accent-primary" wire:model.live='rememberMe' >
+            <input type="checkbox" class="accent-primary" wire:model='rememberMe' >
             <small class="text-dark-primary">Remember Me</small>
         </label>
 

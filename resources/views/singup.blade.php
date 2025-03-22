@@ -1,5 +1,5 @@
 <x-layout >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[80vh] justify-center items-center "">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4  justify-center items-center "">
         <div class="hidden md:block">
             <img src="/asset/man-with-message.svg" alt="man with message">
         </div>

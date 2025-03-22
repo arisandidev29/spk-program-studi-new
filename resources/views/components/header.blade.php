@@ -13,7 +13,7 @@
         @else
             {{-- user login navbar --}}
 
-            <x-user-navbar />
+            <livewire:user-navbar />
         @endif
     </div>
 

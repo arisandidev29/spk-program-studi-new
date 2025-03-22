@@ -53,7 +53,27 @@ class SingupFormTest extends TestCase
                 ]);
         
                 // Storage::disk('public')->as
-                Storage::disk('public')->assertExists('users/sandi/avatar.jpg');
+    }
+
+    public function test_register_user_real() {
+        // $this->seed([DatabaseSeeder::class])
+
+        Livewire::test(SingupForm::class)
+                ->set('username','sandi')
+                ->set('email','sandi@gmail.com')
+                ->set('password','arisandi123@')
+                ->set('password_confirm','arisandi123@')
+                ->set('token','yJPuJU')
+                ->set('profile_pic',UploadedFile::fake()->image('avatar.jpg'))
+                ->call('register')
+                ->assertRedirect('/login');
+
+                $this->assertDatabaseHas('users', [
+                    'name' => 'sandi',
+                    'email' => 'sandi@gmail.com',
+                ]);
+        
+                // Storage::disk('public')->as
     }
 
     public function test_register_user_exist_username_and_email() {
