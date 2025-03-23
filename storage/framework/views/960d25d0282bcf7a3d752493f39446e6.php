@@ -3,8 +3,8 @@
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "id" => "id",
-    "placeholder" => 'Upload File',
-    "error" => null
+    "placeholder" => "Upload File",
+    "error" => null,
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -22,8 +22,8 @@ unset($__newAttributes);
 
 foreach (array_filter(([
     "id" => "id",
-    "placeholder" => 'Upload File',
-    "error" => null
+    "placeholder" => "Upload File",
+    "error" => null,
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }

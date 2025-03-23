@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Sleep;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule as ValidationRule;
 use Livewire\Attributes\Rule;
@@ -29,7 +30,7 @@ class ProfileForm extends Component
     {
         return [
             'name' => ['required', ValidationRule::unique('users', 'name')->ignore(Auth::id())],
-            'email' => ['required', 'email:rfc,dns', ValidationRule::unique('users', 'email')->ignore(Auth::id())]
+            'email' => ['required', 'email:rfc', ValidationRule::unique('users', 'email')->ignore(Auth::id())]
         ];
     }
 
@@ -49,7 +50,9 @@ class ProfileForm extends Component
         $user->email = $this->email;
         if($this->profile_pic) {
             $oldImage = $user->profile_pic;
-            Storage::disk('public')->delete($oldImage);
+            if($oldImage) {
+                Storage::disk('public')->delete($oldImage);
+            }
             $path = $this->uploadPhoto($user);
             $user->profile_pic = $path;
         }
@@ -60,10 +63,6 @@ class ProfileForm extends Component
         $this->fill($user->only(['name','email']));
 
         $this->dispatch('profile-updated');
-
-
-
-
 
 
     }

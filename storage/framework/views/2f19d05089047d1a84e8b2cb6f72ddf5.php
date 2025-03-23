@@ -8,7 +8,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Profile']); ?>
-        <?php
+    <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };

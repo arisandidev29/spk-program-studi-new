@@ -2,9 +2,7 @@
     wire:submit="register"
     class="relative order-1 mx-auto my-6 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:px-10 md:py-14"
 >
-
-
-
+    
     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'Username','error' => 'username','type' => 'text','wire:model' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -125,6 +123,7 @@
         <div
             class="font-roboto my-1 flex flex-col text-sm text-gray-500 italic"
         >
+            <span>Photo profile opsional</span>
             <span>format file : jpeg,jpg,png</span>
             <span>Max file : 2Mb</span>
         </div>
@@ -141,14 +140,32 @@
 
     <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary w-full text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['wire:loading.class' => '!cursor-not-allowed !bg-dark-primary','class' => 'bg-primary flex w-full items-center justify-center gap-2 text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary w-full text-white']); ?>Sing Up <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['wire:loading.class' => '!cursor-not-allowed !bg-dark-primary','class' => 'bg-primary flex w-full items-center justify-center gap-2 text-white']); ?>
+        <svg
+            wire:loading
+            class="h-5 w-5 animate-spin"
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M20.0001 12C20.0001 13.3811 19.6425 14.7386 18.9623 15.9405C18.282 17.1424 17.3022 18.1477 16.1182 18.8587C14.9341 19.5696 13.5862 19.9619 12.2056 19.9974C10.825 20.0328 9.45873 19.7103 8.23975 19.0612"
+                stroke="#fff"
+                stroke-width="3.55556"
+                stroke-linecap="round"
+            />
+        </svg>
+        Sing Up
+     <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>

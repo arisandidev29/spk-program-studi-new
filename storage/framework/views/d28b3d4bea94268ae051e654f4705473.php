@@ -1,7 +1,7 @@
-<footer
-    class="bg-dark-primary text-divider mt-auto  "
->
-    <div class="flex flex-col items-center justify-between p-4 px-8 sm:flex-row">
+<footer class="bg-dark-primary text-divider mt-auto">
+    <div
+        class="flex flex-col items-center justify-between p-4 px-8 sm:flex-row"
+    >
         <div
             class="flex flex-row items-center gap-2 text-xs sm:flex-col md:text-sm"
         >

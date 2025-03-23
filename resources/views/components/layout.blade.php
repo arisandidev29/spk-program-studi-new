@@ -19,7 +19,7 @@
         <title>{{ $title ?? "SPK Pemilihan Program studi" }}</title>
     </head>
 
-    <body class=" flex flex-col min-h-screen ">
+    <body class="flex min-h-screen flex-col">
         @if ($header)
             <x-header />
         @endif

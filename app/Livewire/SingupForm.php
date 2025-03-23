@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Service\TokenServiceInterface;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Sleep;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Rule;
@@ -32,7 +33,7 @@ class SingupForm extends Component
 
     public $token;
 
-    #[Validate('required|image|max:1024')]
+    #[Validate('nullable|image|max:1024')]
     public $profile_pic;
 
 
@@ -66,10 +67,6 @@ class SingupForm extends Component
 
     public function register() {
         $this->validate();
-
-     
-
-        // die();
 
         $newUser = User::create([
             'name' => $this->username,

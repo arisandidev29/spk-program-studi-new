@@ -66,7 +66,7 @@ unset($__defined_vars); ?>
         <img
             src="<?php echo e($icon); ?>"
             alt=""
-            class="absolute top-5 right-1 mr-2 block w-4 <?php echo e($attributes->get('icon-class')); ?>"
+            class="<?php echo e($attributes->get("icon-class")); ?> absolute top-5 right-1 mr-2 block w-4"
         />
     <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
 

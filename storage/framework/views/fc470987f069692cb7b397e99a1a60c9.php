@@ -18,7 +18,7 @@
         x-data="{ show: false }"
         x-show="show"
         x-cloak
-        x-on:profile-updated.window="show = true"
+        x-on:profile-updated.window="show = !show"
         class="bg-primary my-6 rounded-xl p-2 text-center text-sm text-white md:text-base"
     >
         Profile Berhasil Di Ubah !
@@ -30,21 +30,22 @@
         @input-change="enableEditBtn"
     >
         <div class="relative md:w-fit">
-            <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['profile_pic'];
+            <!--[if BLOCK]><![endif]--><?php $__errorArgs = ["profile_pic"];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p class="text-red-500 text-center mt-4"><?php echo e($message); ?></p>
+                <p class="mt-4 text-center text-red-500"><?php echo e($message); ?></p>
             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
+
             <img
                 :src="profilePic"
                 alt=""
                 class="border-primary mx-auto aspect-square w-[60%] rounded-full border-4 border-solid object-cover md:h-64 md:w-64"
-                />
+            />
 
             <label
                 for="edit-photo"
@@ -85,7 +86,6 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
             </label>
-
         </div>
         <div class="mx-auto w-[90%]">
             <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
@@ -130,18 +130,35 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 <?php endif; ?>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => [':disabled' => '!edit_btn_active',':class' => '{
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['wire:loading.class' => '!bg-yellow-200 text-gray-200 !cursor-not-allowed',':disabled' => '!edit_btn_active',':class' => '{
                     \'!bg-yellow-200 text-gray-500 !cursor-not-allowed\': ! edit_btn_active,
-                }','class' => 'bg-secondary my-4 text-sm md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+                }','class' => 'bg-secondary my-4 flex items-center gap-2 text-sm md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([':disabled' => '!edit_btn_active',':class' => '{
+<?php $component->withAttributes(['wire:loading.class' => '!bg-yellow-200 text-gray-200 !cursor-not-allowed',':disabled' => '!edit_btn_active',':class' => '{
                     \'!bg-yellow-200 text-gray-500 !cursor-not-allowed\': ! edit_btn_active,
-                }','class' => 'bg-secondary my-4 text-sm md:text-base']); ?>
+                }','class' => 'bg-secondary my-4 flex items-center gap-2 text-sm md:text-base']); ?>
+                <svg
+                    wire:loading
+                    class="h-5 w-5 animate-spin"
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M20.0001 12C20.0001 13.3811 19.6425 14.7386 18.9623 15.9405C18.282 17.1424 17.3022 18.1477 16.1182 18.8587C14.9341 19.5696 13.5862 19.9619 12.2056 19.9974C10.825 20.0328 9.45873 19.7103 8.23975 19.0612"
+                        stroke="#000000"
+                        stroke-width="3.55556"
+                        stroke-linecap="round"
+                    />
+                </svg>
+
                 Edit
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -168,8 +185,8 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('data', () => ({
-            profilePic:
-                '<?php echo e(asset("storage/" . auth()->user()->profile_pic)); ?>',
+            profilePic: 
+                '<?php echo e(auth()->user()->profile_pic ?  asset("storage/" . auth()->user()->profile_pic) : '/asset/default-user.svg'); ?>',
 
             edit_btn_active: false,
 

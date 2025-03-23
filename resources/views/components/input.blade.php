@@ -16,7 +16,7 @@
         x-ref="{{ "input" . $placeholder }}"
         value="{{ $value }}"
         x-model="value"
-        type="{{$type}}"
+        type="{{ $type }}"
         {{
             $attributes->class([
                 "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
@@ -32,7 +32,7 @@
         <img
             src="{{ $icon }}"
             alt=""
-            class="absolute top-5 right-1 mr-2 block w-4 {{$attributes->get('icon-class')}}"
+            class="{{ $attributes->get("icon-class") }} absolute top-5 right-1 mr-2 block w-4"
         />
     @endif
 
@@ -44,7 +44,7 @@
         {{ $placeholder }}
     </label>
 
-    {{$slot}}
+    {{ $slot }}
 
     @error($error ?? $placeholder)
         <p class="text-sm text-red-500">{{ $message }}</p>
