@@ -23,17 +23,18 @@
 
             </p>
             <ul class="font-poppins flex flex-col gap-1 text-sm md:text-base">
+                    
                 <li>
                     <a
-                        href="<?php echo e(route("dashboard")); ?>"
+                        href="<?php echo e(auth()->user()->role == 'admin' ? route('admin.dashboard') :  route("dashboard")); ?>"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"
                     >
                         <img
                             src="/asset/house.svg"
                             alt="home"
                             class="w-5 transition duration-300 group-hover:invert-100 group-hover:transition group-hover:duration-500 md:w-6"
-                        />
-                        <span class="group-hover:text-divider italic">
+                            />
+                            <span class="group-hover:text-divider italic">
                             Dashboard
                         </span>
                     </a>
@@ -47,13 +48,13 @@
                             src="/asset/people.svg"
                             alt="people"
                             class="w-5 transition-all group-hover:invert-100 md:w-6"
-                        />
-                        <span class="group-hover:text-divider italic">
-                            Profile
-                        </span>
-                    </a>
-                </li>
-                <li>
+                            />
+                            <span class="group-hover:text-divider italic">
+                                Profile
+                            </span>
+                        </a>
+                    </li>
+                    <li>
                     <a
                         href="<?php echo e(route("logout")); ?>"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"

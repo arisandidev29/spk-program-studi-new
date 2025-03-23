@@ -10,5 +10,5 @@
         {{ Breadcrumbs::render($breadcrumbs) }}
     </div>
 
-    <x-user-navbar />
+    <livewire:user-navbar />
 </header>
