@@ -1,4 +1,6 @@
-<x-card class="mx-auto max-w-4xl">
+<x-card
+ x-data
+ class="mx-auto max-w-4xl">
     <div class="flex items-center gap-4">
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/bobot.svg" alt="user" class="w-6" />
@@ -12,6 +14,12 @@
     >
         Tambah Bobot
     </x-button>
+
+    {{-- alert --}}
+
+    <x-alert.succesfull />
+    
+    {{-- end alert --}}
 
     <div class="overflow-auto">
         <table class="my-2">
@@ -27,54 +35,55 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-xs md:text-sm">
-                    <td>1</td>
-                    <td>W1</td>
-                    <td>Penting</td>
-                    <td>5</td>
-                    <td>
-                        <span
-                            class="bg-secondary rounded-full px-2 py-1 text-black"
-                        >
-                            0.344
-                        </span>
-                    </td>
-                    <td>
-                        @php
-                            $data = [
-                                "bobot" => "4",
-                                "keterangan" => "penting sekali",
-                            ];
-                            // dd($data);
-                        @endphp
-
-                        <x-button
-                            class="bg-secondary px-2! text-black"
-                            @click="$dispatch('modaledit-open',{value: {{json_encode($data)}} })"
-                        >
-                            Edit
-                        </x-button>
-                    </td>
-                    <td>
-                        <x-button
-                            @click="$dispatch('modaldelete-open',{id : 'id bobot'})"
-                            class="w-6 rounded-lg bg-red-500 px-1!"
-                        >
-                            <img
-                                src="/asset/trash.svg"
-                                alt="trash"
-                                class="w-6"
-                            />
-                        </x-button>
-                    </td>
-                </tr>
+                @foreach ($bobots as $index => $bobot)
+                    <tr class="text-xs md:text-sm" id="bobot-{{$bobot->id}}">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $bobot->name }}</td>
+                        <td>{{ $bobot->keterangan }}</td>
+                        <td>{{ $bobot->bobot }}</td>
+                        <td>
+                            <span
+                                class="bg-secondary rounded-full px-2 py-1 text-black"
+                            >
+                                {{ $bobot->normalisasi }}
+                            </span>
+                        </td>
+                        <td>
+                            <a wire:navigate  href="{{route('admin.bobot.edit',$bobot->id)}}">
+                                <x-button
+                                class="bg-secondary px-2! text-black"
+                                >
+                                Edit
+                            </x-button>
+                        </a>
+                        </td>
+                        <td>
+                            <x-button
+                                @click="$dispatch('modaldelete-open',
+                                {
+                                    name : '{{$bobot->name}}',
+                                    id : '{{$bobot->id}}'
+                                })"
+                                class="w-6 rounded-lg bg-red-500 px-1!"
+                            >
+                                <img
+                                    src="/asset/trash.svg"
+                                    alt="trash"
+                                    class="w-6"
+                                />
+                            </x-button>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 
     {{-- pegination --}}
 
-    <div class="mx-auto mt-8 flex w-max items-center gap-4">
+    {{$bobots->links()}}
+
+    {{-- <div class="mx-auto mt-8 flex w-max items-center gap-4">
         <div
             class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
         >
@@ -115,27 +124,31 @@
                 class="mx-auto w-[90%] rotate-180"
             />
         </div>
-    </div>
+    </div> --}}
 
     {{-- modal --}}
 
     <livewire:tambah-bobot />
-    <livewire:edit-bobot />
 
     <x-modal-dialog
-        x-data="{show : false, id : ''}"
+        x-data="{show : false, id : '', name : ''}"
         x-on:modaldelete-open.window="
         show = true;
         id = $event.detail.id;
+        name = $event.detail.name;
         "
         x-on:modaldelete-close.window="show = false"
         content-class="text-center"
     >
-        <h1 class="text-primary my-4 text-2xl">Yakin Hapus Bobot ini ?</h1>
+        <h1 class="text-primary my-4 text-2xl">
+            Yakin Hapus Bobot
+            <span x-text="name"></span>
+            ?
+        </h1>
         <div class="my-2 flex justify-center gap-4">
             <x-button
                 class="bg-red-500 text-white"
-                wire:click="deleteBobot(id)"
+                @click="$wire.deleteBobot(id)"
             >
                 Ya
             </x-button>

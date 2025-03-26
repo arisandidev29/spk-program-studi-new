@@ -51,7 +51,7 @@ unset($__defined_vars); ?>
     </head>
 
     <body class="flex min-h-screen flex-col">
-        <?php if($header): ?>
+        <!--[if BLOCK]><![endif]--><?php if($header): ?>
             <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>
 <?php $component = App\View\Components\Header::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -72,7 +72,7 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal2a2e454b2e62574a80c8110e5f128b60; ?>
 <?php unset($__componentOriginal2a2e454b2e62574a80c8110e5f128b60); ?>
 <?php endif; ?>
-        <?php endif; ?>
+        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
 
         <main
             <?php echo e($attributes->merge(["class" => "container mx-auto flex-1 p-4"])); ?>
@@ -82,7 +82,7 @@ unset($__defined_vars); ?>
 
         </main>
 
-        <?php if($footer): ?>
+        <!--[if BLOCK]><![endif]--><?php if($footer): ?>
             <?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal8a8716efb3c62a45938aca52e78e0322 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.footer','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -103,7 +103,7 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal8a8716efb3c62a45938aca52e78e0322; ?>
 <?php unset($__componentOriginal8a8716efb3c62a45938aca52e78e0322); ?>
 <?php endif; ?>
-        <?php endif; ?>
+        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
     </body>
 </html>
 <?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/layout.blade.php ENDPATH**/ ?>

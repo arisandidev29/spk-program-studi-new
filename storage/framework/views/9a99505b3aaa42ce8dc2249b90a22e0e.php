@@ -1,13 +1,13 @@
 <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'mx-auto max-w-4xl']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['xData' => true,'class' => 'mx-auto max-w-4xl']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'mx-auto max-w-4xl']); ?>
+<?php $component->withAttributes(['x-data' => true,'class' => 'mx-auto max-w-4xl']); ?>
     <div class="flex items-center gap-4">
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/bobot.svg" alt="user" class="w-6" />
@@ -37,6 +37,31 @@
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
 
+    
+
+    <?php if (isset($component)) { $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.succesfull','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('alert.succesfull'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
+<?php $attributes = $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
+<?php unset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
+<?php $component = $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
+<?php unset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php endif; ?>
+    
+    
+
     <div class="overflow-auto">
         <table class="my-2">
             <thead>
@@ -51,39 +76,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-xs md:text-sm">
-                    <td>1</td>
-                    <td>W1</td>
-                    <td>Penting</td>
-                    <td>5</td>
-                    <td>
-                        <span
-                            class="bg-secondary rounded-full px-2 py-1 text-black"
-                        >
-                            0.344
-                        </span>
-                    </td>
-                    <td>
-                        <?php
-                            $data = [
-                                "bobot" => "4",
-                                "keterangan" => "penting sekali",
-                            ];
-                            // dd($data);
-                        ?>
+                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $bobots; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $bobot): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr class="text-xs md:text-sm" id="bobot-<?php echo e($bobot->id); ?>">
+                        <td><?php echo e($index + 1); ?></td>
+                        <td><?php echo e($bobot->name); ?></td>
+                        <td><?php echo e($bobot->keterangan); ?></td>
+                        <td><?php echo e($bobot->bobot); ?></td>
+                        <td>
+                            <span
+                                class="bg-secondary rounded-full px-2 py-1 text-black"
+                            >
+                                <?php echo e($bobot->normalisasi); ?>
 
-                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+                            </span>
+                        </td>
+                        <td>
+                            <a wire:navigate  href="<?php echo e(route('admin.bobot.edit',$bobot->id)); ?>">
+                                <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-secondary px-2! text-black','@click' => '$dispatch(\'modaledit-open\',{value: '.e(json_encode($data)).' })']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-secondary px-2! text-black']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-secondary px-2! text-black','@click' => '$dispatch(\'modaledit-open\',{value: '.e(json_encode($data)).' })']); ?>
-                            Edit
-                         <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'bg-secondary px-2! text-black']); ?>
+                                Edit
+                             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -93,24 +113,33 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-                    </td>
-                    <td>
-                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+                        </a>
+                        </td>
+                        <td>
+                            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => '$dispatch(\'modaldelete-open\',{id : \'id bobot\'})','class' => 'w-6 rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => '$dispatch(\'modaldelete-open\',
+                                {
+                                    name : \''.e($bobot->name).'\',
+                                    id : \''.e($bobot->id).'\'
+                                })','class' => 'w-6 rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['@click' => '$dispatch(\'modaldelete-open\',{id : \'id bobot\'})','class' => 'w-6 rounded-lg bg-red-500 px-1!']); ?>
-                            <img
-                                src="/asset/trash.svg"
-                                alt="trash"
-                                class="w-6"
-                            />
-                         <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['@click' => '$dispatch(\'modaldelete-open\',
+                                {
+                                    name : \''.e($bobot->name).'\',
+                                    id : \''.e($bobot->id).'\'
+                                })','class' => 'w-6 rounded-lg bg-red-500 px-1!']); ?>
+                                <img
+                                    src="/asset/trash.svg"
+                                    alt="trash"
+                                    class="w-6"
+                                />
+                             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -120,56 +149,19 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
             </tbody>
         </table>
     </div>
 
     
 
-    <div class="mx-auto mt-8 flex w-max items-center gap-4">
-        <div
-            class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
-        >
-            <img
-                src="/asset/left-arrow.svg"
-                alt="left arrow"
-                class="mx-auto w-[90%]"
-            />
-        </div>
-        <div class="flex gap-2 text-sm md:text-base">
-            <p
-                class="bg-dark-primary grid h-8 w-6 place-content-center rounded-full py-1 text-white md:w-10"
-            >
-                1
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                1
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                ....
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                8
-            </p>
-        </div>
-        <div
-            class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
-        >
-            <img
-                src="/asset/left-arrow.svg"
-                alt="left arrow"
-                class="mx-auto w-[90%] rotate-180"
-            />
-        </div>
-    </div>
+    <?php echo e($bobots->links()); ?>
+
+
+    
 
     
 
@@ -189,28 +181,13 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-    <?php
-$__split = function ($name, $params = []) {
-    return [$name, $params];
-};
-[$__name, $__params] = $__split('edit-bobot', []);
-
-$__html = app('livewire')->mount($__name, $__params, 'lw-2031799279-1', $__slots ?? [], get_defined_vars());
-
-echo $__html;
-
-unset($__html);
-unset($__name);
-unset($__params);
-unset($__split);
-if (isset($__slots)) unset($__slots);
-?>
 
     <?php if (isset($component)) { $__componentOriginal227a88e4577f56072361db363cadef5a = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal227a88e4577f56072361db363cadef5a = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal-dialog','data' => ['xData' => '{show : false, id : \'\'}','xOn:modaldeleteOpen.window' => '
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal-dialog','data' => ['xData' => '{show : false, id : \'\', name : \'\'}','xOn:modaldeleteOpen.window' => '
         show = true;
         id = $event.detail.id;
+        name = $event.detail.name;
         ','xOn:modaldeleteClose.window' => 'show = false','contentClass' => 'text-center']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('modal-dialog'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -218,22 +195,27 @@ if (isset($__slots)) unset($__slots);
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['x-data' => '{show : false, id : \'\'}','x-on:modaldelete-open.window' => '
+<?php $component->withAttributes(['x-data' => '{show : false, id : \'\', name : \'\'}','x-on:modaldelete-open.window' => '
         show = true;
         id = $event.detail.id;
+        name = $event.detail.name;
         ','x-on:modaldelete-close.window' => 'show = false','content-class' => 'text-center']); ?>
-        <h1 class="text-primary my-4 text-2xl">Yakin Hapus Bobot ini ?</h1>
+        <h1 class="text-primary my-4 text-2xl">
+            Yakin Hapus Bobot
+            <span x-text="name"></span>
+            ?
+        </h1>
         <div class="my-2 flex justify-center gap-4">
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 text-white','wire:click' => 'deleteBobot(id)']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 text-white','@click' => '$wire.deleteBobot(id)']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-red-500 text-white','wire:click' => 'deleteBobot(id)']); ?>
+<?php $component->withAttributes(['class' => 'bg-red-500 text-white','@click' => '$wire.deleteBobot(id)']); ?>
                 Ya
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

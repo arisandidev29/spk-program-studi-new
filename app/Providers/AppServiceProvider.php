@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Service\BobotService;
+use App\Service\BobotServiceInterface;
 use App\Service\TokenService;
 use App\Service\TokenServiceInterface;
 use Illuminate\Support\ServiceProvider;
@@ -12,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      */
 
-    // public $singletons = [
-    //     TokenServiceInterface::class => TokenService::class
-    // ];
+    public $singletons = [
+        BobotServiceInterface::class => BobotService::class
+    ];
 
     
     public function register(): void

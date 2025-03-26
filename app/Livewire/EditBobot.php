@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Service\BobotServiceInterface;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
@@ -10,30 +11,37 @@ use Livewire\Component;
 class EditBobot extends Component
 {
 
+    public $id;
+
     #[Rule('required')]
-    public $bobot ;
+    public $name;
+
     #[Rule('required')]
     public $keterangan;
 
+    #[Rule('required')]
+    public $bobot;
 
-    public $modalOpen = false;
 
-    #[On('modaledit-open')]
-    public function setValue($value) {
-        $this->bobot = $value['bobot'];
-        $this->keterangan= $value['keterangan'];
+
+    public function mount(BobotServiceInterface $bobotService, $id) {
+        $bobot = $bobotService->getBobotById($id);
+        $this->id = $id;
+
+        $this->fill(
+           $bobot->only(['name','keterangan','bobot']) 
+        );
     }
 
-    public function editBobot() {
-        try{
+    public function edit(BobotServiceInterface $bobotSevice) {
             $this->validate();
-            $this->reset(['bobot', 'keterangan']); // Reset input
-            $this->modalOpen = false;
-        } catch(ValidationException $e) {
-            $this->modalOpen = true;
-            throw $e;
-
-        }
+            
+            $bobotSevice->updateBobot($this->id,[
+                'name' => $this->name,
+                'keterangan' => $this->keterangan,
+                'bobot' => $this->bobot
+            ]);
+            $this->dispatch('alert-success',message : 'Success Update Bobot !');
     }
 
     public function render()
