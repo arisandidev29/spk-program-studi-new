@@ -1,3 +1,7 @@
+@props([
+    "event" => '',
+])
+
 <div
     x-data="{
         showAlert: false,
@@ -5,22 +9,24 @@
     }"
     x-cloak
     x-show="showAlert"
-    @alert-success.window="
-        console.log('tes');
-        showAlert = true;
-        message = $event.detail.message;
-        setTimeout(() => {
-            showAlert = false;
-        }, 5000)
-     "
-     {{$attributes}}
+
+        @alert{{$event}}-success.window
+        ="
+            showAlert = true;
+            message = $event.detail.message;
+            setTimeout(() => {
+                showAlert = false;
+            }, 5000)
+         "
+
+    {{ $attributes }}
     x-transition:enter="transition duration-300 ease-out"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"
     x-transition:leave="transition duration-300 ease-out"
     x-transition:leave-start="opacity-0"
     x-transition:leave-end="opacity-100"
-    {{$attributes->merge(["class" => "bg-primary flex items-center gap-4 rounded-lg p-2 text-white"])}}
+    {{ $attributes->merge(["class" => "bg-primary flex items-center gap-4 rounded-lg p-2 text-white my-2"]) }}
 >
     <svg
         class="h-5 w-5 fill-slate-200"
@@ -152,7 +158,10 @@
             <g id="Layer1"></g>
         </g>
     </svg>
-    <p class="flex-grow font-bold italic text-sm md:text-base" x-text="message"></p>
+    <p
+        class="flex-grow text-sm font-bold italic md:text-base"
+        x-text="message"
+    ></p>
     <svg
         @click="showAlert = false"
         class="h-6 w-6 cursor-pointer fill-white"

@@ -27,6 +27,29 @@
         <p>Users</p>
     </div>
 
+    
+        <?php if (isset($component)) { $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.succesfull','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('alert.succesfull'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
+<?php $attributes = $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
+<?php unset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
+<?php $component = $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
+<?php unset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php endif; ?>
+    
+
     <div class="flex items-center justify-end gap-4">
         <div>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
@@ -56,14 +79,14 @@
         <div>
             <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'Search','icon' => '/asset/search.svg']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['wire:model.live' => 'search','placeholder' => 'Search','icon' => '/asset/search.svg']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('input'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['placeholder' => 'Search','icon' => '/asset/search.svg']); ?>
+<?php $component->withAttributes(['wire:model.live' => 'search','placeholder' => 'Search','icon' => '/asset/search.svg']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
@@ -91,21 +114,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-xs sm:text-sm">
-                    <td class="whitespace-nowrap">1</td>
-                    <td class="whitespace-nowrap">arisandi</td>
-                    <td class="whitespace-nowrap">arisandi@examble.com</td>
-                    <td class="whitespace-nowrap">
-                        <span
-                            class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
-                        >
-                            Sudah Daftar
-                        </span>
-                    </td>
-                    <td class="whitespace-nowrap">Mahasiswa</td>
-                    <td>
-                        <a href="">
-                            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr class="text-xs sm:text-sm" wire:key="<?php echo e($user->id); ?>">
+                        <td class="whitespace-nowrap"><?php echo e($index + 1); ?></td>
+                        <td class="whitespace-nowrap"><?php echo e($user->name); ?></td>
+                        <td class="whitespace-nowrap"><?php echo e($user->email); ?></td>
+                        <td class="whitespace-nowrap">
+                            <span
+                                class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
+                            >
+                                Sudah Daftar
+                            </span>
+                        </td>
+                        <td>
+                            <a href="">
+                                <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-dark-primary w-max px-2! text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
@@ -115,7 +138,39 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'bg-dark-primary w-max px-2! text-white']); ?>
-                                lihat hasil
+                                    lihat hasil
+                                 <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
+<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
+<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
+<?php endif; ?>
+                            </a>
+                        </td>
+                        <td class="whitespace-nowrap">
+                            <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => '$dispatch(\'modaldelete-open\', {
+                                 id : \''.e($user->id).'\', 
+                                 name : `'.e($user->name).'` })','class' => 'w-6 rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('button'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['@click' => '$dispatch(\'modaldelete-open\', {
+                                 id : \''.e($user->id).'\', 
+                                 name : `'.e($user->name).'` })','class' => 'w-6 rounded-lg bg-red-500 px-1!']); ?>
+                                <img
+                                    src="/asset/trash.svg"
+                                    alt="trash"
+                                    class="h-6 w-6"
+                                />
                              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
@@ -126,117 +181,52 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-                        </a>
-                    </td>
-                    <td class="whitespace-nowrap">
-                        <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'modal.show = !modal.show','class' => 'w-6 rounded-lg bg-red-500 px-1!']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('button'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['@click' => 'modal.show = !modal.show','class' => 'w-6 rounded-lg bg-red-500 px-1!']); ?>
-                            <img
-                                src="/asset/trash.svg"
-                                alt="trash"
-                                class="h-6 w-6"
-                            />
-                         <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
-<?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
-<?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
-<?php endif; ?>
-                    </td>
-                </tr>
-                
+                        </td>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
             </tbody>
         </table>
     </div>
 
-    
-    <div class="mx-auto mt-8 flex w-max items-center gap-4">
-        <div
-            class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
-        >
-            <img
-                src="/asset/left-arrow.svg"
-                alt="left arrow"
-                class="mx-auto w-[90%]"
-            />
-        </div>
-        <div class="flex gap-2 text-sm md:text-base">
-            <p
-                class="bg-dark-primary grid h-8 w-6 place-content-center rounded-full py-1 text-white md:w-10"
-            >
-                1
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                1
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                ....
-            </p>
-            <p
-                class="grid h-8 w-6 place-content-center rounded-full border border-gray-400 bg-transparent py-1 text-gray-500 md:w-10"
-            >
-                8
-            </p>
-        </div>
-        <div
-            class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
-        >
-            <img
-                src="/asset/left-arrow.svg"
-                alt="left arrow"
-                class="mx-auto w-[90%] rotate-180"
-            />
-        </div>
-    </div>
+    <?php echo e($users->links()); ?>
 
-    
 
-    <?php if (isset($component)) { $__componentOriginal9f64f32e90b9102968f2bc548315018c = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal9f64f32e90b9102968f2bc548315018c = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal','data' => ['xCloak' => true,'show' => 'modal.show']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('modal'); ?>
+    <?php if (isset($component)) { $__componentOriginal227a88e4577f56072361db363cadef5a = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal227a88e4577f56072361db363cadef5a = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal-dialog','data' => ['xData' => '{show : false, id : \'\', name : \'\'}','xOn:modaldeleteOpen.window' => '
+    show = true;
+    id = $event.detail.id;
+    name = $event.detail.name;
+    ','xOn:modaldeleteClose.window' => 'show = false','contentClass' => 'text-center']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('modal-dialog'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['x-cloak' => true,'show' => 'modal.show']); ?>
-        <h1 class="font-poppins text-center text-xl">
-            <span>Yakin Hapus User ?</span>
-            <img
-                src="/asset/confuse-face.svg"
-                alt="emotion"
-                class="inline-block w-8"
-            />
+<?php $component->withAttributes(['x-data' => '{show : false, id : \'\', name : \'\'}','x-on:modaldelete-open.window' => '
+    show = true;
+    id = $event.detail.id;
+    name = $event.detail.name;
+    ','x-on:modaldelete-close.window' => 'show = false','content-class' => 'text-center']); ?>
+        <h1 class="text-primary my-4 text-2xl">
+            Yakin Hapus User  
+            <span x-text="name"></span>
+            ?
         </h1>
-
-        <div class="mt-4 flex justify-center gap-8">
+        <div class="my-2 flex justify-center gap-4">
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-red-500 text-white','@click' => '$wire.delete(id)']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-red-500 text-white']); ?>Ya <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'bg-red-500 text-white','@click' => '$wire.delete(id)']); ?>
+                Ya
+             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
 <?php $attributes = $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
@@ -248,14 +238,14 @@
 <?php endif; ?>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white','@click' => 'modal.show = !modal.show']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => '$dispatch(\'modaldelete-close\')','class' => 'bg-primary text-white']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary text-white','@click' => 'modal.show = !modal.show']); ?>
+<?php $component->withAttributes(['@click' => '$dispatch(\'modaldelete-close\')','class' => 'bg-primary text-white']); ?>
                 Tidak
              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -270,13 +260,13 @@
         </div>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal9f64f32e90b9102968f2bc548315018c)): ?>
-<?php $attributes = $__attributesOriginal9f64f32e90b9102968f2bc548315018c; ?>
-<?php unset($__attributesOriginal9f64f32e90b9102968f2bc548315018c); ?>
+<?php if (isset($__attributesOriginal227a88e4577f56072361db363cadef5a)): ?>
+<?php $attributes = $__attributesOriginal227a88e4577f56072361db363cadef5a; ?>
+<?php unset($__attributesOriginal227a88e4577f56072361db363cadef5a); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal9f64f32e90b9102968f2bc548315018c)): ?>
-<?php $component = $__componentOriginal9f64f32e90b9102968f2bc548315018c; ?>
-<?php unset($__componentOriginal9f64f32e90b9102968f2bc548315018c); ?>
+<?php if (isset($__componentOriginal227a88e4577f56072361db363cadef5a)): ?>
+<?php $component = $__componentOriginal227a88e4577f56072361db363cadef5a; ?>
+<?php unset($__componentOriginal227a88e4577f56072361db363cadef5a); ?>
 <?php endif; ?>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

@@ -1,3 +1,37 @@
+<?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
+
+$__newAttributes = [];
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
+    "event" => '',
+]));
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (in_array($__key, $__propNames)) {
+        $$__key = $$__key ?? $__value;
+    } else {
+        $__newAttributes[$__key] = $__value;
+    }
+}
+
+$attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
+
+unset($__propNames);
+unset($__newAttributes);
+
+foreach (array_filter(([
+    "event" => '',
+]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+    $$__key = $$__key ?? $__value;
+}
+
+$__defined_vars = get_defined_vars();
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (array_key_exists($__key, $__defined_vars)) unset($$__key);
+}
+
+unset($__defined_vars); ?>
+
 <div
     x-data="{
         showAlert: false,
@@ -5,15 +39,17 @@
     }"
     x-cloak
     x-show="showAlert"
-    @alert-success.window="
-        console.log('tes');
-        showAlert = true;
-        message = $event.detail.message;
-        setTimeout(() => {
-            showAlert = false;
-        }, 5000)
-     "
-     <?php echo e($attributes); ?>
+
+        @alert<?php echo e($event); ?>-success.window
+        ="
+            showAlert = true;
+            message = $event.detail.message;
+            setTimeout(() => {
+                showAlert = false;
+            }, 5000)
+         "
+
+    <?php echo e($attributes); ?>
 
     x-transition:enter="transition duration-300 ease-out"
     x-transition:enter-start="opacity-0"
@@ -21,7 +57,7 @@
     x-transition:leave="transition duration-300 ease-out"
     x-transition:leave-start="opacity-0"
     x-transition:leave-end="opacity-100"
-    <?php echo e($attributes->merge(["class" => "bg-primary flex items-center gap-4 rounded-lg p-2 text-white"])); ?>
+    <?php echo e($attributes->merge(["class" => "bg-primary flex items-center gap-4 rounded-lg p-2 text-white my-2"])); ?>
 
 >
     <svg
@@ -154,7 +190,10 @@
             <g id="Layer1"></g>
         </g>
     </svg>
-    <p class="flex-grow font-bold italic text-sm md:text-base" x-text="message"></p>
+    <p
+        class="flex-grow text-sm font-bold italic md:text-base"
+        x-text="message"
+    ></p>
     <svg
         @click="showAlert = false"
         class="h-6 w-6 cursor-pointer fill-white"

@@ -6,6 +6,8 @@ use App\Service\BobotService;
 use App\Service\BobotServiceInterface;
 use App\Service\TokenService;
 use App\Service\TokenServiceInterface;
+use App\Service\UserService;
+use App\Service\UserServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
 
     public $singletons = [
-        BobotServiceInterface::class => BobotService::class
+        BobotServiceInterface::class => BobotService::class,
+        UserServiceInterface::class => UserService::class
     ];
 
     
