@@ -5,6 +5,7 @@ $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "placeholder" => "",
     "value" => "",
     "parrentClass" => "",
+    "error" => null
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -24,6 +25,7 @@ foreach (array_filter(([
     "placeholder" => "",
     "value" => "",
     "parrentClass" => "",
+    "error" => null
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -58,7 +60,7 @@ unset($__defined_vars); ?>
 
     </label>
 
-    <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$placeholder];
+    <!--[if BLOCK]><![endif]--><?php $__errorArgs = [$error ?? $placeholder];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

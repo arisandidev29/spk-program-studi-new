@@ -1,7 +1,7 @@
 @props([
     "kriteria" => "Kriteria name",
     "question" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste, sapiente, labore facilis molestias alias blanditiis, error assumenda non aliquam expedita ullam consequatur. Ullam impedit sapiente quidem quia atque quibusdam.",
-    "note" => "tes",
+    "note",
     "number" => "1",
 ])
 <div class="relative rounded-xl bg-white p-4 shadow-xl md:p-8">

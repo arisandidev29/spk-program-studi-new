@@ -1,73 +1,102 @@
 <form wire:submit="save" class="my-2 grid grid-cols-2 justify-stretch gap-4">
-    <x-input
-        placeholder="Id Kriteria"
-        type="text"
-        value="c1"
-        readonly
-        class="text-slate-500"
-    />
-    <x-input placeholder="kriteria" type="text" wire:model="kriteria" />
+    <x-alert.succesfull />
+    <x-input placeholder="kriteria" type="text" wire:model="kriteria" class-wrapper="col-span-2" />
     <x-input-textarea
-        wire:model="pertanyaan"
-        placeholder="pertanyaan"
+        wire:model="desc"
+        placeholder="description"
         parrentClass=" col-span-2 "
+        error="desc"
         class="h-40"
     />
-    <x-input-dropdown name="bobot" wire:model="bobot">
-        <option value="tes">tes</option>
-        <option value="tes1">tes1</option>
+
+    <x-input-textarea
+        wire:model="note"
+        placeholder="note (optional)"
+        parrentClass=" col-span-2 "
+        class="h-20"
+    />
+
+
+
+
+    <x-input-dropdown name="Pilih Bobot" error="bobot" wire:model="bobot">
+        <option value="">Pilih Bobot</option>
+        @foreach ($bobots as $bobot)
+            <option value="{{ $bobot->id }}">
+                {{ $bobot->keterangan }} ({{ $bobot->normalisasi }})
+            </option>
+        @endforeach
     </x-input-dropdown>
-    <x-input-dropdown name="kategori" wire:model="kategori" />
 
-    @foreach ($pilihan as $key => $value)
-        <x-input
-            placeholder="{{$key}}"
-            error="pilihan.{{$key}}"
-            type="text"
-            wire:model="pilihan.{{$key}}"
-        />
-    @endforeach
 
-    <div class="flex gap-2">
-        <x-button
-            wire:click="addPilihan"
-            type="button"
-            class="text-primary flex items-center gap-2 text-sm duration-300 hover:shadow-lg"
-        >
-            Tambah Pilihan
+    <x-input-dropdown name="kategori" error="kategori" wire:model="kategori" >
+        <option value="">Pilih Kategori</option>
+        <option value="Benefit">Benefit</option>
+        <option value="Cost">Cost</option>
+    </x-input-dropdown>
 
-            <svg
-                class="h-6 w-6"
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+    <div
+        class="col-span-2 grid grid-cols-1 justify-center gap-4 md:grid-cols-2"
+    >
+        @foreach ($pilihans as $key => $value)
+            <div class="flex items-center gap-2">
+                <x-input
+                    placeholder="Pilihan {{$key + 1}}"
+                    error="pilihans.{{$key}}.text"
+                    type="text"
+                    wire:model.live="pilihans.{{$key}}.text"
+                    class-wrapper="grow"
+                />
+
+                <p
+                    class="bg-primary rounded-lg px-3 py-2 text-xs text-white md:text-base"
+                >
+                    Nilai {{ $value["nilai"] }}
+                </p>
+            </div>
+        @endforeach
+
+        <div class="flex gap-2">
+            <x-button
+                wire:click="addPilihan"
+                type="button"
+                class="text-primary flex items-center gap-2 text-sm duration-300 hover:shadow-lg"
             >
-                <g>
-                    <rect width="52" height="52" />
-                    <path
-                        id="Path"
-                        d="M9.75 1.625C9.75 0.727545 9.02243 0 8.125 0C7.22757 0 6.5 0.727545 6.5 1.625C6.5 1.625 6.5 6.5 6.5 6.5C6.5 6.5 1.625 6.5 1.625 6.5C0.727545 6.5 0 7.22757 0 8.125C0 9.02243 0.727545 9.75 1.625 9.75C1.625 9.75 6.5 9.75 6.5 9.75C6.5 9.75 6.5 14.625 6.5 14.625C6.5 15.5224 7.22757 16.25 8.125 16.25C9.02243 16.25 9.75 15.5224 9.75 14.625C9.75 14.625 9.75 9.75 9.75 9.75C9.75 9.75 14.625 9.75 14.625 9.75C15.5224 9.75 16.25 9.02243 16.25 8.125C16.25 7.22757 15.5224 6.5 14.625 6.5C14.625 6.5 9.75 6.5 9.75 6.5L9.75 1.625C9.75 1.625 9.75 1.625 9.75 1.625Z"
-                        fill="#40A578"
-                        transform="translate(17.875 17.875)"
-                    />
-                    <path
-                        id="Shape"
-                        d="M23.2917 0C10.428 0 0 10.428 0 23.2917C0 36.1554 10.428 46.5833 23.2917 46.5833C36.1554 46.5833 46.5833 36.1554 46.5833 23.2917C46.5833 10.428 36.1554 0 23.2917 0C23.2917 0 23.2917 0 23.2917 0ZM3.25 23.2917C3.25 12.223 12.223 3.25 23.2917 3.25C34.3603 3.25 43.3333 12.223 43.3333 23.2917C43.3333 34.3603 34.3603 43.3333 23.2917 43.3333C12.223 43.3333 3.25 34.3603 3.25 23.2917C3.25 23.2917 3.25 23.2917 3.25 23.2917Z"
-                        fill="#40A578"
-                        fill-rule="evenodd"
-                        transform="translate(2.709 2.708)"
-                    />
-                </g>
-            </svg>
-        </x-button>
+                Tambah Pilihan
+
+                <svg
+                    class="h-6 w-6"
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g>
+                        <rect width="52" height="52" />
+                        <path
+                            id="Path"
+                            d="M9.75 1.625C9.75 0.727545 9.02243 0 8.125 0C7.22757 0 6.5 0.727545 6.5 1.625C6.5 1.625 6.5 6.5 6.5 6.5C6.5 6.5 1.625 6.5 1.625 6.5C0.727545 6.5 0 7.22757 0 8.125C0 9.02243 0.727545 9.75 1.625 9.75C1.625 9.75 6.5 9.75 6.5 9.75C6.5 9.75 6.5 14.625 6.5 14.625C6.5 15.5224 7.22757 16.25 8.125 16.25C9.02243 16.25 9.75 15.5224 9.75 14.625C9.75 14.625 9.75 9.75 9.75 9.75C9.75 9.75 14.625 9.75 14.625 9.75C15.5224 9.75 16.25 9.02243 16.25 8.125C16.25 7.22757 15.5224 6.5 14.625 6.5C14.625 6.5 9.75 6.5 9.75 6.5L9.75 1.625C9.75 1.625 9.75 1.625 9.75 1.625Z"
+                            fill="#40A578"
+                            transform="translate(17.875 17.875)"
+                        />
+                        <path
+                            id="Shape"
+                            d="M23.2917 0C10.428 0 0 10.428 0 23.2917C0 36.1554 10.428 46.5833 23.2917 46.5833C36.1554 46.5833 46.5833 36.1554 46.5833 23.2917C46.5833 10.428 36.1554 0 23.2917 0C23.2917 0 23.2917 0 23.2917 0ZM3.25 23.2917C3.25 12.223 12.223 3.25 23.2917 3.25C34.3603 3.25 43.3333 12.223 43.3333 23.2917C43.3333 34.3603 34.3603 43.3333 23.2917 43.3333C12.223 43.3333 3.25 34.3603 3.25 23.2917C3.25 23.2917 3.25 23.2917 3.25 23.2917Z"
+                            fill="#40A578"
+                            fill-rule="evenodd"
+                            transform="translate(2.709 2.708)"
+                        />
+                    </g>
+                </svg>
+            </x-button>
+        </div>
         <x-button
             wire:click="removePilihan"
             type="button"
             @class([
                 " flex gap-2 items-center  text-sm text-red-500 hover:shadow-lg duration-300",
-                "hidden" => count($pilihan) <= 5,
+                "hidden" => count($pilihans) <= 5,
             ])
         >
             Hapus PIlihan

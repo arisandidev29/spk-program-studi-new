@@ -1,5 +1,6 @@
 @props([
     "name" => "",
+    "error" => null
 ])
 <div>
     <select
@@ -12,13 +13,12 @@
         {{ $attributes }}
     >
         @if ($slot)
-            <option value="">{{ $name }}</option>
             {{ $slot }}
         @else
             <option value="">Dropdown</option>
         @endif
     </select>
-    @error($name)
+    @error($error)
         <p class="text-sm text-red-500">{{ $message }}</p>
     @enderror
 </div>

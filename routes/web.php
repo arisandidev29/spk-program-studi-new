@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EditAlternative;
 use App\Http\Controllers\EditBobot as ControllersEditBobot;
+use App\Http\Controllers\EditKriteria as ControllersEditKriteria;
 use App\Http\Controllers\UserController;
 use App\Livewire\BobotEdit;
 use App\Livewire\EditBobot;
@@ -38,10 +40,11 @@ Route::prefix('admin')->middleware(['adminAuth'])->group(function () {
     Route::view('/users', 'admin.users')->name('admin.users');
     Route::view('/kriteria', 'admin.kriteria')->name('admin.kriteria');
     Route::view('/kriteria/create', 'admin.buat_kriteria')->name('admin.kriteria.create');
-    Route::get('/kriteria/{id}/edit', EditKriteria::class)->name('admin.kriteria.edit');
+    Route::get('/kriteria/{id}/edit', [ControllersEditKriteria::class,'view'])->name('admin.kriteria.edit');
     Route::view("/bobot", 'admin.bobot')->name('admin.bobot');
     Route::get('/bobot/{id}/edit',[ControllersEditBobot::class,'view'])->name('admin.bobot.edit');
     Route::view('/alternative', 'admin.alternative')->name('admin.alternative');
+    Route::get('/altervative/{id}/edit', [EditAlternative::class,'view'])->name('admin.alternative.edit');
 });
 
 

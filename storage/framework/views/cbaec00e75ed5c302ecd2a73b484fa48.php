@@ -12,9 +12,9 @@
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
-[$__name, $__params] = $__split('kriteria-list', []);
+[$__name, $__params] = $__split('edit-kriteria', ['id' => $id]);
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-1891702335-0', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-3342363353-0', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 
@@ -33,5 +33,4 @@ if (isset($__slots)) unset($__slots);
 <?php if (isset($__componentOriginale0f1cdd055772eb1d4a99981c240763e)): ?>
 <?php $component = $__componentOriginale0f1cdd055772eb1d4a99981c240763e; ?>
 <?php unset($__componentOriginale0f1cdd055772eb1d4a99981c240763e); ?>
-<?php endif; ?>
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/kriteria.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/admin/kriteria_edit.blade.php ENDPATH**/ ?>

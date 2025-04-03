@@ -4,7 +4,7 @@
     "label",
     "description",
 ])
-<label class="flex cursor-pointer flex-col items-center">
+<label class="flex cursor-pointer flex-col flex-1 items-center">
     <input
         type="radio"
         class="hidden"
@@ -16,9 +16,9 @@
     />
     <p
         :class="{ 'bg-dark-primary text-white! hover:bg-dark-primary! ': selected === {{ $value }} }"
-        class="border-primary text-primary hover:bg-primary grid h-8 w-8 place-content-center rounded-full border text-sm transition duration-300 hover:text-white md:h-12 md:w-12 md:text-base"
+        class="border-primary text-primary text-center hover:bg-primary grid h-8 w-8 place-content-center rounded-full border text-sm transition duration-300 hover:text-white md:h-12 md:w-12 md:text-base"
     >
         {{ $label }}
     </p>
-    <small class="text-xs md:text-sm">{{ $description }}</small>
+    <small class="text-xs  text-center">{{ $description }}</small>
 </label>

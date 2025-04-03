@@ -9,6 +9,7 @@
         Tambah Alternative
     </h1>
 
+    <x-input placeholder="Kode Alternative" error="kode" class="w-[90%]" wire:model="kode" />
     <x-input placeholder="name" class="w-[90%]" wire:model="name" />
 
     <div

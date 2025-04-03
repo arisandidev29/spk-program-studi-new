@@ -4,7 +4,7 @@ $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     "kriteria" => "Kriteria name",
     "question" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste, sapiente, labore facilis molestias alias blanditiis, error assumenda non aliquam expedita ullam consequatur. Ullam impedit sapiente quidem quia atque quibusdam.",
-    "note" => "tes",
+    "note",
     "number" => "1",
 ]));
 
@@ -24,7 +24,7 @@ unset($__newAttributes);
 foreach (array_filter(([
     "kriteria" => "Kriteria name",
     "question" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste, sapiente, labore facilis molestias alias blanditiis, error assumenda non aliquam expedita ullam consequatur. Ullam impedit sapiente quidem quia atque quibusdam.",
-    "note" => "tes",
+    "note",
     "number" => "1",
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
@@ -44,13 +44,13 @@ unset($__defined_vars); ?>
 
     </p>
 
-    <?php if($note): ?>
+    <!--[if BLOCK]><![endif]--><?php if($note): ?>
         <hr class="border-divider my-4" />
         <span class="bg-primary rounded-2xl px-2 py-2 text-sm text-white">
             Note !
         </span>
         <p class="my-2 text-xs md:text-sm"><?php echo e($note); ?></p>
-    <?php endif; ?>
+    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
 
     <span
         class="bg-primary absolute -top-3 -left-4 flex h-8 w-8 items-center justify-center rounded-full text-white md:top-5 md:-left-12"

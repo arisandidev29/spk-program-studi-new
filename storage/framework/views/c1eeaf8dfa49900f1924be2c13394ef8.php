@@ -37,7 +37,7 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<label class="flex cursor-pointer flex-col items-center">
+<label class="flex cursor-pointer flex-col flex-1 items-center">
     <input
         type="radio"
         class="hidden"
@@ -50,11 +50,11 @@ unset($__defined_vars); ?>
     />
     <p
         :class="{ 'bg-dark-primary text-white! hover:bg-dark-primary! ': selected === <?php echo e($value); ?> }"
-        class="border-primary text-primary hover:bg-primary grid h-8 w-8 place-content-center rounded-full border text-sm transition duration-300 hover:text-white md:h-12 md:w-12 md:text-base"
+        class="border-primary text-primary text-center hover:bg-primary grid h-8 w-8 place-content-center rounded-full border text-sm transition duration-300 hover:text-white md:h-12 md:w-12 md:text-base"
     >
         <?php echo e($label); ?>
 
     </p>
-    <small class="text-xs md:text-sm"><?php echo e($description); ?></small>
+    <small class="text-xs  text-center"><?php echo e($description); ?></small>
 </label>
 <?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/radio-option.blade.php ENDPATH**/ ?>

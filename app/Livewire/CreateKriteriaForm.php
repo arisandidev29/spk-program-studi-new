@@ -2,43 +2,70 @@
 
 namespace App\Livewire;
 
+use App\Service\BobotServiceInterface;
+use App\Service\KriteriaSeriveInterface;
+use App\Service\PilihanJawabanInterfaces;
+use App\Service\PilihanJawabanServiceInterfaces;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class CreateKriteriaForm extends Component
 {
 
-    public $pilihan = [
-        'pilihan 1' => '',
-        'pilihan 2' => '',
-        'pilihan 3' => '' ,
-        'pilihan 4' => '', 
-        'pilihan 5' => ''
+    public  $pilihans = [
+        [
+            'text' => '',
+            'nilai' => '90'
+        ],
+        [
+            'text' => '',
+            'nilai' => '80'
+        ],
+        [
+            'text' => '',
+            'nilai' => '70'
+        ],
+        [
+            'text' => '',
+            'nilai' => '60'
+        ],
+        [
+            'text' => '',
+            'nilai' => '50'
+        ],
+
     ];
 
-    // #[Validate('required')]
+
+
     public $kriteria ;
 
-    // #[Validate('required')]
-    public $pertanyaan;
+    public $desc;
 
-    // #[Validate('required')]
+    public $note;
+
     public $bobot;
 
-    // #[Validate('required')]
     public $kategori;
+
+    public $defaultValuePiilhan = 90;
+
+
+    // bobot dropdown
+    public $bobots;
+
 
 
     protected function rules() {
         $rule = [
             "kriteria" => 'required',
-            "pertanyaan" => 'required',
+            "desc" => 'required',
             "bobot" => 'required',
             "kategori" => 'required'
         ];
 
-        foreach ($this->pilihan as $key => $value) {
-            $rule["pilihan.{$key}"] = 'required|string|max:255'; // Aturan contoh
+        foreach ($this->pilihans as $key => $value) {
+            $rule["pilihans.{$key}.text"] = 'required|string|max:255';
         }
 
 
@@ -47,31 +74,62 @@ class CreateKriteriaForm extends Component
     }
 
     protected function validationAttributes() {
-        $rule = [];
-        foreach ($this->pilihan as $key => $value) {
-            $rule["pilihan.{$key}"] = $key; 
+        $rule = [
+            'desc' => 'deskription',
+        ];
+        foreach ($this->pilihans as $key => $value) {
+            $rule["pilihans.{$key}.text"] = 'pilhan ' .  $key + 1; 
         }
 
         return $rule;
 
     }
 
-    public function update() {
-        dump($this->pilihan);
+
+    public function mount(BobotServiceInterface $bobotService) {
+        $this->bobots = $bobotService->getAllBobots();
     }
 
 
     public function addPilihan() {
-        $this->pilihan["pilihan " . (count($this->pilihan) + 1)] =   '';
+        $lastPilhan = end($this->pilihans);
+        $lastNilai = $lastPilhan['nilai'];
+
+        $newNilai = max(10, $lastNilai - 5);
+        $this->pilihans[] = [
+            'text' => '',
+            'nilai' => $newNilai
+        ];
     }
 
     public function removePilihan() {
-        $this->pilihan = array_slice($this->pilihan, 0, -1);
+        $this->pilihans = array_slice($this->pilihans, 0, -1);
     }
 
 
-    public function save() {
+    public function save(KriteriaSeriveInterface $KriteriaService, PilihanJawabanServiceInterfaces $PilihanJawabanService) {
         $this->validate();
+        $kriteria = $KriteriaService->createKriteria([
+            'kriteria' => $this->kriteria,
+            'desc' => $this->desc,
+            'note' => $this->note,
+            'kategori' => $this->kategori,
+            'bobot_id' => $this->bobot
+        ]);
+
+        foreach($this->pilihans as $pilihan){
+            $PilihanJawabanService->createPilihan([
+                'name' => $pilihan['text'],
+                'nilai' => $pilihan['nilai'],
+                'id_kriteria' => $kriteria->id
+            ]);
+        }
+
+        $this->dispatch('alert-success', message: 'Success buat kriteria !');
+
+
+
+
     }
 
 

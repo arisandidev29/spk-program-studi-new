@@ -2,6 +2,7 @@
     "placeholder" => "",
     "value" => "",
     "parrentClass" => "",
+    "error" => null
 ])
 <div x-data="{ value: @js($value) }" class="{{ $parrentClass }} relative">
     <textarea
@@ -25,7 +26,7 @@
         {{ $placeholder }}
     </label>
 
-    @error($placeholder)
+    @error($error ?? $placeholder)
         <p class="text-sm text-red-500">{{ $message }}</p>
     @enderror
 </div>

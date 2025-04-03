@@ -2,8 +2,16 @@
 
 namespace App\Providers;
 
+use App\Models\Kriteria;
+use App\Service\AlternativeService;
+use App\Service\AlternativeServiceInterface;
 use App\Service\BobotService;
 use App\Service\BobotServiceInterface;
+use App\Service\KriteriaSeriveInterface;
+use App\Service\KriteriaService;
+use App\Service\PilihanJawabanInterfaces;
+use App\Service\PilihanJawabanService;
+use App\Service\PilihanJawabanServiceInterfaces;
 use App\Service\TokenService;
 use App\Service\TokenServiceInterface;
 use App\Service\UserService;
@@ -18,7 +26,10 @@ class AppServiceProvider extends ServiceProvider
 
     public $singletons = [
         BobotServiceInterface::class => BobotService::class,
-        UserServiceInterface::class => UserService::class
+        UserServiceInterface::class => UserService::class,
+        KriteriaSeriveInterface::class => KriteriaService::class,
+        AlternativeServiceInterface::class => AlternativeService::class,
+        PilihanJawabanServiceInterfaces::class => PilihanJawabanService::class
     ];
 
     

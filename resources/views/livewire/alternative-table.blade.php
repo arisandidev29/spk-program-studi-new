@@ -13,6 +13,10 @@
         Tambah Alternative
     </x-button>
 
+    {{-- alert --}}
+    <x-alert.succesfull />
+    {{-- endalert --}}
+
     <div class="overflow-auto">
         <table class="my-2">
             <thead>
@@ -25,45 +29,44 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-xs md:text-sm">
-                    <td>1</td>
-                    <td>Ak</td>
-                    <td>Sistem Informasi</td>
-                    <td>
-                        @php
-                            $data = [
-                                "name" => "sistem informasi",
-                            ];
-                            // dd($data);
-                        @endphp
-
-                        <x-button
-                            class="bg-secondary px-2! text-black"
-                            @click="$dispatch('modaledit-open',{value: {{json_encode($data)}} })"
-                        >
-                            Edit
-                        </x-button>
-                    </td>
-                    <td>
-                        <x-button
-                            @click="$dispatch('modaldelete-open',{id : 'id alternative'})"
-                            class="rounded-lg bg-red-500 px-1!"
-                        >
-                            <img
-                                src="/asset/trash.svg"
-                                alt="trash"
-                                class="w-4 md:w-6"
-                            />
-                        </x-button>
-                    </td>
-                </tr>
+                @foreach ($alternatives as $index => $value)
+                    <tr class="text-xs md:text-sm">
+                        <td>{{$index + 1}}</td>
+                        <td>{{$value->kode}}</td>
+                        <td>{{$value->name}}</td>
+                        <td>
+                            <a wire:navigate href="{{route('admin.alternative.edit', $value->id)}}">
+                                <x-button
+                                class="bg-secondary px-2! text-black"
+                                >
+                                Edit
+                            </x-button>
+                        </a>
+                        </td>
+                        <td>
+                            <x-button
+                                @click="$dispatch('modaldelete-open',{
+                                    kode : '{{$value->kode}}',
+                                    id : '{{$value->id}}'
+                                })"
+                                class="rounded-lg bg-red-500 px-1!"
+                            >
+                                <img
+                                    src="/asset/trash.svg"
+                                    alt="trash"
+                                    class="w-4 md:w-6"
+                                />
+                            </x-button>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 
     {{-- pegination --}}
-
-    <div class="mx-auto mt-8 flex w-max items-center gap-4">
+    {{$alternatives->links()}}
+    {{-- <div class="mx-auto mt-8 flex w-max items-center gap-4">
         <div
             class="bg-dark-primary grid h-8 w-10 place-content-center rounded-full py-1"
         >
@@ -104,24 +107,26 @@
                 class="mx-auto w-[90%] rotate-180"
             />
         </div>
-    </div>
+    </div> --}}
+    
+
     {{-- modal --}}
 
     <livewire:tambah-alterantive />
-    <livewire:edit-alterantive />
 
     <x-modal-dialog
-        x-data="{show : false, id : ''}"
+        x-data="{show : false, kode : '', id : ''}"
         x-on:modaldelete-open.window="
         show = true;
-        id = $event.detail.id;
+        kode = $event.detail.kode;
+        id = $event.detail.id
         "
         x-on:modaldelete-close.window="show = false"
         content-class="text-center"
     >
         <h1 class="text-primary my-4 text-2xl">
-            Yakin Hapus Alternative ini ?
-        </h1>
+            Yakin Hapus Alternative <span class="font-bold" x-text="kode"></span> ?
+        </h1> 
         <div class="my-2 flex justify-center gap-4">
             <x-button
                 class="bg-red-500 text-white"

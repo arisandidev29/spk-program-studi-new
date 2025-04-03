@@ -21,9 +21,6 @@ class BobotTable extends Component
     // public $bobots;
 
     public function mount(BobotServiceInterface $bobotService) {
-        // $this->bobots = $bobotService->getBobotsByPagination(2); 
-        // $this->bobots = Bobot::paginate(2); 
-        // dd($this->bobots);
     }
     
 
@@ -31,6 +28,10 @@ class BobotTable extends Component
         $this->modalTambah = !$this->modalTambah;
     }
 
+    #[On('refresh-bobot')]
+    public function refresh() {
+        $this->resetPage();
+    }
 
     public function deleteBobot(BobotServiceInterface $bobotService,$id) {
         $bobotService->deleteBobot($id);

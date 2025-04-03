@@ -12,4 +12,6 @@ class Alternative extends Model
         'kode',
         'name'
     ];
+
+    
 }

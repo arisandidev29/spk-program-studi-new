@@ -9,7 +9,7 @@
     x-data="{
         value: '{{ $value }}' ?? @entangle($attributes->wire("model")),
     }"
-    class="relative"
+    class="relative {{$attributes->get('class-wrapper')}}"
 >
     <input
         id="{{ $placeholder }}"

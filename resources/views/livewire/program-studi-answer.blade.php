@@ -12,10 +12,9 @@
         x-data="{ selected: null }"
         class="mx-auto mt-2 flex justify-around gap-4 md:w-[70%]"
     >
-        <x-radio-option value="1" label="1" description="sangat tertarik" />
-        <x-radio-option value="2" label="2" description="tertarik" />
-        <x-radio-option value="3" label="3" description="lumayan" />
-        <x-radio-option value="4" label="4" description="tidak tertarik" />
+        @foreach ($pilihans as  $index => $value)
+            <x-radio-option value="{{$value->nilai}}" label="{{$index + 1 }}" description="{{$value->name}}" />
+        @endforeach
     </div>
 
     @error("selected")
