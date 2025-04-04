@@ -29,7 +29,7 @@ class KriteriaList extends Component
         $this->kriterias = $kriteriaService->getAllKriteria();
         $this->alterantives = $alternativeService->getAllAlternative();
         $this->dispatch('refresh-pilihan');
-        $this->dispatch('alert-success', message : 'Success Delete Kriteria !');
+        $this->dispatch('alert-danger', message : 'Success Delete Kriteria !');
         $this->dispatch('modaldelete-close');
     }
     public function render()

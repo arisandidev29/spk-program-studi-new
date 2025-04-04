@@ -45,10 +45,10 @@
 
     
 
-    <?php if (isset($component)) { $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.succesfull','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('alert.succesfull'); ?>
+    <?php if (isset($component)) { $__componentOriginalf45b1c0e8778cb8b2622428c1655559e = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf45b1c0e8778cb8b2622428c1655559e = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.danger','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('alert.danger'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
@@ -57,13 +57,13 @@
 <?php $component->withAttributes([]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
-<?php $attributes = $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
-<?php unset($__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php if (isset($__attributesOriginalf45b1c0e8778cb8b2622428c1655559e)): ?>
+<?php $attributes = $__attributesOriginalf45b1c0e8778cb8b2622428c1655559e; ?>
+<?php unset($__attributesOriginalf45b1c0e8778cb8b2622428c1655559e); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc)): ?>
-<?php $component = $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc; ?>
-<?php unset($__componentOriginalaa74a36c765b9eb44868c8de081ee2dc); ?>
+<?php if (isset($__componentOriginalf45b1c0e8778cb8b2622428c1655559e)): ?>
+<?php $component = $__componentOriginalf45b1c0e8778cb8b2622428c1655559e; ?>
+<?php unset($__componentOriginalf45b1c0e8778cb8b2622428c1655559e); ?>
 <?php endif; ?>
     
 
@@ -290,6 +290,7 @@ if (isset($__slots)) unset($__slots);
             ','x-on:modaldelete-close.window' => 'show = false']); ?>
             <h2 class="text-center text-lg md:text-2xl">
                 Yakin hapus Kriteria <span x-text="kriteria"></span> ?
+                
             </h2>
             <div class="mt-6 flex justify-center gap-4">
                 <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>

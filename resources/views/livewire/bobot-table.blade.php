@@ -17,6 +17,7 @@
 
     {{-- alert --}}
 
+    <x-alert.danger/>
     <x-alert.succesfull />
     
     {{-- end alert --}}
@@ -144,6 +145,8 @@
             Yakin Hapus Bobot
             <span x-text="name"></span>
             ?
+
+            <small class="block text-xs md:text-sm"> <span class="text-red-500 italic font-bold">Warning !!</span> Kriteria yang menggunakan Bobot ini juga akan ikut terhapus !!</small>
         </h1>
         <div class="my-2 flex justify-center gap-4">
             <x-button

@@ -28,6 +28,26 @@
     </div>
 
     
+        <?php if (isset($component)) { $__componentOriginalf45b1c0e8778cb8b2622428c1655559e = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf45b1c0e8778cb8b2622428c1655559e = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.danger','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('alert.danger'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf45b1c0e8778cb8b2622428c1655559e)): ?>
+<?php $attributes = $__attributesOriginalf45b1c0e8778cb8b2622428c1655559e; ?>
+<?php unset($__attributesOriginalf45b1c0e8778cb8b2622428c1655559e); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf45b1c0e8778cb8b2622428c1655559e)): ?>
+<?php $component = $__componentOriginalf45b1c0e8778cb8b2622428c1655559e; ?>
+<?php unset($__componentOriginalf45b1c0e8778cb8b2622428c1655559e); ?>
+<?php endif; ?>
         <?php if (isset($component)) { $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert.succesfull','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -123,7 +143,7 @@
                             <span
                                 class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
                             >
-                                Sudah Daftar
+                                Sudah Memilih 
                             </span>
                         </td>
                         <td>

@@ -16,7 +16,7 @@ class UsersTable extends Component
     public function delete(UserServiceInterface $userService, $id) {
         $userService->deleteUser($id);
         $this->dispatch('modaldelete-close');
-        $this->dispatch('alert-success', message : "success Delete User !!");
+        $this->dispatch('alert-danger', message : "success Delete User !!");
     }
     public function render(UserServiceInterface $userService)
     {

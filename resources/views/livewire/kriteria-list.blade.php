@@ -18,7 +18,7 @@
 
     {{-- alert --}}
 
-    <x-alert.succesfull />
+    <x-alert.danger />
     {{-- end alert --}}
 
     <div
@@ -169,6 +169,7 @@
         >
             <h2 class="text-center text-lg md:text-2xl">
                 Yakin hapus Kriteria <span x-text="kriteria"></span> ?
+                
             </h2>
             <div class="mt-6 flex justify-center gap-4">
                 <x-button class="bg-red-500 text-sm text-white md:text-base" @click="$wire.deleteKriteria(id)">

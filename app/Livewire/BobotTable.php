@@ -35,7 +35,8 @@ class BobotTable extends Component
 
     public function deleteBobot(BobotServiceInterface $bobotService,$id) {
         $bobotService->deleteBobot($id);
-        $this->dispatch('alert-success',message : 'Success Delete Bobot');
+        $this->dispatch('alert-danger',message : 'Success Delete Bobot');
+        $this->dispatch('modaldelete-close');
     }
 
 

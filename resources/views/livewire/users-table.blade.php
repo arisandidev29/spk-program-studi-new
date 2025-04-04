@@ -16,6 +16,7 @@
     </div>
 
     {{-- alert --}}
+        <x-alert.danger />
         <x-alert.succesfull   />
     {{-- end alert --}}
 
@@ -57,7 +58,7 @@
                             <span
                                 class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
                             >
-                                Sudah Daftar
+                                Sudah Memilih 
                             </span>
                         </td>
                         <td>
