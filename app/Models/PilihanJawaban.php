@@ -18,4 +18,8 @@ class PilihanJawaban extends Model
     {
         return $this->belongsTo(Kriteria::class);
     }
+    public function UserJawaban()
+    {
+        return $this->hasMany(UserJawaban::class);
+    }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nilai');
-            $table->unsignedBigInteger('id_kriteria');
+            $table->uuid('id_kriteria');
             $table->timestamps();
 
             $table->foreign('id_kriteria')->references('id')->on('kriterias');

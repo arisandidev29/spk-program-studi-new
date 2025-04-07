@@ -5,6 +5,8 @@ namespace App\Livewire;
 use App\Models\Kriteria;
 use App\Service\KriteriaSeriveInterface;
 use App\Service\PilihanJawabanServiceInterfaces;
+use Dotenv\Exception\ValidationException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
@@ -19,8 +21,11 @@ class ProgramStudiAnswer extends Component
 
     public $pilihans;
 
+    public $pilihanSelected;
+
     #[Validate('required', message: 'Wajib di pililh salah satu !')]
     public $selected;
+
 
 
     public function mount(KriteriaSeriveInterface $kriteriaService)
@@ -43,14 +48,39 @@ class ProgramStudiAnswer extends Component
             return;
         }
 
-        try {
-            $kriteria = $kriteriaService->getKriteriaById($this->kriteria_id)->pilihanJawaban;
-            $this->pilihans = $kriteria ?? [];
-            Log::info("loadend pilihan for id kriteria {$this->kriteria_id} => " . json_encode($this->pilihans));
-        } catch (\Exception $e) {
-            $this->pilihans = [];
-            Log::info('no pilhan loaded for kriteira {$this->kriteria_id}');
+        $pilihan = $kriteriaService->getKriteriaById($this->kriteria_id)->pilihanJawaban->map(function ($jawaban) {
+            return (object)[
+                'id' => $jawaban->id,
+                'name' => $jawaban->name,
+                'nilai' => $jawaban->nilai,
+                'kriteria' => $jawaban->kriteria,
+                'program_studi' => $jawaban->program_studi,
+                'description' => $jawaban->description,
+                'kriteria_id' => $jawaban->kriteria_id,
+                'is_selected' => false,
+
+            ];
+        });
+
+
+        if (Auth::user()->UserJawaban()->where('kriteria_id', $this->kriteria_id)->exists()) {
+            $userJawaban = Auth::user()->UserJawaban()
+                                ->where('kriteria_id', $this->kriteria_id)
+                                ->where('alternative_id', $this->programStudi->id)
+                                ->first();
+
+            $pilihan= $pilihan->map(function ($item) use ($userJawaban) {
+                if ($item->id == $userJawaban->pilihan_jawaban_id) {
+                    $item->is_selected = true;
+                }
+                $this->selected = $userJawaban->pilihan_jawaban_id;
+                return $item;
+            });
+
+
         }
+
+        $this->pilihans = $pilihan->all() ?? [];
     }
 
     public function setSelectedValue(string $value)
@@ -61,7 +91,16 @@ class ProgramStudiAnswer extends Component
     #[On('send')]
     public function validateRadion()
     {
-        $this->validate();
+        try {
+            $this->validate();
+            $this->dispatch(
+                'validation-passed',
+                programStudi: $this->programStudi,
+                pilihanJawaban: $this->selected
+            )->to('question');
+        } catch (ValidationException $e) {
+            throw $e;
+        }
     }
 
     public function render()

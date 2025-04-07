@@ -16,7 +16,6 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function token(TokenServiceInterface $token) {
-        dd($token);
-    }
+
+
 }

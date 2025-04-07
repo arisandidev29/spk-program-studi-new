@@ -4,6 +4,7 @@ use App\Http\Controllers\EditAlternative;
 use App\Http\Controllers\EditBobot as ControllersEditBobot;
 use App\Http\Controllers\EditKriteria as ControllersEditKriteria;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDashboardController;
 use App\Livewire\BobotEdit;
 use App\Livewire\EditBobot;
 use App\Livewire\EditKriteria;
@@ -28,7 +29,7 @@ Route::view('/register', 'singup')->name('register')->middleware('guestAuth');
 
 Route::view('/dashboard', 'user.dashboard')->name('dashboard')->middleware(['userAuth']);
 Route::view('/profile','user.profile')->middleware(['auth','userAuth'])->name('user.profile');
-Route::get('/question', Question::class)->name('question');
+Route::get('/question/{id}/kriteria', Question::class)->name('question');
 
 Route::get('/tes', [UserController::class, 'token']);
 

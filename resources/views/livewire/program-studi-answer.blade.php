@@ -2,7 +2,7 @@
     <div
         class="border-primary text-primary mt-2 rounded-lg border px-4 py-2 shadow-xl"
     >
-        <p class="text-sm md:text-base">{{ $programStudi }}</p>
+        <p class="text-sm md:text-base">{{ $programStudi->name }}</p>
         @if ($description)
             <p class="mt-2 text-sm text-black">{{ $description }}</p>
         @endif
@@ -13,7 +13,7 @@
         class="mx-auto mt-2 flex justify-around gap-4 md:w-[70%]"
     >
         @foreach ($pilihans as  $index => $value)
-            <x-radio-option value="{{$value->nilai}}" label="{{$index + 1 }}" description="{{$value->name}}" />
+            <x-radio-option :key="$value->id" :id="$value->id" value="{{$value->id}}" :name="$value->id" label="{{$index + 1 }}" description="{{$value->name}}"  :selected="$selected"/>
         @endforeach
     </div>
 

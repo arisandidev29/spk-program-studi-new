@@ -145,7 +145,7 @@
                         <livewire:program-studi-answer 
                             :key="$alternative->id . '-' . $kriteria->id"
                             kriteria_id="{{$kriteria->id}}"
-                            programStudi="{{$alternative->name}}" 
+                            :programStudi="$alternative" 
                         />
                     @endforeach
                 </div>

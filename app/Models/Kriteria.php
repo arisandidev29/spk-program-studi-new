@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Kriteria extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
     protected $table = 'kriterias';
     protected $fillable = [
         'kriteria',
@@ -27,7 +28,8 @@ class Kriteria extends Model
         static::creating(function ($model) {
             // Ambil data terakhir untuk menentukan nomor berikutnya
             $lastKriteria = self::orderBy('id', 'desc')->first();
-            $number = $lastKriteria ? (int) filter_var($lastKriteria->id, FILTER_SANITIZE_NUMBER_INT) + 1 : 1;
+            $number = $lastKriteria ? $lastKriteria->sequence + 1 : 1;
+            $model->sequence = $number;
             $model->kode_kriteria = 'C' . $number; // Contoh: C1, C2, dst.
         });
     }

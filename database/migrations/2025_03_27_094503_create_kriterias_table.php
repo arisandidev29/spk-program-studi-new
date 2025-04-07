@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kriterias', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->integer('sequence')->nullable();
             $table->string('kode_kriteria')->unique();
             $table->string('kriteria')->nullable();
             $table->text('desc')->nullable();
