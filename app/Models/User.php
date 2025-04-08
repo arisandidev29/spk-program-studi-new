@@ -55,4 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(UserJawaban::class);
     }
+
+    public function VektorS()
+    {
+        return $this->hasMany(VektorS::class);
+    }
+
+    
 }

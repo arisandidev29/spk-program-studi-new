@@ -16,6 +16,8 @@ use App\Service\TokenService;
 use App\Service\TokenServiceInterface;
 use App\Service\UserService;
 use App\Service\UserServiceInterface;
+use App\Service\VektorSService;
+use App\Service\VektorSServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,7 +31,8 @@ class AppServiceProvider extends ServiceProvider
         UserServiceInterface::class => UserService::class,
         KriteriaSeriveInterface::class => KriteriaService::class,
         AlternativeServiceInterface::class => AlternativeService::class,
-        PilihanJawabanServiceInterfaces::class => PilihanJawabanService::class
+        PilihanJawabanServiceInterfaces::class => PilihanJawabanService::class,
+        VektorSServiceInterface::class => VektorSService::class
     ];
 
     

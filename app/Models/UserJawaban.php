@@ -19,8 +19,14 @@ class UserJawaban extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function kriteria() {
+        return $this->belongsTo(Kriteria::class,'kriteria_id');
+    }
+
     public function pilihanJawaban()
     {
         return $this->belongsTo(PilihanJawaban::class);
     }
+
+    
 }

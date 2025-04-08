@@ -13,5 +13,10 @@ class Alternative extends Model
         'name'
     ];
 
+    public function VektorS() 
+    {
+        return $this->hasMany(VektorS::class);
+    }
+
     
 }
