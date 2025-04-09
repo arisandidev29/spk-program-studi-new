@@ -30,8 +30,7 @@ Route::view('/register', 'singup')->name('register')->middleware('guestAuth');
 Route::view('/dashboard', 'user.dashboard')->name('dashboard')->middleware(['userAuth']);
 Route::view('/profile','user.profile')->middleware(['auth','userAuth'])->name('user.profile');
 Route::get('/question/{id}/kriteria', Question::class)->name('question');
-
-Route::get('/tes', [UserController::class, 'token']);
+route::view('/result','user.result')->name('user.result');
 
 
 // admin

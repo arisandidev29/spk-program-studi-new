@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect width="48" height="48" />
+    <rect id="Rectangle" width="36.183" height="48" fill="#EDEEF0" fill-rule="evenodd" transform="translate(1.059 0)" />
+    <rect id="Rectangle" width="14.474" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 4.224)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 9.037)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 13.851)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 18.665)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 23.478)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 28.292)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 33.105)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 37.919)" />
+    <rect id="Rectangle" width="26.691" height="1.043" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(5.805 42.733)" />
+    <path id="Oval" d="M0 7.84821C0 3.51376 3.51376 0 7.84821 0C12.1827 0 15.6964 3.51376 15.6964 7.84821C15.6964 12.1827 12.1827 15.6964 7.84821 15.6964C3.51376 15.6964 0 12.1827 0 7.84821Z" fill="#90C5FF" fill-rule="evenodd" transform="translate(21.792 21.305)" />
+    <rect id="Rectangle" width="9.602" height="9.602" fill="#59595A" fill-rule="evenodd" transform="translate(36.666 36.179)" />
+    <rect id="Rectangle" width="3.139" height="3.139" fill="#ABCB57" fill-rule="evenodd" transform="translate(35.992 35.506)" />
+    <rect id="Rectangle" width="3.139" height="3.139" fill="#ABCB57" fill-rule="evenodd" transform="translate(43.802 43.314)" />
+    <path id="Shape" d="M24.0492 10.2529L24.7217 8.52324L2.7629 0L2.09277 1.72852L24.0492 10.2529ZM21.9563 12.7274L22.6284 10.9982L0.670958 2.47363L0 4.20299L21.9563 12.7274Z" fill="#FFFFFF" fill-rule="evenodd" transform="translate(20.53 21.194)" />
+    <path id="Shape" d="M17.5039 8.75196C17.5039 6.41426 16.5936 4.21638 14.9405 2.5633C13.2874 0.91033 11.0897 -0.000102997 8.75196 0C6.41426 0 4.21638 0.91033 2.56341 2.5633C0.91033 4.21638 0 6.41416 0 8.75196C0 11.0897 0.91033 13.2875 2.56341 14.9405C4.21649 16.5936 6.41426 17.5039 8.75196 17.5039C10.7828 17.5039 12.7075 16.8162 14.2616 15.5521C14.2616 15.5521 15.6926 16.983 15.6926 16.983L16.983 15.6926C16.983 15.6926 15.5521 14.2616 15.5521 14.2616C16.8162 12.7075 17.5039 10.7828 17.5039 8.75196C17.5039 8.75196 17.5039 8.75196 17.5039 8.75196ZM8.75197 15.6964C6.89708 15.6964 5.15311 14.9741 3.84157 13.6625C2.52991 12.3509 1.80762 10.607 1.80762 8.75207C1.80762 6.89718 2.53002 5.15322 3.84157 3.84167C5.15322 2.53002 6.89708 1.80772 8.75197 1.80762C10.6069 1.80762 12.3508 2.53002 13.6624 3.84167C14.974 5.15322 15.6963 6.89718 15.6963 8.75207C15.6963 10.607 14.9739 12.3509 13.6624 13.6625C12.3507 14.974 10.6069 15.6964 8.75197 15.6964C8.75197 15.6964 8.75197 15.6964 8.75197 15.6964Z" fill="#59595A" transform="translate(20.888 20.401)" />
+    <path id="Path" d="M14.9405 8.75196C14.9405 6.41426 14.0302 4.21638 12.3771 2.56341C10.724 0.91033 8.52626 0 6.18856 0C3.85085 0 1.65297 0.91033 0 2.56341C0 2.56341 1.27816 3.84156 1.27816 3.84156C2.58981 2.52991 4.33367 1.80762 6.18856 1.80762C8.04355 1.80762 9.78741 2.53002 11.099 3.84156C12.4106 5.15322 13.1329 6.89708 13.1329 8.75196C13.1329 10.607 12.4105 12.3508 11.099 13.6624C11.099 13.6624 12.2839 14.8473 12.2839 14.8473L12.3771 14.9405L13.7744 16.3378L14.111 16.6744L22.2563 24.8197L23.4895 23.5866L22.8165 22.9135L15.6807 15.7777L15.0076 15.1047L14.4196 15.6927C14.4196 15.6927 12.989 14.262 12.989 14.262C14.2531 12.7078 14.9405 10.7828 14.9405 8.75196C14.9405 8.75196 14.9405 8.75196 14.9405 8.75196Z" fill="#5B5B5F" fill-rule="evenodd" fill-opacity="0.4" transform="translate(23.451 20.401)" />
+  </g>
+</svg>

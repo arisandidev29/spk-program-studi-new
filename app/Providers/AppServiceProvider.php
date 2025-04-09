@@ -7,11 +7,15 @@ use App\Service\AlternativeService;
 use App\Service\AlternativeServiceInterface;
 use App\Service\BobotService;
 use App\Service\BobotServiceInterface;
+use App\Service\HasilRekomdasiService;
+use App\Service\HasilRekomendasiServiceInterface;
 use App\Service\KriteriaSeriveInterface;
 use App\Service\KriteriaService;
 use App\Service\PilihanJawabanInterfaces;
 use App\Service\PilihanJawabanService;
 use App\Service\PilihanJawabanServiceInterfaces;
+use App\Service\RekomendasiService;
+use App\Service\RekomendasiServiceInterface;
 use App\Service\TokenService;
 use App\Service\TokenServiceInterface;
 use App\Service\UserService;
@@ -32,7 +36,9 @@ class AppServiceProvider extends ServiceProvider
         KriteriaSeriveInterface::class => KriteriaService::class,
         AlternativeServiceInterface::class => AlternativeService::class,
         PilihanJawabanServiceInterfaces::class => PilihanJawabanService::class,
-        VektorSServiceInterface::class => VektorSService::class
+        VektorSServiceInterface::class => VektorSService::class,
+        HasilRekomendasiServiceInterface::class => HasilRekomdasiService::class,
+        RekomendasiServiceInterface::class => RekomendasiService::class
     ];
 
     

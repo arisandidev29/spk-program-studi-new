@@ -6,6 +6,7 @@ use App\Models\Alternative;
 use App\Models\Kriteria;
 use App\Models\UserJawaban;
 use App\Service\KriteriaSeriveInterface;
+use App\Service\RekomendasiServiceInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
@@ -63,7 +64,7 @@ class Question extends Component
     }
 
     #[On('validation-passed')]
-    public function handleValidationPassed($programStudi, $pilihanJawaban)
+    public function handleValidationPassed(RekomendasiServiceInterface $rekomendasiService,$programStudi, $pilihanJawaban)
     {
         $this->pilihanJawabans["$programStudi[id]"] =  $pilihanJawaban;
         $totalProgramStudi = $this->alternatives->count();
@@ -85,9 +86,10 @@ class Question extends Component
                 $this->saveAnswer();
                 return $this->redirect(route('question', $nextKriteria->id), true);
             } else {
-                // return redirect()->route('dashboard');
                 $this->saveAnswer();
-                dd('kriteria sudah habis');
+                $rekomendasi = $rekomendasiService->createRekomendasi();
+                return $this->redirect(route('user.result'), true);
+
             }
         }
     }

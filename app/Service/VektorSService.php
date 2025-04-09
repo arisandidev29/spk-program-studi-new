@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 class VektorSService implements VektorSServiceInterface {
     public function getAllVektorSByUser() {
-        return User::VektorS()->all();
+        return Auth::user()->VektorS->all();
     }
 
     public function createVektorS() {
@@ -32,8 +32,8 @@ class VektorSService implements VektorSServiceInterface {
         return $vektor;
     }
 
-    public function deleteVektorS() {
-        $vektor = Auth::user()->VektorS()->delete();
+    public function deleteVektorS($user_id) {
+        $vektor = User::find($user_id)->VektorS()->delete();
         return $vektor;
     }
 }

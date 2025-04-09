@@ -61,5 +61,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(VektorS::class);
     }
 
+    public function hasilRekomendasi()
+    {
+        return $this->hasMany(HasilRekomendasi::class);
+    }
+
     
 }

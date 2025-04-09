@@ -8,6 +8,6 @@ interface VektorSServiceInterface
     function getAllVektorSByUser();
     function createVektorS();
     function calculateVektorS();
-    function deleteVektorS();
+    function deleteVektorS($user_id);
 
 }
