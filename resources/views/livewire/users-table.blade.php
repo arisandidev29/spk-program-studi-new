@@ -16,8 +16,8 @@
     </div>
 
     {{-- alert --}}
-        <x-alert.danger />
-        <x-alert.succesfull   />
+    <x-alert.danger />
+    <x-alert.succesfull />
     {{-- end alert --}}
 
     <div class="flex items-center justify-end gap-4">
@@ -31,7 +31,11 @@
         </div>
 
         <div>
-            <x-input wire:model.live='search' placeholder="Search" icon="/asset/search.svg" />
+            <x-input
+                wire:model.live="search"
+                placeholder="Search"
+                icon="/asset/search.svg"
+            />
         </div>
     </div>
 
@@ -50,21 +54,36 @@
             </thead>
             <tbody>
                 @foreach ($users as $index => $user)
-                    <tr class="text-xs sm:text-sm" wire:key="{{$user->id}}">
+                    <tr class="text-xs sm:text-sm " wire:key="{{ $user->id }}">
                         <td class="whitespace-nowrap">{{ $index + 1 }}</td>
                         <td class="whitespace-nowrap">{{ $user->name }}</td>
                         <td class="whitespace-nowrap">{{ $user->email }}</td>
                         <td class="whitespace-nowrap">
+                            {{-- @if ($user->HasilRekomendasi()->exists()) --}}
+                            @if( $user->HasilRekomendasi()->exists())
+                            
                             <span
-                                class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
+                            class="bg-primary inline-block w-max rounded-full px-2 py-1 text-white"
                             >
-                                Sudah Memilih 
-                            </span>
+                            Sudah Memilih
+                        </span>
+                        @else
+                        <span
+                        class="bg-secondary inline-block w-max rounded-full px-2 py-1 text-black"
+                        >
+                        Belum Memilih
+                    </span>
+                    @endif
                         </td>
                         <td>
                             <a href="">
                                 <x-button
-                                    class="bg-dark-primary w-max px-2! text-white"
+                                    class="bg-dark-primary w-max px-2! text-white {{
+                                        $user->hasilRekomendasi()->exists()
+                                            ? '' :  ' !text-black !cursor-not-allowed'
+                                            
+                                    }}"
+                                    :disabled="!$user->hasilRekomendasi()->exists()"
                                 >
                                     lihat hasil
                                 </x-button>
@@ -72,8 +91,8 @@
                         </td>
                         <td class="whitespace-nowrap">
                             <x-button
-                            @click="$dispatch('modaldelete-open', {
-                                 id : '{{$user->id}}', 
+                                @click="$dispatch('modaldelete-open', {
+                                 id : '{{$user->id}}',
                                  name : `{{$user->name}}` })"
                                 class="w-6 rounded-lg bg-red-500 px-1!"
                             >
@@ -103,15 +122,12 @@
         content-class="text-center"
     >
         <h1 class="text-primary my-4 text-2xl">
-            Yakin Hapus User  
+            Yakin Hapus User
             <span x-text="name"></span>
             ?
         </h1>
         <div class="my-2 flex justify-center gap-4">
-            <x-button
-                class="bg-red-500 text-white"
-                @click="$wire.delete(id)"
-            >
+            <x-button class="bg-red-500 text-white" @click="$wire.delete(id)">
                 Ya
             </x-button>
             <x-button

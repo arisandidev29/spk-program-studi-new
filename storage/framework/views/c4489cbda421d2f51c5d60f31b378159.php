@@ -1,1 +1,0 @@
-<?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/components/question-answer.blade.php ENDPATH**/ ?>

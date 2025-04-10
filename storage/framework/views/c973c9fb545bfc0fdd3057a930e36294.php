@@ -68,4 +68,4 @@
 <?php if (isset($__componentOriginal53747ceb358d30c0105769f8471417f6)): ?>
 <?php $component = $__componentOriginal53747ceb358d30c0105769f8471417f6; ?>
 <?php unset($__componentOriginal53747ceb358d30c0105769f8471417f6); ?>
-<?php endif; ?><?php /**PATH /media/arisandi/New Volume/coding/skripsi/spk-program-studi/resources/views/livewire/register-token.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH /home/arisandi/Documents/skirpsi/spk-program-studi-new/resources/views/livewire/register-token.blade.php ENDPATH**/ ?>
