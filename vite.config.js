@@ -8,7 +8,9 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/chart.js'],
+                'resources/js/chart.js',
+                'resources/js/presentaseNilaiVektorChart.js',
+            ],
             refresh: true,
         }),
         tailwindcss()

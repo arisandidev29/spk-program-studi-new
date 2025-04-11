@@ -1,9 +1,18 @@
 import { Chart } from "chart.js/auto";
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 
 const userRegistration = document.getElementById('UserRegistration');
+const UserRegistrationData= JSON.parse(userRegistration.dataset.userRegistrationData);
+
+const UserRegistrationChartData = labels.map((item,index) => {
+    const data = UserRegistrationData.find((data) => data.bulan === index + 1);
+    return data ? data.jumlah : 0;
+});
+
+
+// const userRegistrationData = UserRegistrationData.map(data => )
 
 new Chart(userRegistration, {
     type: 'bar',
@@ -11,7 +20,7 @@ new Chart(userRegistration, {
         labels: labels,
         datasets: [{
             label: "User Registration 2025",
-            data: [12, 19, 3, 5, 2],
+            data: UserRegistrationChartData,
             borderWidth: 1,
             backgroundColor: '#40A578',
         }]
@@ -29,18 +38,19 @@ new Chart(userRegistration, {
 
 
 const TotalUserChart = document.querySelector('#TotalUserChart');
+const distribution = JSON.parse(TotalUserChart.dataset.userDistribution);
+
+const labelUserChart = distribution.map((data) => data.programStudi);
+const dataUserChart = distribution.map((data) => data.total);
 
 new Chart(TotalUserChart, {
     type: 'pie',
     data: {
-        labels: [
-            'Sistem Informasi',
-            'Komputer Akuntansi',
-            'Manajement Informatika'
-        ],
+        labels: labelUserChart
+        ,
         datasets: [{
             label: 'Jumlah Mahasiswa',
-            data: [300, 50, 100],
+            data: dataUserChart,
             backgroundColor: [
                 '#40A578',
                 'rgb(54, 162, 235)',
@@ -51,3 +61,5 @@ new Chart(TotalUserChart, {
     },
 }
 );
+
+

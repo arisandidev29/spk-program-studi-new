@@ -76,7 +76,7 @@
                     @endif
                         </td>
                         <td>
-                            <a href="">
+                            <a wire:navigate href="{{route('admin.user.result', $user->id)}}">
                                 <x-button
                                     class="bg-dark-primary w-max px-2! text-white {{
                                         $user->hasilRekomendasi()->exists()

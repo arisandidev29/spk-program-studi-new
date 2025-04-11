@@ -33,14 +33,14 @@ foreach ($attributes->all() as $__key => $__value) {
 }
 
 unset($__defined_vars); ?>
-<div class="my-3 flex items-center gap-4">
+<div class="my-3 flex items-center gap-4 w-full">
     <p
         class="text-primary border-primary grid h-12 w-12 place-content-center rounded-full border"
     >
         <?php echo e($percentage); ?>
 
     </p>
-    <div>
+    <div class="flex-grow">
         <span class="my-1 block text-sm"><?php echo e($programStudy); ?></span>
         <p class="bg-primary h-2" style="width: <?php echo e($percentage); ?>"></p>
     </div>

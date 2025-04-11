@@ -18,5 +18,6 @@ class Alternative extends Model
         return $this->hasMany(VektorS::class);
     }
 
+
     
 }

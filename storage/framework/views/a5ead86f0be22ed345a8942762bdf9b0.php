@@ -157,7 +157,7 @@
                     <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                         </td>
                         <td>
-                            <a href="">
+                            <a wire:navigate href="<?php echo e(route('admin.user.result', $user->id)); ?>">
                                 <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-dark-primary w-max px-2! text-white '.e($user->hasilRekomendasi()->exists()

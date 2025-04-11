@@ -5,6 +5,9 @@ use App\Http\Controllers\EditBobot as ControllersEditBobot;
 use App\Http\Controllers\EditKriteria as ControllersEditKriteria;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserDashboardController;
+use App\Livewire\AdaminUserResult;
+use App\Livewire\AdminDashboard;
+use App\Livewire\AdminUserResult;
 use App\Livewire\BobotEdit;
 use App\Livewire\EditBobot;
 use App\Livewire\EditKriteria;
@@ -36,8 +39,9 @@ route::view('/result','user.result')->name('user.result');
 // admin
 
 Route::prefix('admin')->middleware(['adminAuth'])->group(function () {
-    Route::view('/dashboard', 'admin.dashboard')->name('admin.dashboard');
+    Route::get('/dashboard', AdminDashboard::class)->name('admin.dashboard');
     Route::view('/users', 'admin.users')->name('admin.users');
+    Route::get('/user/{id}/result', AdminUserResult::class )->name('admin.user.result');
     Route::view('/kriteria', 'admin.kriteria')->name('admin.kriteria');
     Route::view('/kriteria/create', 'admin.buat_kriteria')->name('admin.kriteria.create');
     Route::get('/kriteria/{id}/edit', [ControllersEditKriteria::class,'view'])->name('admin.kriteria.edit');
