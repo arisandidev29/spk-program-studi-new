@@ -5,15 +5,22 @@ use App\Models\User;
 
 class UserService implements UserServiceInterface {
     public function getAllUsers() {
-        return User::all();
+        return User::where('role','users')->get();
     }
 
     public function getUserById($id) {
         return User::find($id);
     }
 
-    public function getUsersByPegination($pegination) {
-        return User::where('role','users')->simplePaginate($pegination);
+    public function getUserByFilterName($orderBy = 'asc') {
+        return $this->getAllUsers()->orderBy('name', $orderBy)->get();
+    }
+
+    public function getUsersByPegination($pegination, $sortColumn = 'name', $sortCondition = 'asc') {
+        return User::where('role','users')
+        ->orderBy($sortColumn,$sortCondition)
+        ->simplePaginate($pegination);
+
     }
 
     public function getUserByCondition($column, $value, $condition = '=') {

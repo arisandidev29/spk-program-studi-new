@@ -12,15 +12,16 @@ class RekomendasiService implements RekomendasiServiceInterface {
         $this->hasilRekomendasiService = $hasilRekomendasiService;
     }
 
-    public function createRekomendasi() {
-        $this->serviceVektor->createVektorS();
-       $vektorV = $this->serviceVektor->getAllVektorSByUser(); 
-       $rekomendasi = $this->hasilRekomendasiService->createHasilRekomendasi($vektorV);
+    public function createRekomendasi($user = null) {
+        $this->serviceVektor->createVektorS($user);
+       $vektorV = $this->serviceVektor->getAllVektorSByUser($user); 
+       $rekomendasi = $this->hasilRekomendasiService->createHasilRekomendasi($vektorV,$user);
        return $rekomendasi;
     }
 
-    public function getRekomendasi() {
-        return $this->hasilRekomendasiService->getHasilRekomendasi(Auth::id());
+    public function getRekomendasi($user = null) {
+        $user = $user ?? Auth::id();
+        return $this->hasilRekomendasiService->getHasilRekomendasi($user);
     }
 
     public function deleteRekomendasi() {

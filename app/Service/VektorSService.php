@@ -5,23 +5,27 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class VektorSService implements VektorSServiceInterface {
-    public function getAllVektorSByUser() {
-        return Auth::user()->VektorS->all();
+    public function getAllVektorSByUser($user) {
+        $user = $user ?? Auth::user();
+        return $user->VektorS->all();
     }
 
-    public function createVektorS() {
-        $VektorResult =  $this->calculateVektorS();
+    public function createVektorS($user = null) {
+        $user = $user ?? Auth::user();
+        $VektorResult =  $this->calculateVektorS($user);
         foreach($VektorResult as  $index => $vektor) {
-            Auth::user()->VektorS()->create([
+            $user->VektorS()->create([
                 'alternative_id' => $index,
                 'vektor_s' => $vektor
             ]);
         }
 
+
     }
 
-    public function calculateVektorS() {
-        $vektor =  Auth::user()->UserJawaban()->get()->groupBy('alternative_id')->map(function($gruop) {
+    public function calculateVektorS($user = null) {
+        $user = $user ?? Auth::user();
+        $vektor =  $user->UserJawaban()->get()->groupBy('alternative_id')->map(function($gruop) {
 
               $totalNilai = $gruop->sum(function ($item) {
                 

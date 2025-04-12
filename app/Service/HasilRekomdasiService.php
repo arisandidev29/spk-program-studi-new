@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class HasilRekomdasiService implements HasilRekomendasiServiceInterface
 {
-    public function createHasilRekomendasi($vektorS)
+    public function createHasilRekomendasi($vektorS, $user = null)
     {
+        $user_id = $user_id ?? Auth::user();
         $hasilRekomendasi = $this->calculateHasilRekomendasi($vektorS);
         $rekomendasi = [];
         foreach ($hasilRekomendasi as $hasil) {
-            $rekomendasi[] = Auth::user()->hasilRekomendasi()->create(
+            $rekomendasi[] = $user->hasilRekomendasi()->create(
                     [
                         'alternative_id' => $hasil['alternative_id'],
                         'vektor_v' => $hasil['vektor_v'],
