@@ -3,6 +3,7 @@
 use App\Http\Controllers\EditAlternative;
 use App\Http\Controllers\EditBobot as ControllersEditBobot;
 use App\Http\Controllers\EditKriteria as ControllersEditKriteria;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserDashboardController;
 use App\Livewire\AdaminUserResult;
@@ -12,14 +13,17 @@ use App\Livewire\BobotEdit;
 use App\Livewire\EditBobot;
 use App\Livewire\EditKriteria;
 use App\Livewire\Question;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Spatie\LaravelPdf\Facades\Pdf;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::view('/pdf' ,'pdf.UserRekomendation');
 Route::view('/about', 'about')->name('about');
 
 Route::view('/login', 'login')->name('login')->middleware(['guestAuth']);

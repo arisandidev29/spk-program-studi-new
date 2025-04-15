@@ -39,6 +39,7 @@ class AdminDashboard extends Component
             ->with('alternative') // jika ingin nama program studi
             ->get();
 
+
         $this->distribution = $Userdistribution->map(function ($item) {
             return [
                 'programStudi' => $item->alternative->name,
@@ -46,14 +47,17 @@ class AdminDashboard extends Component
             ];
         })->toArray();
 
+        $userHasChoise = User::has('hasilRekomendasi')->get();
 
-        $presentase = $Userdistribution->map(function ($item) {
-            $value = ($item->total / $this->users->count()) * 100;
+
+        $presentase = $Userdistribution->map(function ($item) use ($userHasChoise) {
+            $value = ($item->total / $userHasChoise->count()) * 100;
             return [
                 'programStudi' => $item->alternative->name,
-                'presentase' => $value,
+                'presentase' => floor($value),
             ];
         });
+        // dd($presentase);
 
         $this->presentaseProgramStudi = $presentase;
     }

@@ -24,7 +24,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/user.svg" alt="user" class="w-6" />
         </div>
-        <p>Users</p>
+        <p>Total User : <?php echo e($totalUsers); ?></p>
     </div>
 
     
@@ -112,7 +112,8 @@
 <?php $component->withAttributes(['@click' => 'actionOption = !actionOption','@click.outside' => 'actionOption = false','class' => 'text-primary border-primary relative flex gap-2 border bg-transparent px-2! text-sm md:px-2! md:py-1! md:text-base']); ?>
                     Action
                     <svg
-                        class="w-4"
+                        :class="actionOption ? '-rotate-' : '' "
+                        class="w-4 -rotate-90 duration-300"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -381,6 +382,45 @@
 
     <?php echo e($users->links()); ?>
 
+
+    
+
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('export-user', []);
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-1517421204-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
+
+
+    
+
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('pdf-export-popup', []);
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-1517421204-1', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
 
     
 

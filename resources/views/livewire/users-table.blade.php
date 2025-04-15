@@ -12,7 +12,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/user.svg" alt="user" class="w-6" />
         </div>
-        <p>Users</p>
+        <p>Total User : {{$totalUsers}}</p>
     </div>
 
     {{-- alert --}}
@@ -42,7 +42,8 @@
                 >
                     Action
                     <svg
-                        class="w-4"
+                        :class="actionOption ? '-rotate-' : '' "
+                        class="w-4 -rotate-90 duration-300"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -213,6 +214,15 @@
     </div>
 
     {{ $users->links() }}
+
+    {{-- export user --}}
+
+    <livewire:export-user />
+
+
+    {{-- popup export pdf --}}
+
+    <livewire:pdf-export-popup />
 
     {{-- modal delete single user --}}
 

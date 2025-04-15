@@ -1,9 +1,10 @@
 <x-admin-layout title="Hasil Rekomendasi" breadcrumbs="users">
-    <x-card>
+    <x-card class="flex items-center justify-between">
         <h1 class="text-xl text-gray-600">
             Rekomendasi Untuk User :
             <span class="text-primary">{{ $user->name }}</span>
         </h1>
+
     </x-card>
 
     <div

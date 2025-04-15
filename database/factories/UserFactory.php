@@ -2,7 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Alternative;
+use App\Models\Kriteria;
+use App\Models\PilihanJawaban;
+use App\Models\User;
+use App\Service\RekomendasiService;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -40,5 +46,24 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function withJawaban() {
+        return $this->afterCreating(function (User $user) {
+            Kriteria::all()->each(function ($kriteria) use ($user) {
+                $jawabanData = Alternative::all()->map(function ($alternative) use ($kriteria) {
+                    return [
+                        'kriteria_id' => $kriteria->id,
+                        'alternative_id' => $alternative->id,
+                        'pilihan_jawaban_id' => PilihanJawaban::where('id_kriteria', $kriteria->id)->inRandomOrder()->first()->id
+                    ];
+                });
+        
+                $user->UserJawaban()->createMany($jawabanData);
+            });
+        
+            $rekomendasiService = App::make(RekomendasiService::class);
+            $rekomendasiService->createRekomendasi($user);
+        });
     }
 }

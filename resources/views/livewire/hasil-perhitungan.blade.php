@@ -1,9 +1,19 @@
-<x-card>
-    <div class="flex items-center gap-4">
-        <div class="bg-primary w-max rounded-xl p-4">
-            <img src="/asset/diagnosis.svg" alt="user" class="w-6" />
+<x-card class="relative">
+
+    <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <div class="bg-primary w-max rounded-xl p-4">
+                <img src="/asset/diagnosis.svg" alt="user" class="w-6" />
+            </div>
+            <p>Hasil Rekomendasi</p>
         </div>
-        <p>Hasil Rekomendasi</p>
+
+        <x-button
+            wire:click="exportUserResult"
+            class="bg-secondary px-3! text-xs text-black transition-all duration-300 hover:bg-amber-300 md:text-base"
+        >
+            Export PDF
+        </x-button>
     </div>
 
     <div class="overflow-auto">
@@ -19,27 +29,36 @@
             </thead>
             <tbody>
                 @foreach ($hasilRekomendasi as $hasil)
-                <tr class="text-xs sm:text-sm " :key="$hasil->id" >
-                    <td class="whitespace-nowrap">{{$hasil->alternative->kode}}</td>
+                    <tr class="text-xs sm:text-sm" :key="$hasil->id">
+                        <td class="whitespace-nowrap">
+                            {{ $hasil->alternative->kode }}
+                        </td>
 
-                    <td class="whitespace-nowrap">{{$hasil->alternative->name}}</td>
-                    
-                    <td>{{$hasil->alternative->VektorS->first()->vektor_s}}</td>
+                        <td class="whitespace-nowrap">
+                            {{ $hasil->alternative->name }}
+                        </td>
 
-                    <td>
-                        {{$hasil->vektor_v}}
-                    </td>
-                    <td>
-                        <span class="p-2 rounded-full bg-primary text-white font-bold">{{$hasil->ranking}}</span>
-                    </td>
+                        <td>
+                            {{ $hasil->alternative->VektorS->first()->vektor_s }}
+                        </td>
 
-
-
-                    
-                </tr>
+                        <td>
+                            {{ $hasil->vektor_v }}
+                        </td>
+                        <td>
+                            <span
+                                class="bg-primary rounded-full p-2 font-bold text-white"
+                            >
+                                {{ $hasil->ranking }}
+                            </span>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 
+    {{-- pdf popup --}}
+
+    <livewire:pdf-export-popup />
 </x-card>
