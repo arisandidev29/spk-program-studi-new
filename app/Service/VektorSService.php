@@ -28,8 +28,13 @@ class VektorSService implements VektorSServiceInterface {
         $vektor =  $user->UserJawaban()->get()->groupBy('alternative_id')->map(function($gruop) {
 
               $totalNilai = $gruop->sum(function ($item) {
+                $bobot = $item->kriteria->bobot->normalisasi;
+
+                if($item->kriteria->kategori == 'cost') {
+                    $bobot = -$bobot;
+                }
                 
-                return round(pow($item->pilihanJawaban->nilai,$item->kriteria->bobot->normalisasi),2);
+                return round(pow($item->pilihanJawaban->nilai,$bobot),2);
               });
               return $totalNilai;
         });
