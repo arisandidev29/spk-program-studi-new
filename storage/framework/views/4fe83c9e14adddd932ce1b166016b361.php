@@ -23,18 +23,38 @@
 <?php endif; ?>
 
     <div id="right header" class="flex items-center gap-4">
+        <?php if (isset($component)) { $__componentOriginal49db1bc4bf3f0cb55ab84e285d72a7cf = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal49db1bc4bf3f0cb55ab84e285d72a7cf = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.toggle-dark-mode','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('toggle-dark-mode'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal49db1bc4bf3f0cb55ab84e285d72a7cf)): ?>
+<?php $attributes = $__attributesOriginal49db1bc4bf3f0cb55ab84e285d72a7cf; ?>
+<?php unset($__attributesOriginal49db1bc4bf3f0cb55ab84e285d72a7cf); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal49db1bc4bf3f0cb55ab84e285d72a7cf)): ?>
+<?php $component = $__componentOriginal49db1bc4bf3f0cb55ab84e285d72a7cf; ?>
+<?php unset($__componentOriginal49db1bc4bf3f0cb55ab84e285d72a7cf); ?>
+<?php endif; ?>
         <?php if(! auth()->check()): ?>
             <a href="<?php echo e(Route("login")); ?>">
                 <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-sm text-white md:text-base']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-xs text-white md:text-base md:text-sm']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'bg-primary text-sm text-white md:text-base']); ?>
+<?php $component->withAttributes(['class' => 'bg-primary text-xs text-white md:text-base md:text-sm']); ?>
                     Login
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

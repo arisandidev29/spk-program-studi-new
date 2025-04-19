@@ -41,7 +41,7 @@ unset($__defined_vars); ?>
 
     </p>
     <div class="flex-grow">
-        <span class="my-1 block text-sm"><?php echo e($programStudy); ?></span>
+        <span class="my-1 block text-sm dark:text-gray-200"><?php echo e($programStudy); ?></span>
         <p class="bg-primary h-2" style="width: <?php echo e($percentage); ?>"></p>
     </div>
 </div>

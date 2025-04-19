@@ -48,12 +48,14 @@
         </style>
     </head>
     <body>
-        <h2>Hasil rekomendasi Program Studi {{$user->name}}</h2>
+        <h2>Hasil rekomendasi Program Studi {{ $user->name }}</h2>
         <small>
             Berdasarkan hasil perhitungan, user dengan nama
-            <span class="bold">{{$user->name}}</span>
+            <span class="bold">{{ $user->name }}</span>
             memiliki rekomendasi untuk memilih Program Studi
-            <span class="bold">{{$hasilRekomendasi->first()->alternative->name}}</span>
+            <span class="bold">
+                {{ $hasilRekomendasi->first()->alternative->name }}
+            </span>
         </small>
 
         <section>

@@ -60,6 +60,6 @@ unset($__defined_vars); ?>
         <?php echo e($label); ?>
 
     </p>
-    <small class="text-xs  text-center"><?php echo e($description); ?></small>
+<small class="text-xs  text-center dark:text-gray-300"><?php echo e($description); ?></small>
 </label>
 <?php /**PATH /home/arisandi/Documents/skirpsi/spk-program-studi-new/resources/views/components/radio-option.blade.php ENDPATH**/ ?>

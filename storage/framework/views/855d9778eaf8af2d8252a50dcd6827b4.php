@@ -12,7 +12,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/kriteria.svg" alt="user" class="w-6" />
         </div>
-        <p>Kriteria</p>
+        <p class="dark:text-gray-200">Kriteria</p>
     </div>
 
     <a

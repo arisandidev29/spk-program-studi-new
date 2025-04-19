@@ -4,9 +4,12 @@
     <x-navbar />
 
     <div id="right header" class="flex items-center gap-4">
+        <x-toggle-dark-mode />
         @if (! auth()->check())
             <a href="{{ Route("login") }}">
-                <x-button class="bg-primary text-sm text-white md:text-base">
+                <x-button
+                    class="bg-primary text-xs text-white md:text-base md:text-sm"
+                >
                     Login
                 </x-button>
             </a>

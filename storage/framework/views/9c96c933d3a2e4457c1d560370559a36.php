@@ -9,7 +9,7 @@
 
 >
     <div
-        class="<?php echo e($attributes->get("content-class")); ?> w-[90vw] max-w-2xl rounded-xl bg-white px-8 py-4"
+    class="<?php echo e($attributes->get("content-class")); ?> w-[90vw] max-w-2xl rounded-xl bg-white dark:bg-gray-700 px-8 py-4"
     >
         <?php echo e($slot); ?>
 

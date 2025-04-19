@@ -104,8 +104,8 @@
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('data', () => ({
-            profilePic: 
-                '{{ auth()->user()->profile_pic ?  asset("storage/" . auth()->user()->profile_pic) : '/asset/default-user.svg' }}',
+            profilePic:
+                '{{ auth()->user()->profile_pic ? asset("storage/" . auth()->user()->profile_pic) : "/asset/default-user.svg" }}',
 
             edit_btn_active: false,
 

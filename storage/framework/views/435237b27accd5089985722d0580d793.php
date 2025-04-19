@@ -36,7 +36,7 @@ unset($__defined_vars); ?>
 <div>
     <select
         <?php echo e($attributes->class([
-                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
+                "peer dark:text-gray-300 border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
                 "border-red-500!" => $errors->has($name),
             ])); ?>
 

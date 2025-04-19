@@ -1,6 +1,11 @@
 <form wire:submit="save" class="my-2 grid grid-cols-2 justify-stretch gap-4">
     <x-alert.succesfull />
-    <x-input placeholder="kriteria" type="text" wire:model="kriteria" class-wrapper="col-span-2" />
+    <x-input
+        placeholder="kriteria"
+        type="text"
+        wire:model="kriteria"
+        class-wrapper="col-span-2"
+    />
     <x-input-textarea
         wire:model="desc"
         placeholder="description"
@@ -16,9 +21,6 @@
         class="h-20"
     />
 
-
-
-
     <x-input-dropdown name="Pilih Bobot" error="bobot" wire:model="bobot">
         <option value="">Pilih Bobot</option>
         @foreach ($bobots as $bobot)
@@ -28,8 +30,7 @@
         @endforeach
     </x-input-dropdown>
 
-
-    <x-input-dropdown name="kategori" error="kategori" wire:model="kategori" >
+    <x-input-dropdown name="kategori" error="kategori" wire:model="kategori">
         <option value="">Pilih Kategori</option>
         <option value="Benefit">Benefit</option>
         <option value="Cost">Cost</option>
@@ -41,10 +42,10 @@
         @foreach ($pilihans as $key => $value)
             <div class="flex items-center gap-2">
                 <x-input
-                    placeholder="Pilihan {{$key + 1}}"
-                    error="pilihans.{{$key}}.text"
+                    placeholder="Pilihan {{ $key + 1 }}"
+                    error="pilihans.{{ $key }}.text"
                     type="text"
-                    wire:model.live="pilihans.{{$key}}.text"
+                    wire:model.live="pilihans.{{ $key }}.text"
                     class-wrapper="grow"
                 />
 

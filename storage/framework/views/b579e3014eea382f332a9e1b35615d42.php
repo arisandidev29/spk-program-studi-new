@@ -1,12 +1,12 @@
 <div class="grid grid-cols-1   xl:grid-cols-2 gap-4 items-center my-4">
     <div class="order-2 xl:order-1">
         <h2 class="text-center  text-md  md:text-2xl">
-            <p>
+            <p class="dark:text-gray-200">
                 Oke,
                 <span class="text-primary">Kami</span>
                 telah menganalisis nya
             </p>
-            <p>
+            <p class="dark:text-gray-200">
                 Rekomendasi
                 <span class="text-primary">Program Studi</span>
                 untuk kamu yaitu !
@@ -20,7 +20,7 @@
         </div>
 
         <div class="flex flex-col gap-4 items-center mt-8">
-            <small class="text-center block">Kamu Bisa Mengulagi lagi Pilhan mu !</small>
+            <small class="text-center block dark:text-gray-200">Kamu Bisa Mengulagi lagi Pilhan mu !</small>
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'bg-primary text-white rounded-md ','wire:click' => 'UlangiPilihan']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>

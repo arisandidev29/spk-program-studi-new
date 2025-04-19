@@ -21,14 +21,14 @@
 
     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'username','type' => 'text','class' => 'text-sm placeholder:text-sm md:text-base md:placeholder:text-base','icon' => '/asset/user-2.svg','wire:model' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'username','type' => 'text','class' => 'text-sm placeholder:text-sm md:text-base md:placeholder:text-base','labelClass' => 'dark:bg-gray-800','icon' => '/asset/user-2.svg','wire:model' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('input'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['placeholder' => 'username','type' => 'text','class' => 'text-sm placeholder:text-sm md:text-base md:placeholder:text-base','icon' => '/asset/user-2.svg','wire:model' => 'username']); ?>
+<?php $component->withAttributes(['placeholder' => 'username','type' => 'text','class' => 'text-sm placeholder:text-sm md:text-base md:placeholder:text-base','label-class' => 'dark:bg-gray-800','icon' => '/asset/user-2.svg','wire:model' => 'username']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
@@ -39,8 +39,6 @@
 <?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
-
-    
 
     <?php if (isset($component)) { $__componentOriginal88cfe17a0624537feef452f30f31deda = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal88cfe17a0624537feef452f30f31deda = $attributes; } ?>
@@ -70,7 +68,9 @@
                 class="accent-primary"
                 wire:model="rememberMe"
             />
-            <small class="text-dark-primary">Remember Me</small>
+            <small class="text-dark-primary dark:text-primary">
+                Remember Me
+            </small>
         </label>
 
         <a href="" class="block">

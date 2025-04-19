@@ -10,7 +10,7 @@ class HasilRekomdasiService implements HasilRekomendasiServiceInterface
 {
     public function createHasilRekomendasi($vektorS, $user = null)
     {
-        $user = $user_id ?? Auth::user();
+        $user = $user ?? Auth::user();
         $hasilRekomendasi = $this->calculateHasilRekomendasi($vektorS);
         $rekomendasi = [];
         foreach ($hasilRekomendasi as $hasil) {

@@ -81,9 +81,6 @@
 <?php unset($__componentOriginal0dbfa54f6986b51b03e2500f8899abef); ?>
 <?php endif; ?>
 
-
-
-
     <?php if (isset($component)) { $__componentOriginal3df0918eef61aaa79605e132760f550e = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal3df0918eef61aaa79605e132760f550e = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-dropdown','data' => ['name' => 'Pilih Bobot','error' => 'bobot','wire:model' => 'bobot']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -110,7 +107,6 @@
 <?php $component = $__componentOriginal3df0918eef61aaa79605e132760f550e; ?>
 <?php unset($__componentOriginal3df0918eef61aaa79605e132760f550e); ?>
 <?php endif; ?>
-
 
     <?php if (isset($component)) { $__componentOriginal3df0918eef61aaa79605e132760f550e = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal3df0918eef61aaa79605e132760f550e = $attributes; } ?>

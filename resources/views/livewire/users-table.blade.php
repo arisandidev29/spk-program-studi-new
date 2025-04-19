@@ -12,7 +12,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/user.svg" alt="user" class="w-6" />
         </div>
-        <p>Total User : {{$totalUsers}}</p>
+        <p class="dark:text-gray-200">Total User : {{ $totalUsers }}</p>
     </div>
 
     {{-- alert --}}
@@ -90,25 +90,25 @@
                 >
                     <button
                         @click="$wire.sort('name','asc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs hover:bg-gray-100 md:text-sm"
                     >
                         Name (asc)
                     </button>
                     <button
                         @click="$wire.sort('name','desc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs hover:bg-gray-100 md:text-sm"
                     >
                         Name (desc)
                     </button>
                     <button
                         @click="$wire.sort('email','asc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs hover:bg-gray-100 md:text-sm"
                     >
                         Email (asc)
                     </button>
                     <button
                         @click="$wire.sort('email','desc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs hover:bg-gray-100 md:text-sm"
                     >
                         Email (desc)
                     </button>
@@ -126,7 +126,7 @@
     </div>
 
     <div class="overflow-auto">
-        <table class="my-2 table-auto">
+        <table class="my-2 table-auto dark:text-gray-200">
             <thead>
                 <tr class="text-xs md:text-sm">
                     @if ($selectionMode)
@@ -218,7 +218,6 @@
     {{-- export user --}}
 
     <livewire:export-user />
-
 
     {{-- popup export pdf --}}
 

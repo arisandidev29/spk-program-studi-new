@@ -1,11 +1,10 @@
 <x-card class="relative">
-
     <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-4">
             <div class="bg-primary w-max rounded-xl p-4">
                 <img src="/asset/diagnosis.svg" alt="user" class="w-6" />
             </div>
-            <p>Hasil Rekomendasi</p>
+            <p class="dark:text-gray-200">Hasil Rekomendasi</p>
         </div>
 
         <x-button
@@ -17,7 +16,7 @@
     </div>
 
     <div class="overflow-auto">
-        <table class="my-2 table-auto">
+        <table class="my-2 table-auto dark:text-gray-300">
             <thead>
                 <tr class="text-xs md:text-sm">
                     <th>Kode Alternative</th>

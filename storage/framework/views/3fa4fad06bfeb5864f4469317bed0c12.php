@@ -50,7 +50,7 @@ unset($__defined_vars); ?>
         <title><?php echo e($title ?? "SPK Pemilihan Program studi"); ?></title>
     </head>
 
-    <body class="flex min-h-screen flex-col">
+    <body class="flex min-h-screen flex-col bg-white dark:bg-gray-800">
         <?php if($header): ?>
             <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>

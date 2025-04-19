@@ -7,7 +7,7 @@
     {{ $attributes }}
 >
     <div
-        class="{{ $attributes->get("content-class") }} w-[90vw] max-w-2xl rounded-xl bg-white px-8 py-4"
+        class="{{ $attributes->get("content-class") }} w-[90vw] max-w-2xl rounded-xl bg-white px-8 py-4 dark:bg-gray-700"
     >
         {{ $slot }}
     </div>

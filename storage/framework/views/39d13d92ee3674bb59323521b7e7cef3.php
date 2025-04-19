@@ -43,7 +43,7 @@ unset($__defined_vars); ?>
     x-data="{
         value: '<?php echo e($value); ?>' ?? <?php if ((object) ($attributes->wire("model")) instanceof \Livewire\WireDirective) : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")->value()); ?>')<?php echo e($attributes->wire("model")->hasModifier('live') ? '.live' : ''); ?><?php else : ?>window.Livewire.find('<?php echo e($__livewire->getId()); ?>').entangle('<?php echo e($attributes->wire("model")); ?>')<?php endif; ?>,
     }"
-    class="relative <?php echo e($attributes->get('class-wrapper')); ?>"
+    class="<?php echo e($attributes->get("class-wrapper")); ?> relative"
 >
     <input
         id="<?php echo e($placeholder); ?>"
@@ -52,7 +52,7 @@ unset($__defined_vars); ?>
         x-model="value"
         type="<?php echo e($type); ?>"
         <?php echo e($attributes->class([
-                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
+                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 text-sm outline-none md:text-base dark:text-gray-300",
                 "border-red-500!" => $errors->has($placeholder),
             ])); ?>
 
@@ -73,7 +73,7 @@ unset($__defined_vars); ?>
     <label
         for="<?php echo e($placeholder); ?>"
         :class="{ 'px-2! -top-1! left-2!  text-xs!': value }"
-        class="absolute top-4.5 left-5 rounded-lg bg-white text-gray-400 transition-all peer-focus:-top-1 peer-focus:left-2 peer-focus:px-2 peer-focus:text-xs"
+        class="<?php echo e($attributes->get("label-class")); ?> absolute top-4.5 left-5 rounded-lg bg-white text-gray-400 transition-all peer-focus:-top-1 peer-focus:left-2 peer-focus:px-2 peer-focus:text-xs dark:bg-gray-700"
     >
         <?php echo e($placeholder); ?>
 

@@ -2,11 +2,11 @@
     <h1
         class="text-primary font-poppins my-3 text-center text-lg font-bold md:text-2xl"
     >
-        Edit Alternative {{$kode}}
+        Edit Alternative {{ $kode }}
     </h1>
 
     {{-- alert --}}
-        <x-alert.succesfull />
+    <x-alert.succesfull />
     {{-- endalert --}}
 
     <x-input
@@ -30,7 +30,7 @@
         <x-button class="bg-primary text-white" wire:click="editBobot">
             Edit
         </x-button>
-        <a wire:navigate href="{{route('admin.alternative')}}">
+        <a wire:navigate href="{{ route("admin.alternative") }}">
             <x-button class="bg-secondary">back</x-button>
         </a>
     </div>

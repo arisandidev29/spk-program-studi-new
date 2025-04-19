@@ -11,7 +11,12 @@
 
     <x-input placeholder="name" class="w-[90%]" wire:model="name" />
     <x-input placeholder="keterangan" class="w-[90%]" wire:model="keterangan" />
-    <x-input placeholder="bobot" type="number" class="w-[90%]" wire:model="bobot" />
+    <x-input
+        placeholder="bobot"
+        type="number"
+        class="w-[90%]"
+        wire:model="bobot"
+    />
 
     <div
         class="mt-4 flex w-full flex-col justify-center gap-2 text-sm md:flex-row md:gap-8 md:text-base"

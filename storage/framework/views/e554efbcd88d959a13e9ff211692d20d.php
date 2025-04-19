@@ -3,7 +3,6 @@
     x-data="{ show: false }"
     class="flex items-center gap-1 md:gap-4"
 >
-    <p class="text-xs md:text-base"><?php echo e($user->name); ?></p>
     <div class="relative">
         <img
             @click="show = !show"

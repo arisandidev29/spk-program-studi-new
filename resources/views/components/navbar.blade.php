@@ -4,12 +4,16 @@
     <li
         @class(["hover:text-primary list-none duration-300", "active-navbar" => request()->routeIs("welcome")])
     >
-        <a href="{{ Route("welcome") }}">HOME</a>
+        <a href="{{ Route("welcome") }}" class="text-black dark:text-white">
+            HOME
+        </a>
     </li>
     <li
         @class(["hover:text-primary list-none duration-300", "active-navbar" => request()->routeIs("about")])
         class="list-none"
     >
-        <a href="{{ Route("about") }}">ABOUT</a>
+        <a href="{{ Route("about") }}" class="text-black dark:text-white">
+            ABOUT
+        </a>
     </li>
 </nav>

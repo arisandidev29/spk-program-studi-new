@@ -5,8 +5,12 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">Total User</h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <h1
+                        class="text-sm text-gray-500 md:text-lg dark:text-gray-300"
+                    >
+                        Total User
+                    </h1>
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         {{ $users->count() }}
                     </p>
                     <a
@@ -19,10 +23,12 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">
+                    <h1
+                        class="text-sm text-gray-500 md:text-lg dark:text-gray-300"
+                    >
                         Total Kriteria
                     </h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         {{ $kriteriasCount }}
                     </p>
                     <a
@@ -35,10 +41,12 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">
+                    <h1
+                        class="text-sm text-gray-500 md:text-lg dark:text-gray-300"
+                    >
                         Total Alternative
                     </h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         {{ $alternativesCount }}
                     </p>
                     <a
@@ -50,7 +58,11 @@
                 </div>
             </x-card>
             <x-card class="my-2 aspect-video w-full">
-                <canvas id="UserRegistration" width="200px" data-user-registration-data="{{json_encode($userRegistrationData)}}"></canvas>
+                <canvas
+                    id="UserRegistration"
+                    width="200px"
+                    data-user-registration-data="{{ json_encode($userRegistrationData) }}"
+                ></canvas>
             </x-card>
         </div>
         <div>
@@ -70,7 +82,10 @@
             </x-card>
 
             <x-card class="my-4">
-                <canvas id="TotalUserChart" data-user-distribution="{{json_encode($distribution)}}"></canvas>
+                <canvas
+                    id="TotalUserChart"
+                    data-user-distribution="{{ json_encode($distribution) }}"
+                ></canvas>
             </x-card>
         </div>
     </div>

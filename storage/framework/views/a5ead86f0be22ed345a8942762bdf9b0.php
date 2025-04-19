@@ -24,7 +24,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/user.svg" alt="user" class="w-6" />
         </div>
-        <p>Total User : <?php echo e($totalUsers); ?></p>
+        <p class="dark:text-gray-200">Total User : <?php echo e($totalUsers); ?></p>
     </div>
 
     
@@ -212,25 +212,25 @@
                 >
                     <button
                         @click="$wire.sort('name','asc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs md:text-sm hover:bg-gray-100"
                     >
                         Name (asc)
                     </button>
                     <button
                         @click="$wire.sort('name','desc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs md:text-sm hover:bg-gray-100"
                     >
                         Name (desc)
                     </button>
                     <button
                         @click="$wire.sort('email','asc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs md:text-sm hover:bg-gray-100"
                     >
                         Email (asc)
                     </button>
                     <button
                         @click="$wire.sort('email','desc')"
-                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-sm hover:bg-gray-100"
+                        class="text-primary cursor-pointer rounded-md bg-white px-3 py-1 text-xs md:text-sm hover:bg-gray-100"
                     >
                         Email (desc)
                     </button>
@@ -263,7 +263,7 @@
     </div>
 
     <div class="overflow-auto">
-        <table class="my-2 table-auto">
+        <table class="my-2 table-auto dark:text-gray-200">
             <thead>
                 <tr class="text-xs md:text-sm">
                     <!--[if BLOCK]><![endif]--><?php if($selectionMode): ?>
@@ -281,7 +281,7 @@
             </thead>
             <tbody>
                 <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr class="text-xs sm:text-sm" wire:key="<?php echo e($user->id); ?>">
+                <tr class="text-xs sm:text-sm " wire:key="<?php echo e($user->id); ?>">
                         <!--[if BLOCK]><![endif]--><?php if($selectionMode): ?>
                             <td x-data="{ isChecked: null }">
                                 <input

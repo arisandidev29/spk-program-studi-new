@@ -3,7 +3,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/kriteria.svg" alt="user" class="w-6" />
         </div>
-        <p>Kriteria</p>
+        <p class="dark:text-gray-200">Kriteria</p>
     </div>
 
     <a
@@ -105,7 +105,7 @@
                             </x-button>
                         </a>
                         <x-button
-                            @click="$dispatch('modaldelete-open' , 
+                            @click="$dispatch('modaldelete-open' ,
                             {
                                 id : '{{$kriteria->id}}',
                                 kriteria : '{{$kriteria->kode_kriteria}}',
@@ -142,10 +142,10 @@
                 />
                 <div class="my-6">
                     @foreach ($alterantives as $alternative)
-                        <livewire:program-studi-answer 
+                        <livewire:program-studi-answer
                             :key="$alternative->id . '-' . $kriteria->id"
-                            kriteria_id="{{$kriteria->id}}"
-                            :programStudi="$alternative" 
+                            kriteria_id="{{ $kriteria->id }}"
+                            :programStudi="$alternative"
                         />
                     @endforeach
                 </div>
@@ -168,11 +168,15 @@
             x-on:modaldelete-close.window="show = false"
         >
             <h2 class="text-center text-lg md:text-2xl">
-                Yakin hapus Kriteria <span x-text="kriteria"></span> ?
-                
+                Yakin hapus Kriteria
+                <span x-text="kriteria"></span>
+                ?
             </h2>
             <div class="mt-6 flex justify-center gap-4">
-                <x-button class="bg-red-500 text-sm text-white md:text-base" @click="$wire.deleteKriteria(id)">
+                <x-button
+                    class="bg-red-500 text-sm text-white md:text-base"
+                    @click="$wire.deleteKriteria(id)"
+                >
                     Ya
                 </x-button>
                 <x-button

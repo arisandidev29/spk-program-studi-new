@@ -23,8 +23,8 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">Total User</h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <h1 class="text-sm text-gray-500 dark:text-gray-300 md:text-lg">Total User</h1>
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         <?php echo e($users->count()); ?>
 
                     </p>
@@ -38,16 +38,16 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">
+                    <h1 class="text-sm text-gray-500 dark:text-gray-300 md:text-lg">
                         Total Kriteria
                     </h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         <?php echo e($kriteriasCount); ?>
 
                     </p>
                     <a
                         href="<?php echo e(route("admin.kriteria")); ?>"
-                        class="text-primary text-xs"
+                        class="text-primary text-xs "
                     >
                         Visit Kriteria Page
                     </a>
@@ -55,10 +55,10 @@
                 <div
                     class="font-poppins flex flex-col items-center justify-center border border-gray-400 p-2 md:p-4"
                 >
-                    <h1 class="text-sm text-gray-500 md:text-lg">
+                    <h1 class="text-sm text-gray-500 dark:text-gray-300 md:text-lg">
                         Total Alternative
                     </h1>
-                    <p class="my-2 text-xl md:text-2xl">
+                    <p class="my-2 text-xl md:text-2xl dark:text-gray-200">
                         <?php echo e($alternativesCount); ?>
 
                     </p>

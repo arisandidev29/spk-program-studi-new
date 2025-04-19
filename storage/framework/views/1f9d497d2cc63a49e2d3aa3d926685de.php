@@ -71,7 +71,7 @@ unset($__defined_vars); ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
         <span
-            class="line-clamp-1 text-sm"
+            class="line-clamp-1 text-sm text-black dark:text-gray-300"
             x-text="fileName ? fileName : 'No File Chosen'"
         ></span>
     </div>

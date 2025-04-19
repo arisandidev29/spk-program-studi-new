@@ -12,8 +12,16 @@
         x-data="{ selected: null }"
         class="mx-auto mt-2 flex justify-around gap-4 md:w-[70%]"
     >
-        @foreach ($pilihans as  $index => $value)
-            <x-radio-option :key="$value->id" :id="$value->id" value="{{$value->id}}" :name="$value->id" label="{{$index + 1 }}" description="{{$value->name}}"  :selected="$selected"/>
+        @foreach ($pilihans as $index => $value)
+            <x-radio-option
+                :key="$value->id"
+                :id="$value->id"
+                value="{{$value->id}}"
+                :name="$value->id"
+                label="{{$index + 1 }}"
+                description="{{$value->name}}"
+                :selected="$selected"
+            />
         @endforeach
     </div>
 

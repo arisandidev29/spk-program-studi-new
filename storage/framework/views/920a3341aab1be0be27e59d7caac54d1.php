@@ -2,7 +2,7 @@
 
 $__newAttributes = [];
 $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
-    'disabled' => false,
+    "disabled" => false,
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -19,7 +19,7 @@ unset($__propNames);
 unset($__newAttributes);
 
 foreach (array_filter(([
-    'disabled' => false,
+    "disabled" => false,
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -32,7 +32,7 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars); ?>
 <button
-    <?php echo e($attributes->merge(["class" => "px-6 py-2 rounded-md cursor-pointer "  ])); ?>
+    <?php echo e($attributes->merge(["class" => "px-6 py-2 rounded-md cursor-pointer "])); ?>
 
     <?php if($disabled): ?>
         disabled

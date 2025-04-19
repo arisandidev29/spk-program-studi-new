@@ -1,14 +1,14 @@
-<div x-data="{ show: false }" class="relative">
+<div x-data="{ show: false }" class="relative my-2">
     <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'show = !show','@click.outside' => 'show = false','class' => 'bg-secondary hover:bg-amber-400 duration-300 flex items-center gap-2 font-bold text-black']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['@click' => 'show = !show','@click.outside' => 'show = false','class' => 'bg-secondary hover:bg-amber-400 duration-300 flex text-xs md:text-sm items-center gap-2 font-bold text-black']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['@click' => 'show = !show','@click.outside' => 'show = false','class' => 'bg-secondary hover:bg-amber-400 duration-300 flex items-center gap-2 font-bold text-black']); ?>
+<?php $component->withAttributes(['@click' => 'show = !show','@click.outside' => 'show = false','class' => 'bg-secondary hover:bg-amber-400 duration-300 flex text-xs md:text-sm items-center gap-2 font-bold text-black']); ?>
         Export / Cetak
         <svg
             :class="show ? '-rotate-90' : '' "
@@ -38,7 +38,7 @@
     <div
         x-clock
         x-show="show"
-        class="border-secondary absolute bottom-0 left-[190px] flex flex-col gap-1 rounded-lg border-2 bg-white p-1"
+        class="border-secondary absolute bottom-0 left-[160px] md:left-[190px] flex flex-col gap-1 rounded-lg border-2 bg-white p-1"
     >
         <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>

@@ -18,7 +18,7 @@ if (isset($__slots)) unset($__slots);
 ?>
     <?php else: ?>
     <div class="flex min-h-[80vh] flex-col items-center justify-center gap-2">
-        <h1 class="my-2 text-xl md:text-4xl">
+        <h1 class="my-2 text-xl md:text-4xl dark:text-gray-200">
             Selamat Datang
             <span class="text-primary"><?php echo e(auth()->user()->name); ?></span>
         </h1>
@@ -29,7 +29,7 @@ if (isset($__slots)) unset($__slots);
             class="my-2 w-[60%] max-w-sm"
         />
 
-        <p class="my-2 w-64 text-center text-sm md:text-xl">
+        <p class="my-2 w-64 text-center text-sm md:text-xl dark:text-gray-200">
             Yuk Cari tau Rekomendasi Program Studi Untuk Mu !
         </p>
 

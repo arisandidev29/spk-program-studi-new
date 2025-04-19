@@ -19,7 +19,7 @@
             {{ $placeholder }}
         </x-button>
         <span
-            class="line-clamp-1 text-sm"
+            class="line-clamp-1 text-sm text-black dark:text-gray-300"
             x-text="fileName ? fileName : 'No File Chosen'"
         ></span>
     </div>

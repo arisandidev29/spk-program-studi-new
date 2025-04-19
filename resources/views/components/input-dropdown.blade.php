@@ -1,12 +1,12 @@
 @props([
     "name" => "",
-    "error" => null
+    "error" => null,
 ])
 <div>
     <select
         {{
             $attributes->class([
-                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
+                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none dark:text-gray-300",
                 "border-red-500!" => $errors->has($name),
             ])
         }}

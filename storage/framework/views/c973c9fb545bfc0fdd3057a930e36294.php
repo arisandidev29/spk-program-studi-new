@@ -9,7 +9,6 @@
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'order-2 flex w-full flex-col items-center gap-4 self-start xl:order-1 xl:w-64']); ?>
 
-    
 
     <?php if (isset($component)) { $__componentOriginalaa74a36c765b9eb44868c8de081ee2dc = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalaa74a36c765b9eb44868c8de081ee2dc = $attributes; } ?>
@@ -33,9 +32,7 @@
 <?php endif; ?>
 
     
-
-    
-    <p>User Register Token</p>
+    <p class="dark:text-gray-200">User Register Token</p>
     <h2 class="text-dark-secondary font-poppins text-4xl font-bold"><?php echo e($token); ?></h2>
     <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>

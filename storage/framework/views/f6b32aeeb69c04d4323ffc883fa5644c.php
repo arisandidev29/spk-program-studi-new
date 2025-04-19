@@ -53,7 +53,7 @@ unset($__defined_vars); ?>
         x-model="value"
         :type="showPassword ? 'text' : '<?php echo e($type); ?>'"
         <?php echo e($attributes->class([
-                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none",
+                "peer border-primary focus:border-dark-primary my-2 w-full rounded-md border-1 px-6 py-2 pr-7 outline-none dark:text-gray-300",
                 "border-red-500!" => $errors->has($placeholder),
             ])); ?>
 
@@ -74,7 +74,7 @@ unset($__defined_vars); ?>
     <label
         for="<?php echo e($placeholder); ?>"
         :class="{ 'px-2! -top-1! left-2!  text-xs!': value }"
-        class="absolute top-4.5 left-5 rounded-lg bg-white text-gray-400 transition-all peer-focus:-top-1 peer-focus:left-2 peer-focus:px-2 peer-focus:text-xs"
+        class="absolute top-4.5 left-5 rounded-lg bg-transparent text-gray-400 transition-all peer-focus:-top-1 peer-focus:left-2 peer-focus:px-2 peer-focus:text-xs"
     >
         <?php echo e($placeholder); ?>
 
@@ -89,10 +89,10 @@ unset($__defined_vars); ?>
         <img
             :src="showPassword ? '/asset/eye-slash.svg' : '/asset/eye.svg'"
             alt="eye"
-            class="w-4"
+            class="w-4 dark:invert"
         />
         <span
-            class="text-sm"
+            class="text-sm text-black dark:text-gray-300"
             x-text="showPassword ? 'Hide Password' : 'Show Password'"
         ></span>
     </button>

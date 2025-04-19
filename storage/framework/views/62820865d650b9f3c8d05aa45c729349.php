@@ -18,7 +18,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'flex items-center justify-between']); ?>
-        <h1 class="text-xl text-gray-600">
+        <h1 class="text-xl text-gray-600 dark:text-gray-300">
             Rekomendasi Untuk User :
             <span class="text-primary"><?php echo e($user->name); ?></span>
         </h1>
@@ -63,7 +63,7 @@ if (isset($__slots)) unset($__slots);
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'flex flex-col items-center']); ?>
-            <p class="text-center my-2">Presentase Nilai Vekor V</p>
+            <p class="text-center my-2 dark:text-gray-300">Presentase Nilai Vekor V</p>
 
             <div class="w-full  mx-auto"> 
                 <canvas id="nilaiVektor"  data-chart-data="<?php echo e(json_encode($chartData)); ?>"></canvas>

@@ -1,4 +1,4 @@
-<div class="mx-auto my-4 max-w-4xl">
+<div class="mx-auto my-2 md:my-4 max-w-4xl">
     <?php if (isset($component)) { $__componentOriginal49c2ff89931ec24f8a7c07fed8459e6f = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal49c2ff89931ec24f8a7c07fed8459e6f = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.question-head','data' => ['kriteria' => $kriteria->kriteria,'question' => $kriteria->desc,'note' => $kriteria->note,'number' => $number]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -121,8 +121,8 @@ if (isset($__slots)) unset($__slots);
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['x-data' => '{show : false}','x-on:close' => 'show = false','x-on:open.window' => 'show = true']); ?>
-        <h2 class="text-2xl text-center font-poppins">Yakin Udah  Selesai 🤔 ??</h2>
-        <p class="text-center text-sm text-gray-500 my-2 max-w-md mx-auto">
+        <h2 class="text-2xl text-center font-poppins dark:text-gray-100">Yakin Udah  Selesai 🤔 ??</h2>
+        <p class="text-center text-sm text-gray-500 my-2 max-w-md mx-auto dark:text-gray-300">
             Pastikan semua jawaban sudah terisi dengan benar
             Kamu dapat kembali untuk ganti jawaban kamu 
         </p>

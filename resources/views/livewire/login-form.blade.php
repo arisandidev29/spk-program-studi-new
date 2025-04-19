@@ -21,11 +21,10 @@
         placeholder="username"
         type="text"
         class="text-sm placeholder:text-sm md:text-base md:placeholder:text-base"
+        label-class="dark:bg-gray-800"
         icon="/asset/user-2.svg"
         wire:model="username"
     />
-
-    {{-- <x-input placeholder="password" type="password" class="text-sm md:text-base placeholder:text-sm md:placeholder:text-base " icon="/asset/password.svg" wire:model="password" /> --}}
 
     <x-input-password
         placeholder="password"
@@ -42,7 +41,9 @@
                 class="accent-primary"
                 wire:model="rememberMe"
             />
-            <small class="text-dark-primary">Remember Me</small>
+            <small class="text-dark-primary dark:text-primary">
+                Remember Me
+            </small>
         </label>
 
         <a href="" class="block">

@@ -3,11 +3,10 @@
     x-data="{ show: false }"
     class="flex items-center gap-1 md:gap-4"
 >
-    <p class="text-xs md:text-base">{{ $user->name }}</p>
     <div class="relative">
         <img
             @click="show = !show"
-            src="{{ $user->profile_pic ?  asset("storage/" . $user->profile_pic) : "/asset/default-user.svg"  }}"
+            src="{{ $user->profile_pic ? asset("storage/" . $user->profile_pic) : "/asset/default-user.svg" }}"
             alt="profile picture"
             class="h-6 w-6 cursor-pointer rounded-full md:h-10 md:w-10"
         />
@@ -22,18 +21,17 @@
                 {{ $user->email }}
             </p>
             <ul class="font-poppins flex flex-col gap-1 text-sm md:text-base">
-                    
                 <li>
                     <a
-                        href="{{ auth()->user()->role == 'admin' ? route('admin.dashboard') :  route("dashboard") }}"
+                        href="{{ auth()->user()->role == "admin" ? route("admin.dashboard") : route("dashboard") }}"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"
                     >
                         <img
                             src="/asset/house.svg"
                             alt="home"
                             class="w-5 transition duration-300 group-hover:invert-100 group-hover:transition group-hover:duration-500 md:w-6"
-                            />
-                            <span class="group-hover:text-divider italic">
+                        />
+                        <span class="group-hover:text-divider italic">
                             Dashboard
                         </span>
                     </a>
@@ -47,13 +45,13 @@
                             src="/asset/people.svg"
                             alt="people"
                             class="w-5 transition-all group-hover:invert-100 md:w-6"
-                            />
-                            <span class="group-hover:text-divider italic">
-                                Profile
-                            </span>
-                        </a>
-                    </li>
-                    <li>
+                        />
+                        <span class="group-hover:text-divider italic">
+                            Profile
+                        </span>
+                    </a>
+                </li>
+                <li>
                     <a
                         href="{{ route("logout") }}"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"

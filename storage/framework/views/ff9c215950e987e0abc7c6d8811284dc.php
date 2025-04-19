@@ -14,7 +14,7 @@
             <div class="bg-primary w-max rounded-xl p-4">
                 <img src="/asset/diagnosis.svg" alt="user" class="w-6" />
             </div>
-            <p>Hasil Rekomendasi</p>
+            <p class="dark:text-gray-200">Hasil Rekomendasi</p>
         </div>
 
         <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="overflow-auto">
-        <table class="my-2 table-auto">
+        <table class="my-2 table-auto dark:text-gray-300">
             <thead>
                 <tr class="text-xs md:text-sm">
                     <th>Kode Alternative</th>

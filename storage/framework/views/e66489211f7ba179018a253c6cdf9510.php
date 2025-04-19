@@ -36,7 +36,7 @@
 <?php endif; ?>
         </a>
 
-        <h1 class="text-primary text-xl">Edit Kriteria</h1>
+        <h1 class="text-primary text-xl dark:text-gray-300">Edit Kriteria</h1>
 
 
         
@@ -68,14 +68,14 @@
         >
             <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'kriteria','type' => 'text','wire:model' => 'kriteria','value' => $kriteria]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'kriteria','type' => 'text','wire:model' => 'kriteria','classWrapper' => 'col-span-2','value' => $kriteria]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('input'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['placeholder' => 'kriteria','type' => 'text','wire:model' => 'kriteria','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($kriteria)]); ?>
+<?php $component->withAttributes(['placeholder' => 'kriteria','type' => 'text','wire:model' => 'kriteria','class-wrapper' => 'col-span-2','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($kriteria)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
@@ -128,7 +128,7 @@
 <?php unset($__componentOriginal0dbfa54f6986b51b03e2500f8899abef); ?>
 <?php endif; ?>
 
-            
+   
             <?php if (isset($component)) { $__componentOriginal3df0918eef61aaa79605e132760f550e = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal3df0918eef61aaa79605e132760f550e = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-dropdown','data' => ['name' => 'bobot','wire:model' => 'bobot.id','error' => 'bobot.id']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -188,8 +188,10 @@
 <?php unset($__componentOriginal3df0918eef61aaa79605e132760f550e); ?>
 <?php endif; ?>
 
-            <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $pilihans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="flex items-center gap-2">
+            <div class="grid gridcols-1 col-span-2 gap-2 md:grid-cols-2">
+
+                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $pilihans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="flex items-center gap-2">
                     <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['placeholder' => 'Pilihan '.e($index + 1).'','error' => 'pilihans.'.e($index).'.name','type' => 'text','wire:model' => 'pilihans.'.e($index).'.name','value' => $pilihans[$index]['name'],'classWrapper' => 'grow']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -210,15 +212,16 @@
 <?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
-
+                    
                     <p
-                        class="bg-primary rounded-lg px-3 py-2 text-xs text-white md:text-base"
+                    class="bg-primary rounded-lg px-3 py-2 text-xs text-white md:text-base"
                     >
-                        Nilai <?php echo e($value["nilai"]); ?>
+                    Nilai <?php echo e($value["nilai"]); ?>
 
-                    </p>
-                </div>
+                </p>
+            </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+        </div>
 
 
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>

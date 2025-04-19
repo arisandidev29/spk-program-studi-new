@@ -2,24 +2,19 @@
     wire:submit="register"
     class="relative order-1 mx-auto my-6 max-w-sm rounded-sm border-1 border-solid border-gray-600 px-8 py-10 md:px-10 md:py-14"
 >
-    {{--
-        @if($errors->any())
-        @php
-        dump($errors)
-        @endphp
-        @endif
-    --}}
     <x-input
         placeholder="Username"
         error="username"
         type="text"
         wire:model="username"
+        label-class="dark:bg-gray-800"
     />
     <x-input
         placeholder="Email"
         error="email"
         type="Email"
         wire:model="email"
+        label-class="dark:bg-gray-800"
     />
     <x-input-password
         placeholder="Password"
@@ -39,6 +34,7 @@
         type="text"
         error="token"
         wire:model="token"
+        label-class="dark:bg-gray-800"
     />
     <a
         href=""
@@ -53,7 +49,7 @@
         error="profile_pic"
     >
         <div
-            class="font-roboto my-1 flex flex-col text-sm text-gray-500 italic"
+            class="font-roboto my-1 flex flex-col text-sm text-gray-500 italic dark:text-gray-300"
         >
             <span>Photo profile opsional</span>
             <span>format file : jpeg,jpg,png</span>

@@ -12,7 +12,7 @@
         <div class="bg-primary w-max rounded-xl p-4">
             <img src="/asset/bobot.svg" alt="user" class="w-6" />
         </div>
-        <p>Bobot</p>
+        <p class="dark:text-gray-200">Bobot</p>
     </div>
 
     <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
@@ -83,7 +83,7 @@
     
 
     <div class="overflow-auto">
-        <table class="my-2">
+        <table class="my-2 dark:text-gray-200">
             <thead>
                 <tr class="text-sm md:text-base">
                     <th>#</th>

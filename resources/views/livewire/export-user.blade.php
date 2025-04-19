@@ -1,8 +1,8 @@
-<div x-data="{ show: false }" class="relative">
+<div x-data="{ show: false }" class="relative my-2">
     <x-button
         @click="show = !show"
         @click.outside="show = false"
-        class="bg-secondary hover:bg-amber-400 duration-300 flex items-center gap-2 font-bold text-black"
+        class="bg-secondary flex items-center gap-2 text-xs font-bold text-black duration-300 hover:bg-amber-400 md:text-sm"
     >
         Export / Cetak
         <svg
@@ -24,15 +24,24 @@
     <div
         x-clock
         x-show="show"
-        class="border-secondary absolute bottom-0 left-[190px] flex flex-col gap-1 rounded-lg border-2 bg-white p-1"
+        class="border-secondary absolute bottom-0 left-[160px] flex flex-col gap-1 rounded-lg border-2 bg-white p-1 md:left-[190px]"
     >
-        <x-button @click="$wire.exportAllUser()" class="bg-secondary text-xs text-black">
+        <x-button
+            @click="$wire.exportAllUser()"
+            class="bg-secondary text-xs text-black"
+        >
             Export Semua User
         </x-button>
-        <x-button @click="$wire.exportUserOnlyThisYear()" class="bg-secondary text-xs text-black">
+        <x-button
+            @click="$wire.exportUserOnlyThisYear()"
+            class="bg-secondary text-xs text-black"
+        >
             Export User Tahun ini
         </x-button>
-        <x-button @click="$wire.exortUserOnlyHasChoise()" class="bg-secondary text-xs text-black">
+        <x-button
+            @click="$wire.exortUserOnlyHasChoise()"
+            class="bg-secondary text-xs text-black"
+        >
             Export User yang Sudah pilih
         </x-button>
     </div>

@@ -61,7 +61,7 @@
     
 
     <div class="overflow-auto">
-        <table class="my-2">
+        <table class="my-2 dark:text-gray-200">
             <thead>
                 <tr class="text-sm md:text-base">
                     <th>#</th>
