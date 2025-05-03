@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('alternative_id');   
             $table->float('vektor_v')->nullable();
-            $table->sting('rangking')->nullable();
+            $table->string('rangking')->nullable();
             $table->timestamps();
 
             $table->unique(['user_id', 'alternative_id']);

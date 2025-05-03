@@ -72,20 +72,32 @@
                 </h2>
 
                 <div class="my-2">
-                    @foreach ($presentaseProgramStudi as $presentase)
-                        <x-popular-study-program-card
-                            :programStudy="$presentase['programStudi']"
-                            :percentage="$presentase['presentase'] . '%'"
-                        />
-                    @endforeach
+                    @if (!$presentaseProgramStudi)
+                        <p class="text-center text-gray-500">
+                           Belum Ada Data Untuk Di Tampilkan 
+                        </p>
+                    @else
+                        @foreach ($presentaseProgramStudi as $presentase)
+                            <x-popular-study-program-card
+                                :programStudy="$presentase['programStudi']"
+                                :percentage="$presentase['presentase'] . '%'"
+                            />
+                        @endforeach
+                    @endif
                 </div>
             </x-card>
 
             <x-card class="my-4">
+                @if(!$distribution) 
+                    <p class="text-center text-gray-500">
+                        Belum ada data untuk ditampilkan
+                    </p>
+                @else
                 <canvas
                     id="TotalUserChart"
                     data-user-distribution="{{ json_encode($distribution) }}"
                 ></canvas>
+                @endif
             </x-card>
         </div>
     </div>

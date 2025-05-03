@@ -6,7 +6,7 @@
     <div class="relative">
         <img
             @click="show = !show"
-            src="{{ $user->profile_pic ? asset("storage/" . $user->profile_pic) : "/asset/default-user.svg" }}"
+            src="<?php echo e($user->profile_pic ? asset("storage/" . $user->profile_pic) : "/asset/default-user.svg"); ?>"
             alt="profile picture"
             class="h-6 w-6 cursor-pointer rounded-full object-cover  md:h-10 md:w-10"
         />
@@ -18,12 +18,13 @@
             <p
                 class="font-poppins my-3 text-center text-sm text-gray-400 italic md:text-base"
             >
-                {{ $user->email }}
+                <?php echo e($user->email); ?>
+
             </p>
             <ul class="font-poppins text-gray-600 flex flex-col gap-1 text-sm md:text-base">
                 <li>
                     <a
-                        href="{{ auth()->user()->role == "admin" ? route("admin.dashboard") : route("dashboard") }}"
+                        href="<?php echo e(auth()->user()->role == "admin" ? route("admin.dashboard") : route("dashboard")); ?>"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"
                     >
                         <img
@@ -38,7 +39,7 @@
                 </li>
                 <li>
                     <a
-                        href="{{ route("user.profile") }}"
+                        href="<?php echo e(route("user.profile")); ?>"
                         class="group md:Jgap-4 flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500"
                     >
                         <img
@@ -53,7 +54,7 @@
                 </li>
                 <li>
                     <a
-                        href="{{ route("logout") }}"
+                        href="<?php echo e(route("logout")); ?>"
                         class="group flex items-center gap-2 rounded-md p-2 transition duration-300 hover:bg-gray-500 hover:transition hover:duration-500 md:gap-4"
                     >
                         <img
@@ -69,4 +70,4 @@
             </ul>
         </div>
     </div>
-</div>
+</div><?php /**PATH /home/arisandi/Documents/skripsi/spk-program-studi-new/resources/views/livewire/user-navbar.blade.php ENDPATH**/ ?>

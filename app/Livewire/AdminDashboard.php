@@ -33,33 +33,41 @@ class AdminDashboard extends Component
 
     public function calculateUserDestribution()
     {
-        $Userdistribution = HasilRekomendasi::where('ranking', 1)
-            ->select('alternative_id', DB::raw('count(*) as total'))
-            ->groupBy('alternative_id')
-            ->with('alternative') // jika ingin nama program studi
-            ->get();
+
+        if (HasilRekomendasi::count() == 0) {
+            $this->distribution = [];
+            $this->presentaseProgramStudi = [];
+            return;
+        } else {
+
+            $Userdistribution = HasilRekomendasi::where('ranking', 1)
+                ->select('alternative_id', DB::raw('count(*) as total'))
+                ->groupBy('alternative_id')
+                ->with('alternative') // jika ingin nama program studi
+                ->get();
 
 
-        $this->distribution = $Userdistribution->map(function ($item) {
-            return [
-                'programStudi' => $item->alternative->name,
-                'total' => $item->total,
-            ];
-        })->toArray();
+            $this->distribution = $Userdistribution->map(function ($item) {
+                return [
+                    'programStudi' => $item->alternative->name,
+                    'total' => $item->total,
+                ];
+            })->toArray();
 
-        $userHasChoise = User::has('hasilRekomendasi')->get();
+            $userHasChoise = User::has('hasilRekomendasi')->get();
 
 
-        $presentase = $Userdistribution->map(function ($item) use ($userHasChoise) {
-            $value = ($item->total / $userHasChoise->count()) * 100;
-            return [
-                'programStudi' => $item->alternative->name,
-                'presentase' => floor($value),
-            ];
-        });
-        // dd($presentase);
+            $presentase = $Userdistribution->map(function ($item) use ($userHasChoise) {
+                $value = ($item->total / $userHasChoise->count()) * 100;
+                return [
+                    'programStudi' => $item->alternative->name,
+                    'presentase' => floor($value),
+                ];
+            });
+            // dd($presentase);
 
-        $this->presentaseProgramStudi = $presentase;
+            $this->presentaseProgramStudi = $presentase;
+        }
     }
     public function render()
     {
